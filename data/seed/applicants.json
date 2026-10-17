@@ -1,0 +1,9604 @@
+{
+ "source": "우연한식탁_가상데이터.xlsx",
+ "excluded_non_operating_region": [
+  {
+   "row": 67,
+   "name": "조주은",
+   "region": "인천"
+  },
+  {
+   "row": 164,
+   "name": "강다은",
+   "region": "수원 인계동"
+  },
+  {
+   "row": 221,
+   "name": "홍아린",
+   "region": "분당, 판교"
+  }
+ ],
+ "applicants": [
+  {
+   "seed_key": "xlsx-3",
+   "name": "한우석",
+   "birth_year": 1999,
+   "gender": "M",
+   "mbti": "ENTJ",
+   "interests": [
+    "운동",
+    "자기계발·공부"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "열정 있는 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 2,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-4",
+   "name": "김진우",
+   "birth_year": 2000,
+   "gender": "M",
+   "mbti": "ESFJ",
+   "interests": [
+    "맛집·카페 탐방",
+    "영화·드라마",
+    "음악",
+    "독서·글쓰기",
+    "자기계발·공부",
+    "전시·공연·아트"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "이야기를 이끄는 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 3,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-5",
+   "name": "이지아",
+   "birth_year": 2004,
+   "gender": "F",
+   "mbti": "ENTP",
+   "interests": [
+    "맛집·카페 탐방",
+    "음악",
+    "전시·공연·아트"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-6",
+   "name": "송민지",
+   "birth_year": 2000,
+   "gender": "F",
+   "mbti": "ESTJ",
+   "interests": [
+    "운동",
+    "여행",
+    "영화·드라마",
+    "음악",
+    "독서·글쓰기"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-7",
+   "name": "하우진",
+   "birth_year": 1992,
+   "gender": "M",
+   "mbti": "ESTP",
+   "interests": [
+    "맛집·카페 탐방",
+    "여행",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "이야기를 이끄는 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-8",
+   "name": "유한결",
+   "birth_year": 1995,
+   "gender": "M",
+   "mbti": "ENFP",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "독서·글쓰기"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-9",
+   "name": "장지원",
+   "birth_year": 1996,
+   "gender": "F",
+   "mbti": "INFJ",
+   "interests": [
+    "맛집·카페 탐방",
+    "여행",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 2,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-10",
+   "name": "김세진",
+   "birth_year": 1991,
+   "gender": "F",
+   "mbti": "ESFJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "영화·드라마",
+    "자기계발·공부",
+    "전시·공연·아트"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-11",
+   "name": "조수영",
+   "birth_year": 1994,
+   "gender": "F",
+   "mbti": "ISFJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방"
+   ],
+   "self_traits": [
+    "가볍고 유머 있는 대화를 좋아함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 2,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-12",
+   "name": "홍승준",
+   "birth_year": 2005,
+   "gender": "M",
+   "mbti": "ENFP",
+   "interests": [
+    "맛집·카페 탐방",
+    "여행",
+    "영화·드라마",
+    "음악",
+    "전시·공연·아트",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 3,
+   "pass_type": "MEMBERSHIP_1M"
+  },
+  {
+   "seed_key": "xlsx-13",
+   "name": "이지우",
+   "birth_year": 2002,
+   "gender": "F",
+   "mbti": "INFJ",
+   "interests": [
+    "운동",
+    "여행",
+    "음악",
+    "독서·글쓰기",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-14",
+   "name": "강현정",
+   "birth_year": 2000,
+   "gender": "F",
+   "mbti": "ISTP",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "음악"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 3,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-15",
+   "name": "손소은",
+   "birth_year": 1992,
+   "gender": "F",
+   "mbti": "INFP",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "영화·드라마",
+    "음악",
+    "독서·글쓰기",
+    "전시·공연·아트"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "열정 있는 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "MEMBERSHIP_1M"
+  },
+  {
+   "seed_key": "xlsx-16",
+   "name": "우주연",
+   "birth_year": 1991,
+   "gender": "F",
+   "mbti": "INFJ",
+   "interests": [
+    "운동",
+    "독서·글쓰기",
+    "전시·공연·아트"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 2,
+   "pass_type": "MEMBERSHIP_1M"
+  },
+  {
+   "seed_key": "xlsx-17",
+   "name": "차현아",
+   "birth_year": 1996,
+   "gender": "F",
+   "mbti": "ESTP",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "독서·글쓰기"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "경청을 잘 함",
+    "이야기를 이끄는 편"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 2,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-18",
+   "name": "이준우",
+   "birth_year": 1998,
+   "gender": "M",
+   "mbti": "ENFP",
+   "interests": [
+    "운동"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-19",
+   "name": "정세영",
+   "birth_year": 2002,
+   "gender": "F",
+   "mbti": "ESFP",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-20",
+   "name": "남해인",
+   "birth_year": 1999,
+   "gender": "F",
+   "mbti": "INFJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "영화·드라마",
+    "전시·공연·아트"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-21",
+   "name": "강윤지",
+   "birth_year": 1993,
+   "gender": "F",
+   "mbti": "ISFJ",
+   "interests": [
+    "운동",
+    "여행",
+    "영화·드라마",
+    "자기계발·공부",
+    "전시·공연·아트"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-22",
+   "name": "장도훈",
+   "birth_year": 1995,
+   "gender": "M",
+   "mbti": "INTP",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "편하고 유머 있는 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-23",
+   "name": "하우진",
+   "birth_year": 1992,
+   "gender": "M",
+   "mbti": "ESTP",
+   "interests": [
+    "맛집·카페 탐방",
+    "전시·공연·아트",
+    "패션·뷰티"
+   ],
+   "self_traits": [
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "이야기를 이끄는 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-24",
+   "name": "김서연",
+   "birth_year": 1998,
+   "gender": "F",
+   "mbti": "ISTJ",
+   "interests": [
+    "맛집·카페 탐방",
+    "여행",
+    "자기계발·공부",
+    "패션·뷰티",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "이야기를 이끄는 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 3,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-25",
+   "name": "박지온",
+   "birth_year": 1998,
+   "gender": "F",
+   "mbti": "ENFJ",
+   "interests": [
+    "영화·드라마",
+    "전시·공연·아트"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "이야기를 이끄는 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-26",
+   "name": "손소영",
+   "birth_year": 1991,
+   "gender": "F",
+   "mbti": "INFJ",
+   "interests": [
+    "여행",
+    "영화·드라마"
+   ],
+   "self_traits": [
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 2,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-27",
+   "name": "정서진",
+   "birth_year": 2000,
+   "gender": "F",
+   "mbti": "ESFP",
+   "interests": [
+    "맛집·카페 탐방",
+    "독서·글쓰기"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "경청을 잘 함",
+    "이야기를 이끄는 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-28",
+   "name": "오유리",
+   "birth_year": 1997,
+   "gender": "F",
+   "mbti": "ENFJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "영화·드라마"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-29",
+   "name": "최아윤",
+   "birth_year": 1999,
+   "gender": "F",
+   "mbti": "INFJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "전시·공연·아트",
+    "패션·뷰티",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-30",
+   "name": "장도훈",
+   "birth_year": 1995,
+   "gender": "M",
+   "mbti": "INTP",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 3,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-31",
+   "name": "권하은",
+   "birth_year": 1988,
+   "gender": "F",
+   "mbti": "INTP",
+   "interests": [
+    "자기계발·공부"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-32",
+   "name": "강민혁",
+   "birth_year": 1990,
+   "gender": "M",
+   "mbti": "ISTJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함"
+   ],
+   "wanted_traits": [
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-33",
+   "name": "최희원",
+   "birth_year": 1999,
+   "gender": "F",
+   "mbti": "INFJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "영화·드라마",
+    "독서·글쓰기"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-34",
+   "name": "강나현",
+   "birth_year": 1991,
+   "gender": "F",
+   "mbti": "ENFP",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "영화·드라마",
+    "음악",
+    "자기계발·공부",
+    "전시·공연·아트",
+    "패션·뷰티",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "이야기를 이끄는 편",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-35",
+   "name": "김다현",
+   "birth_year": 1998,
+   "gender": "F",
+   "mbti": "ENFJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "음악",
+    "자기계발·공부"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-36",
+   "name": "이지아",
+   "birth_year": 2004,
+   "gender": "F",
+   "mbti": "ENTP",
+   "interests": [
+    "맛집·카페 탐방",
+    "음악",
+    "전시·공연·아트"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-37",
+   "name": "정현진",
+   "birth_year": 1996,
+   "gender": "M",
+   "mbti": "INTJ",
+   "interests": [
+    "맛집·카페 탐방",
+    "음악",
+    "전시·공연·아트"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-38",
+   "name": "진채영",
+   "birth_year": 1991,
+   "gender": "F",
+   "mbti": "ESTP",
+   "interests": [
+    "운동",
+    "여행",
+    "독서·글쓰기"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "가볍고 유머 있는 대화를 좋아함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-39",
+   "name": "박도훈",
+   "birth_year": 1995,
+   "gender": "M",
+   "mbti": "ENFP",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-40",
+   "name": "송민성",
+   "birth_year": 1993,
+   "gender": "M",
+   "mbti": "ENFJ",
+   "interests": [
+    "운동",
+    "여행",
+    "음악",
+    "독서·글쓰기",
+    "자기계발·공부",
+    "패션·뷰티"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 3,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-41",
+   "name": "이지원",
+   "birth_year": 1992,
+   "gender": "F",
+   "mbti": "INFP",
+   "interests": [
+    "맛집·카페 탐방",
+    "영화·드라마",
+    "전시·공연·아트"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-42",
+   "name": "김채아",
+   "birth_year": 1999,
+   "gender": "F",
+   "mbti": "ISFP",
+   "interests": [
+    "맛집·카페 탐방",
+    "영화·드라마",
+    "음악"
+   ],
+   "self_traits": [
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-43",
+   "name": "최영민",
+   "birth_year": 1995,
+   "gender": "M",
+   "mbti": "ISFJ",
+   "interests": [
+    "여행",
+    "영화·드라마",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-44",
+   "name": "이서윤",
+   "birth_year": 1998,
+   "gender": "F",
+   "mbti": "INTJ",
+   "interests": [
+    "맛집·카페 탐방",
+    "여행"
+   ],
+   "self_traits": [
+    "가볍고 유머 있는 대화를 좋아함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "jamsil"
+   ],
+   "date_choice_count": 2,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-45",
+   "name": "최승재",
+   "birth_year": 1984,
+   "gender": "M",
+   "mbti": "ISTJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 2,
+   "pass_type": "MEMBERSHIP_1M"
+  },
+  {
+   "seed_key": "xlsx-46",
+   "name": "이이준",
+   "birth_year": 1996,
+   "gender": "M",
+   "mbti": "INFJ",
+   "interests": [
+    "맛집·카페 탐방",
+    "영화·드라마",
+    "독서·글쓰기",
+    "패션·뷰티"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 3,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-47",
+   "name": "주소은",
+   "birth_year": 2000,
+   "gender": "F",
+   "mbti": "ESFJ",
+   "interests": [
+    "맛집·카페 탐방",
+    "음악",
+    "패션·뷰티"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-48",
+   "name": "이민주",
+   "birth_year": 1996,
+   "gender": "F",
+   "mbti": "INTP",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "영화·드라마",
+    "음악",
+    "전시·공연·아트",
+    "패션·뷰티"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-49",
+   "name": "원유선",
+   "birth_year": 2001,
+   "gender": "F",
+   "mbti": "ENFP",
+   "interests": [
+    "영화·드라마",
+    "패션·뷰티"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "이야기를 이끄는 편"
+   ],
+   "wanted_traits": [
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 2,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-50",
+   "name": "이하나",
+   "birth_year": 1997,
+   "gender": "F",
+   "mbti": "ISFJ",
+   "interests": [
+    "맛집·카페 탐방",
+    "여행"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-51",
+   "name": "노선아",
+   "birth_year": 1996,
+   "gender": "F",
+   "mbti": "INFP",
+   "interests": [
+    "운동",
+    "영화·드라마",
+    "자기계발·공부",
+    "전시·공연·아트"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-52",
+   "name": "신하진",
+   "birth_year": 1998,
+   "gender": "F",
+   "mbti": "ISFP",
+   "interests": [
+    "운동",
+    "여행"
+   ],
+   "self_traits": [
+    "가볍고 유머 있는 대화를 좋아함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-53",
+   "name": "남유주",
+   "birth_year": 1999,
+   "gender": "F",
+   "mbti": "ESTJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "편하고 유머 있는 사람",
+    "열정 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 3,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-54",
+   "name": "윤유미",
+   "birth_year": 1991,
+   "gender": "F",
+   "mbti": "INFP",
+   "interests": [
+    "맛집·카페 탐방",
+    "자기계발·공부",
+    "전시·공연·아트"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-55",
+   "name": "최윤지",
+   "birth_year": 1999,
+   "gender": "F",
+   "mbti": "ENFJ",
+   "interests": [
+    "맛집·카페 탐방",
+    "여행",
+    "음악",
+    "패션·뷰티"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "가볍고 유머 있는 대화를 좋아함",
+    "이야기를 이끄는 편"
+   ],
+   "wanted_traits": [
+    "편하고 유머 있는 사람",
+    "열정 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-56",
+   "name": "김채민",
+   "birth_year": 2003,
+   "gender": "F",
+   "mbti": "INTJ",
+   "interests": [
+    "운동",
+    "여행",
+    "독서·글쓰기",
+    "자기계발·공부"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-57",
+   "name": "이지아",
+   "birth_year": 2004,
+   "gender": "F",
+   "mbti": "ENTP",
+   "interests": [
+    "음악",
+    "전시·공연·아트"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-58",
+   "name": "김다현",
+   "birth_year": 1998,
+   "gender": "F",
+   "mbti": "ENFJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "자기계발·공부",
+    "패션·뷰티"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-59",
+   "name": "김미소",
+   "birth_year": 1999,
+   "gender": "F",
+   "mbti": "INTP",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "음악",
+    "패션·뷰티"
+   ],
+   "self_traits": [
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-60",
+   "name": "이주연",
+   "birth_year": 2003,
+   "gender": "F",
+   "mbti": "ENTP",
+   "interests": [
+    "여행"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "가볍고 유머 있는 대화를 좋아함"
+   ],
+   "wanted_traits": [
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-61",
+   "name": "이유리",
+   "birth_year": 1997,
+   "gender": "F",
+   "mbti": "ESFP",
+   "interests": [
+    "운동",
+    "여행",
+    "독서·글쓰기",
+    "자기계발·공부",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "이야기를 이끄는 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "열정 있는 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 2,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-62",
+   "name": "심세진",
+   "birth_year": 1999,
+   "gender": "F",
+   "mbti": "INFJ",
+   "interests": [
+    "맛집·카페 탐방",
+    "음악",
+    "독서·글쓰기",
+    "패션·뷰티"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 2,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-63",
+   "name": "윤희원",
+   "birth_year": 2002,
+   "gender": "F",
+   "mbti": "ENFJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "영화·드라마",
+    "음악",
+    "전시·공연·아트"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-64",
+   "name": "이영준",
+   "birth_year": 1995,
+   "gender": "M",
+   "mbti": "INFJ",
+   "interests": [
+    "전시·공연·아트"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 2,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-65",
+   "name": "이은영",
+   "birth_year": 1994,
+   "gender": "F",
+   "mbti": "ISFJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 2,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-66",
+   "name": "임현수",
+   "birth_year": 1991,
+   "gender": "M",
+   "mbti": "ENFJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "영화·드라마"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-68",
+   "name": "김민규",
+   "birth_year": 1990,
+   "gender": "M",
+   "mbti": "ISFJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "영화·드라마",
+    "음악",
+    "자기계발·공부",
+    "전시·공연·아트"
+   ],
+   "self_traits": [
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-69",
+   "name": "조아영",
+   "birth_year": 1995,
+   "gender": "F",
+   "mbti": "ISTJ",
+   "interests": [
+    "운동",
+    "독서·글쓰기",
+    "자기계발·공부"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "gangnam"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-70",
+   "name": "김준혁",
+   "birth_year": 1999,
+   "gender": "M",
+   "mbti": null,
+   "interests": [
+    "운동",
+    "영화·드라마",
+    "자기계발·공부",
+    "전시·공연·아트"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "열정 있는 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "gangnam"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-71",
+   "name": "김다은",
+   "birth_year": 2006,
+   "gender": "F",
+   "mbti": "ESFP",
+   "interests": [
+    "음악",
+    "독서·글쓰기",
+    "패션·뷰티"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "이야기를 이끄는 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "gangnam"
+   ],
+   "date_choice_count": 2,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-72",
+   "name": "이승재",
+   "birth_year": 2002,
+   "gender": "M",
+   "mbti": "INFP",
+   "interests": [
+    "운동",
+    "음악",
+    "독서·글쓰기",
+    "자기계발·공부",
+    "패션·뷰티"
+   ],
+   "self_traits": [
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-73",
+   "name": "윤한결",
+   "birth_year": 1997,
+   "gender": "M",
+   "mbti": "INFJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "영화·드라마",
+    "자기계발·공부"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "열정 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 3,
+   "pass_type": "MEMBERSHIP_1M"
+  },
+  {
+   "seed_key": "xlsx-74",
+   "name": "백서율",
+   "birth_year": 1998,
+   "gender": "F",
+   "mbti": "ENTJ",
+   "interests": [
+    "맛집·카페 탐방",
+    "여행",
+    "영화·드라마",
+    "전시·공연·아트"
+   ],
+   "self_traits": [
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "편하고 유머 있는 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-75",
+   "name": "이윤지",
+   "birth_year": 1997,
+   "gender": "F",
+   "mbti": "ENFJ",
+   "interests": [
+    "맛집·카페 탐방",
+    "여행",
+    "영화·드라마",
+    "음악",
+    "독서·글쓰기",
+    "전시·공연·아트"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "경청을 잘 함",
+    "이야기를 이끄는 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-76",
+   "name": "손로아",
+   "birth_year": 1999,
+   "gender": "F",
+   "mbti": "INTP",
+   "interests": [
+    "맛집·카페 탐방",
+    "여행",
+    "음악",
+    "자기계발·공부",
+    "전시·공연·아트",
+    "패션·뷰티"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 3,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-77",
+   "name": "윤미진",
+   "birth_year": 2000,
+   "gender": "F",
+   "mbti": "ISFJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "영화·드라마",
+    "음악",
+    "자기계발·공부",
+    "전시·공연·아트"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-78",
+   "name": "문아영",
+   "birth_year": 1995,
+   "gender": "F",
+   "mbti": "ESFP",
+   "interests": [
+    "운동",
+    "자기계발·공부"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-79",
+   "name": "이서희",
+   "birth_year": 1994,
+   "gender": "F",
+   "mbti": "ENFJ",
+   "interests": [
+    "영화·드라마",
+    "음악",
+    "자기계발·공부"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-80",
+   "name": "김동민",
+   "birth_year": 1995,
+   "gender": "M",
+   "mbti": "INFP",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "전시·공연·아트"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-81",
+   "name": "정동민",
+   "birth_year": 2000,
+   "gender": "M",
+   "mbti": "ISTJ",
+   "interests": [
+    "운동",
+    "전시·공연·아트",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-82",
+   "name": "강하은",
+   "birth_year": 2000,
+   "gender": "F",
+   "mbti": "ESTJ",
+   "interests": [
+    "맛집·카페 탐방",
+    "여행"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "경청을 잘 함",
+    "이야기를 이끄는 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "euljiro"
+   ],
+   "date_choice_count": 3,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-83",
+   "name": "김세은",
+   "birth_year": 2000,
+   "gender": "F",
+   "mbti": "ENTJ",
+   "interests": [
+    "여행",
+    "영화·드라마",
+    "음악",
+    "전시·공연·아트"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-84",
+   "name": "한가영",
+   "birth_year": 1997,
+   "gender": "F",
+   "mbti": "ENFP",
+   "interests": [
+    "운동",
+    "영화·드라마",
+    "전시·공연·아트",
+    "패션·뷰티"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "이야기를 이끄는 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-85",
+   "name": "윤아현",
+   "birth_year": 2003,
+   "gender": "F",
+   "mbti": "ISFP",
+   "interests": [
+    "운동",
+    "영화·드라마",
+    "음악",
+    "독서·글쓰기",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-86",
+   "name": "김태희",
+   "birth_year": 2003,
+   "gender": "F",
+   "mbti": "ENFP",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "자기계발·공부",
+    "전시·공연·아트",
+    "패션·뷰티"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "jamsil"
+   ],
+   "date_choice_count": 2,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-87",
+   "name": "민수영",
+   "birth_year": 1998,
+   "gender": "F",
+   "mbti": "ESFJ",
+   "interests": [
+    "운동",
+    "여행",
+    "독서·글쓰기"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-88",
+   "name": "김지성",
+   "birth_year": 1990,
+   "gender": "M",
+   "mbti": "ISTJ",
+   "interests": [
+    "여행",
+    "자기계발·공부"
+   ],
+   "self_traits": [
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-89",
+   "name": "민세진",
+   "birth_year": 1992,
+   "gender": "F",
+   "mbti": "ENFJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "음악",
+    "자기계발·공부",
+    "패션·뷰티"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "이야기를 이끄는 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-90",
+   "name": "차라희",
+   "birth_year": 1992,
+   "gender": "F",
+   "mbti": "INTP",
+   "interests": [
+    "운동",
+    "여행",
+    "자기계발·공부",
+    "전시·공연·아트"
+   ],
+   "self_traits": [
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-91",
+   "name": "최하은",
+   "birth_year": 1992,
+   "gender": "F",
+   "mbti": "ISFJ",
+   "interests": [
+    "맛집·카페 탐방",
+    "여행",
+    "영화·드라마",
+    "음악"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "gangnam"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-92",
+   "name": "김지유",
+   "birth_year": 1992,
+   "gender": "F",
+   "mbti": "ISFP",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "영화·드라마",
+    "음악"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "gangnam"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-93",
+   "name": "윤영진",
+   "birth_year": 1992,
+   "gender": "M",
+   "mbti": "ESTP",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "gangnam"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-94",
+   "name": "장상우",
+   "birth_year": 1994,
+   "gender": "M",
+   "mbti": "ENTJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "영화·드라마",
+    "음악",
+    "전시·공연·아트",
+    "패션·뷰티",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "가볍고 유머 있는 대화를 좋아함"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "gangnam"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-95",
+   "name": "하서진",
+   "birth_year": 2002,
+   "gender": "F",
+   "mbti": "ISTJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "영화·드라마",
+    "음악"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "gangnam"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-96",
+   "name": "전연지",
+   "birth_year": 2002,
+   "gender": "F",
+   "mbti": "INFP",
+   "interests": [
+    "맛집·카페 탐방",
+    "영화·드라마",
+    "전시·공연·아트"
+   ],
+   "self_traits": [
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "gangnam"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-97",
+   "name": "박준호",
+   "birth_year": 2005,
+   "gender": "M",
+   "mbti": "ISFJ",
+   "interests": [
+    "운동",
+    "여행",
+    "독서·글쓰기"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-98",
+   "name": "허인호",
+   "birth_year": 1995,
+   "gender": "M",
+   "mbti": null,
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "음악",
+    "자기계발·공부",
+    "전시·공연·아트",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-99",
+   "name": "이주희",
+   "birth_year": 1990,
+   "gender": "F",
+   "mbti": "INFP",
+   "interests": [
+    "운동",
+    "영화·드라마",
+    "독서·글쓰기",
+    "전시·공연·아트"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "gangnam"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-100",
+   "name": "최영민",
+   "birth_year": 1995,
+   "gender": "M",
+   "mbti": "ISFJ",
+   "interests": [
+    "운동",
+    "영화·드라마",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-101",
+   "name": "윤채은",
+   "birth_year": 1992,
+   "gender": "F",
+   "mbti": "INFJ",
+   "interests": [
+    "맛집·카페 탐방",
+    "여행",
+    "독서·글쓰기",
+    "자기계발·공부",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "깊은 대화가 되는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "euljiro"
+   ],
+   "date_choice_count": 2,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-102",
+   "name": "이지윤",
+   "birth_year": 1997,
+   "gender": "F",
+   "mbti": "ENTP",
+   "interests": [
+    "맛집·카페 탐방",
+    "여행",
+    "영화·드라마",
+    "음악",
+    "독서·글쓰기"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 2,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-103",
+   "name": "황솔비",
+   "birth_year": 1984,
+   "gender": "F",
+   "mbti": "INFP",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "자기계발·공부"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-104",
+   "name": "박재호",
+   "birth_year": 1998,
+   "gender": "M",
+   "mbti": "ESFJ",
+   "interests": [
+    "여행",
+    "영화·드라마",
+    "음악",
+    "독서·글쓰기",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-105",
+   "name": "최예빈",
+   "birth_year": 1993,
+   "gender": "F",
+   "mbti": "ENFJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "영화·드라마",
+    "음악",
+    "독서·글쓰기",
+    "자기계발·공부",
+    "전시·공연·아트",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "이야기를 이끄는 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "euljiro",
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-106",
+   "name": "김서희",
+   "birth_year": 2002,
+   "gender": "F",
+   "mbti": "ESFP",
+   "interests": [
+    "맛집·카페 탐방",
+    "영화·드라마"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "MEMBERSHIP_1M"
+  },
+  {
+   "seed_key": "xlsx-107",
+   "name": "손솔비",
+   "birth_year": 1995,
+   "gender": "F",
+   "mbti": "ISFP",
+   "interests": [
+    "운동",
+    "여행",
+    "독서·글쓰기",
+    "자기계발·공부",
+    "전시·공연·아트"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": "내장류 대창 막창 등, 닭발, 회",
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-108",
+   "name": "유정현",
+   "birth_year": 1999,
+   "gender": "M",
+   "mbti": "INFP",
+   "interests": [
+    "운동",
+    "영화·드라마"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "편하고 유머 있는 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-109",
+   "name": "최하율",
+   "birth_year": 1992,
+   "gender": "F",
+   "mbti": "ISFP",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "음악"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-110",
+   "name": "남지훈",
+   "birth_year": 1998,
+   "gender": "M",
+   "mbti": "ENFJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "전시·공연·아트"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "깊은 대화가 되는 사람",
+    "열정 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-111",
+   "name": "김라희",
+   "birth_year": 1990,
+   "gender": "F",
+   "mbti": "ISFP",
+   "interests": [
+    "여행",
+    "영화·드라마",
+    "독서·글쓰기"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-112",
+   "name": "전예원",
+   "birth_year": 2002,
+   "gender": "F",
+   "mbti": "ESTP",
+   "interests": [
+    "여행",
+    "음악",
+    "패션·뷰티",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함"
+   ],
+   "wanted_traits": [
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-113",
+   "name": "최채민",
+   "birth_year": 2000,
+   "gender": "F",
+   "mbti": "ISFP",
+   "interests": [
+    "맛집·카페 탐방",
+    "여행",
+    "전시·공연·아트",
+    "패션·뷰티",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-114",
+   "name": "이승재",
+   "birth_year": 2002,
+   "gender": "M",
+   "mbti": "INFP",
+   "interests": [
+    "운동",
+    "음악",
+    "독서·글쓰기",
+    "자기계발·공부",
+    "패션·뷰티"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편"
+   ],
+   "wanted_traits": [
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-115",
+   "name": "김민준",
+   "birth_year": 1990,
+   "gender": "M",
+   "mbti": "ESTJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "자기계발·공부",
+    "패션·뷰티"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "이야기를 이끄는 편"
+   ],
+   "wanted_traits": [
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-116",
+   "name": "배로아",
+   "birth_year": 1999,
+   "gender": "F",
+   "mbti": "ESFJ",
+   "interests": [
+    "맛집·카페 탐방"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-117",
+   "name": "손보라",
+   "birth_year": 1998,
+   "gender": "F",
+   "mbti": "INTP",
+   "interests": [
+    "운동",
+    "영화·드라마",
+    "독서·글쓰기",
+    "자기계발·공부"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-118",
+   "name": "최하나",
+   "birth_year": 1995,
+   "gender": "F",
+   "mbti": "INFJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "독서·글쓰기",
+    "자기계발·공부"
+   ],
+   "self_traits": [
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-119",
+   "name": "문서연",
+   "birth_year": 1995,
+   "gender": "F",
+   "mbti": "ISFJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "영화·드라마",
+    "독서·글쓰기",
+    "자기계발·공부"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "euljiro"
+   ],
+   "date_choice_count": 2,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-120",
+   "name": "남채아",
+   "birth_year": 1997,
+   "gender": "F",
+   "mbti": "ENFP",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "영화·드라마",
+    "음악",
+    "독서·글쓰기"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "이야기를 이끄는 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-121",
+   "name": "장준형",
+   "birth_year": 1998,
+   "gender": "M",
+   "mbti": "ISTJ",
+   "interests": [
+    "운동",
+    "독서·글쓰기",
+    "자기계발·공부"
+   ],
+   "self_traits": [
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-122",
+   "name": "정수빈",
+   "birth_year": 1996,
+   "gender": "F",
+   "mbti": "ISFJ",
+   "interests": [
+    "여행"
+   ],
+   "self_traits": [
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "jamsil"
+   ],
+   "date_choice_count": 2,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-123",
+   "name": "서채아",
+   "birth_year": 1995,
+   "gender": "F",
+   "mbti": "ENFP",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "영화·드라마",
+    "독서·글쓰기"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-124",
+   "name": "이효진",
+   "birth_year": 1998,
+   "gender": "F",
+   "mbti": "ISFJ",
+   "interests": [
+    "영화·드라마",
+    "음악",
+    "독서·글쓰기"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-125",
+   "name": "임주환",
+   "birth_year": 1998,
+   "gender": "M",
+   "mbti": "ENTJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "영화·드라마",
+    "자기계발·공부"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "gangnam"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-126",
+   "name": "하규리",
+   "birth_year": 1998,
+   "gender": "F",
+   "mbti": "ISTJ",
+   "interests": [
+    "여행",
+    "음악",
+    "독서·글쓰기",
+    "패션·뷰티"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "gangnam"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-127",
+   "name": "정나현",
+   "birth_year": 1996,
+   "gender": "F",
+   "mbti": "ISTP",
+   "interests": [
+    "맛집·카페 탐방",
+    "여행",
+    "영화·드라마",
+    "음악"
+   ],
+   "self_traits": [
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "gangnam"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-128",
+   "name": "장희원",
+   "birth_year": 2004,
+   "gender": "F",
+   "mbti": "ISFJ",
+   "interests": [
+    "운동",
+    "독서·글쓰기"
+   ],
+   "self_traits": [
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "gangnam"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-129",
+   "name": "윤영진",
+   "birth_year": 1993,
+   "gender": "M",
+   "mbti": "ESTP",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "영화·드라마"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "gangnam"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-130",
+   "name": "엄예지",
+   "birth_year": 2002,
+   "gender": "F",
+   "mbti": "ENTP",
+   "interests": [
+    "맛집·카페 탐방",
+    "음악",
+    "패션·뷰티"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "이야기를 이끄는 편"
+   ],
+   "wanted_traits": [
+    "깊은 대화가 되는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원"
+   ],
+   "food_restrictions": "날거(육회,초밥,간장게장 등)",
+   "regions": [
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-131",
+   "name": "임우성",
+   "birth_year": 2006,
+   "gender": "M",
+   "mbti": "ENFP",
+   "interests": [
+    "운동",
+    "음악",
+    "독서·글쓰기",
+    "자기계발·공부"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "이야기를 이끄는 편"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "gangnam"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-132",
+   "name": "고채영",
+   "birth_year": 1992,
+   "gender": "F",
+   "mbti": "ENFP",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "자기계발·공부"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "열정 있는 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-133",
+   "name": "우지윤",
+   "birth_year": 1999,
+   "gender": "F",
+   "mbti": "ESTJ",
+   "interests": [
+    "맛집·카페 탐방"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "가볍고 유머 있는 대화를 좋아함"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-134",
+   "name": "장도훈",
+   "birth_year": 1995,
+   "gender": "M",
+   "mbti": "INTP",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "전시·공연·아트"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "열정 있는 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "euljiro"
+   ],
+   "date_choice_count": 3,
+   "pass_type": "MEMBERSHIP_1M"
+  },
+  {
+   "seed_key": "xlsx-135",
+   "name": "김유주",
+   "birth_year": 2000,
+   "gender": "F",
+   "mbti": "INTP",
+   "interests": [
+    "운동",
+    "여행",
+    "자기계발·공부"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "gangnam"
+   ],
+   "date_choice_count": 3,
+   "pass_type": "MEMBERSHIP_1M"
+  },
+  {
+   "seed_key": "xlsx-136",
+   "name": "장유미",
+   "birth_year": 1995,
+   "gender": "F",
+   "mbti": "ESFP",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "자기계발·공부",
+    "패션·뷰티"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "이야기를 이끄는 편",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "편하고 유머 있는 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 2,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-137",
+   "name": "한하준",
+   "birth_year": 2002,
+   "gender": "M",
+   "mbti": "ENTP",
+   "interests": [
+    "맛집·카페 탐방",
+    "여행",
+    "음악"
+   ],
+   "self_traits": [
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 3,
+   "pass_type": "MEMBERSHIP_1M"
+  },
+  {
+   "seed_key": "xlsx-138",
+   "name": "정건희",
+   "birth_year": 1995,
+   "gender": "M",
+   "mbti": "ISTJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "영화·드라마",
+    "음악",
+    "전시·공연·아트",
+    "패션·뷰티",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 2,
+   "pass_type": "MEMBERSHIP_1M"
+  },
+  {
+   "seed_key": "xlsx-139",
+   "name": "구영준",
+   "birth_year": 1995,
+   "gender": "M",
+   "mbti": "INFJ",
+   "interests": [
+    "운동",
+    "여행",
+    "독서·글쓰기"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "MEMBERSHIP_1M"
+  },
+  {
+   "seed_key": "xlsx-140",
+   "name": "이재욱",
+   "birth_year": 2000,
+   "gender": "M",
+   "mbti": "ISFJ",
+   "interests": [
+    "운동",
+    "여행",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-141",
+   "name": "이영민",
+   "birth_year": 2005,
+   "gender": "M",
+   "mbti": "ESTJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "영화·드라마",
+    "독서·글쓰기"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-142",
+   "name": "박가람",
+   "birth_year": 2005,
+   "gender": "F",
+   "mbti": "ISTJ",
+   "interests": [
+    "여행",
+    "독서·글쓰기",
+    "자기계발·공부"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원"
+   ],
+   "food_restrictions": "회",
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-143",
+   "name": "김서진",
+   "birth_year": 2002,
+   "gender": "F",
+   "mbti": "ISFJ",
+   "interests": [
+    "운동",
+    "여행",
+    "영화·드라마",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-144",
+   "name": "최승준",
+   "birth_year": 1991,
+   "gender": "M",
+   "mbti": "ISTJ",
+   "interests": [
+    "음악",
+    "전시·공연·아트"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 3,
+   "pass_type": "MEMBERSHIP_1M"
+  },
+  {
+   "seed_key": "xlsx-145",
+   "name": "김시훈",
+   "birth_year": 2001,
+   "gender": "M",
+   "mbti": "ESTJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "자기계발·공부",
+    "전시·공연·아트",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "경청을 잘 함",
+    "이야기를 이끄는 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-146",
+   "name": "박도훈",
+   "birth_year": 1995,
+   "gender": "M",
+   "mbti": "ENFP",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "경청을 잘 함",
+    "이야기를 이끄는 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "열정 있는 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-147",
+   "name": "한혁준",
+   "birth_year": 1987,
+   "gender": "M",
+   "mbti": "ENTP",
+   "interests": [
+    "운동",
+    "영화·드라마",
+    "독서·글쓰기"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": "마라탕",
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-148",
+   "name": "정예서",
+   "birth_year": 1988,
+   "gender": "F",
+   "mbti": "ESFP",
+   "interests": [
+    "맛집·카페 탐방",
+    "여행",
+    "독서·글쓰기",
+    "자기계발·공부",
+    "전시·공연·아트",
+    "패션·뷰티",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-149",
+   "name": "구솔비",
+   "birth_year": 1991,
+   "gender": "F",
+   "mbti": "INFP",
+   "interests": [
+    "운동",
+    "영화·드라마",
+    "음악",
+    "독서·글쓰기"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": "맵거나 짠 음식 빼고 괜찮아요",
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-150",
+   "name": "엄하경",
+   "birth_year": 2000,
+   "gender": "F",
+   "mbti": "ISFJ",
+   "interests": [
+    "맛집·카페 탐방"
+   ],
+   "self_traits": [
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-151",
+   "name": "엄예지",
+   "birth_year": 2002,
+   "gender": "F",
+   "mbti": "ENTP",
+   "interests": [
+    "맛집·카페 탐방",
+    "음악",
+    "패션·뷰티"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "이야기를 이끄는 편"
+   ],
+   "wanted_traits": [
+    "깊은 대화가 되는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원"
+   ],
+   "food_restrictions": "날거(육회,초밥,간장게장 등등)",
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-152",
+   "name": "박연지",
+   "birth_year": 1996,
+   "gender": "F",
+   "mbti": "ESFJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "독서·글쓰기",
+    "자기계발·공부"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "깊은 대화가 되는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-153",
+   "name": "조미소",
+   "birth_year": 1999,
+   "gender": "F",
+   "mbti": "ENTP",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "가볍고 유머 있는 대화를 좋아함"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-154",
+   "name": "박아현",
+   "birth_year": 1988,
+   "gender": "F",
+   "mbti": "ISFJ",
+   "interests": [
+    "운동",
+    "여행",
+    "독서·글쓰기",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "편하고 유머 있는 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-155",
+   "name": "임주환",
+   "birth_year": 1998,
+   "gender": "M",
+   "mbti": "ENTJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "편하고 유머 있는 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-156",
+   "name": "주민경",
+   "birth_year": 1994,
+   "gender": "F",
+   "mbti": "INFJ",
+   "interests": [
+    "여행",
+    "음악",
+    "자기계발·공부"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함"
+   ],
+   "wanted_traits": [
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "gangnam",
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-157",
+   "name": "김해원",
+   "birth_year": 2004,
+   "gender": "F",
+   "mbti": "INFP",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "영화·드라마"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "gangnam"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-158",
+   "name": "이원석",
+   "birth_year": 2003,
+   "gender": "M",
+   "mbti": "ISTJ",
+   "interests": [
+    "여행",
+    "영화·드라마",
+    "자기계발·공부"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "편하고 유머 있는 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "gangnam"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-159",
+   "name": "우동준",
+   "birth_year": 2000,
+   "gender": "M",
+   "mbti": "ESFJ",
+   "interests": [
+    "운동",
+    "영화·드라마",
+    "음악",
+    "자기계발·공부"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "이야기를 이끄는 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "gangnam"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-160",
+   "name": "조혜린",
+   "birth_year": 1998,
+   "gender": "F",
+   "mbti": "ISFP",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방"
+   ],
+   "self_traits": [
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-161",
+   "name": "이혜민",
+   "birth_year": 1993,
+   "gender": "F",
+   "mbti": "ISTP",
+   "interests": [
+    "맛집·카페 탐방",
+    "영화·드라마",
+    "자기계발·공부"
+   ],
+   "self_traits": [
+    "가볍고 유머 있는 대화를 좋아함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원"
+   ],
+   "food_restrictions": "아니요",
+   "regions": [
+    "gangnam"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-162",
+   "name": "김민재",
+   "birth_year": 1995,
+   "gender": "M",
+   "mbti": "ISTJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "패션·뷰티"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": "다 잘먹습니다!",
+   "regions": [
+    "gangnam"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "MEMBERSHIP_1M"
+  },
+  {
+   "seed_key": "xlsx-163",
+   "name": "이현정",
+   "birth_year": 1996,
+   "gender": "F",
+   "mbti": "ISTP",
+   "interests": [
+    "맛집·카페 탐방",
+    "여행",
+    "영화·드라마",
+    "음악"
+   ],
+   "self_traits": [
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "gangnam"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-165",
+   "name": "김경민",
+   "birth_year": 1996,
+   "gender": "M",
+   "mbti": "INFJ",
+   "interests": [
+    "운동",
+    "영화·드라마",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "편하고 유머 있는 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": "조개류",
+   "regions": [
+    "hongdae",
+    "gangnam"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "MEMBERSHIP_1M"
+  },
+  {
+   "seed_key": "xlsx-166",
+   "name": "김태희",
+   "birth_year": 2002,
+   "gender": "F",
+   "mbti": "ENTJ",
+   "interests": [
+    "운동",
+    "음악",
+    "독서·글쓰기",
+    "자기계발·공부",
+    "패션·뷰티"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "경청을 잘 함",
+    "이야기를 이끄는 편"
+   ],
+   "wanted_traits": [
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "MEMBERSHIP_1M"
+  },
+  {
+   "seed_key": "xlsx-167",
+   "name": "차도연",
+   "birth_year": 1990,
+   "gender": "F",
+   "mbti": "ISFP",
+   "interests": [
+    "맛집·카페 탐방",
+    "여행",
+    "영화·드라마",
+    "독서·글쓰기"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": "오이, 마요네즈",
+   "regions": [
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-168",
+   "name": "김유림",
+   "birth_year": 1993,
+   "gender": "F",
+   "mbti": "ENFP",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "음악",
+    "전시·공연·아트",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편"
+   ],
+   "wanted_traits": [
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "MEMBERSHIP_1M"
+  },
+  {
+   "seed_key": "xlsx-169",
+   "name": "박가영",
+   "birth_year": 1991,
+   "gender": "F",
+   "mbti": "INFP",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "영화·드라마",
+    "전시·공연·아트",
+    "패션·뷰티",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": "생선구이 (고등어구이)",
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "MEMBERSHIP_1M"
+  },
+  {
+   "seed_key": "xlsx-170",
+   "name": "김윤희",
+   "birth_year": 1998,
+   "gender": "F",
+   "mbti": "INFJ",
+   "interests": [
+    "영화·드라마",
+    "음악",
+    "독서·글쓰기",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-171",
+   "name": "송보민",
+   "birth_year": 1997,
+   "gender": "F",
+   "mbti": "ENFJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "음악",
+    "독서·글쓰기",
+    "전시·공연·아트"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae",
+    "gangnam",
+    "euljiro",
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-172",
+   "name": "강예진",
+   "birth_year": 2001,
+   "gender": "F",
+   "mbti": "ISTJ",
+   "interests": [
+    "운동",
+    "영화·드라마",
+    "음악",
+    "독서·글쓰기",
+    "전시·공연·아트",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": "고수, 홍어",
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-173",
+   "name": "정대현",
+   "birth_year": 1990,
+   "gender": "M",
+   "mbti": "ESTJ",
+   "interests": [
+    "맛집·카페 탐방",
+    "음악",
+    "독서·글쓰기",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "MEMBERSHIP_1M"
+  },
+  {
+   "seed_key": "xlsx-174",
+   "name": "김민재",
+   "birth_year": 1995,
+   "gender": "M",
+   "mbti": "ISTJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "패션·뷰티"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": "3만원 이상으로 퀄리티있게 먹고싶어요!",
+   "regions": [
+    "hongdae",
+    "gangnam",
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "MEMBERSHIP_1M"
+  },
+  {
+   "seed_key": "xlsx-175",
+   "name": "구영준",
+   "birth_year": 1995,
+   "gender": "M",
+   "mbti": "INFJ",
+   "interests": [
+    "운동",
+    "여행",
+    "독서·글쓰기"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "MEMBERSHIP_1M"
+  },
+  {
+   "seed_key": "xlsx-176",
+   "name": "강채희",
+   "birth_year": 1986,
+   "gender": "F",
+   "mbti": "ISFP",
+   "interests": [
+    "맛집·카페 탐방",
+    "여행"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": "닭발, 곱창",
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-177",
+   "name": "김이안",
+   "birth_year": 1993,
+   "gender": "F",
+   "mbti": "ESFJ",
+   "interests": [
+    "영화·드라마",
+    "독서·글쓰기"
+   ],
+   "self_traits": [
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": "삼겹살 안먹습니다!",
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-178",
+   "name": "이채아",
+   "birth_year": 1999,
+   "gender": "F",
+   "mbti": "ENFJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방"
+   ],
+   "self_traits": [
+    "가볍고 유머 있는 대화를 좋아함"
+   ],
+   "wanted_traits": [
+    "편하고 유머 있는 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": "느끼한 것….콩…..",
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-179",
+   "name": "김예나",
+   "birth_year": 2002,
+   "gender": "F",
+   "mbti": "ESTP",
+   "interests": [
+    "독서·글쓰기",
+    "자기계발·공부",
+    "패션·뷰티",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "가볍고 유머 있는 대화를 좋아함"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "편하고 유머 있는 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-180",
+   "name": "장도훈",
+   "birth_year": 1995,
+   "gender": "M",
+   "mbti": "INTP",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "열정 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "MEMBERSHIP_1M"
+  },
+  {
+   "seed_key": "xlsx-181",
+   "name": "박보경",
+   "birth_year": 2000,
+   "gender": "F",
+   "mbti": "ISTP",
+   "interests": [
+    "맛집·카페 탐방",
+    "영화·드라마",
+    "전시·공연·아트"
+   ],
+   "self_traits": [
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "열정 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "MEMBERSHIP_1M"
+  },
+  {
+   "seed_key": "xlsx-182",
+   "name": "정도겸",
+   "birth_year": 1995,
+   "gender": "M",
+   "mbti": "INTP",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "열정 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "gangnam"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "MEMBERSHIP_1M"
+  },
+  {
+   "seed_key": "xlsx-183",
+   "name": "김지환",
+   "birth_year": 1999,
+   "gender": "M",
+   "mbti": "ESTJ",
+   "interests": [
+    "영화·드라마",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae",
+    "gangnam",
+    "euljiro",
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-184",
+   "name": "우동준",
+   "birth_year": 2000,
+   "gender": "M",
+   "mbti": "ESFJ",
+   "interests": [
+    "운동",
+    "영화·드라마",
+    "음악"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "이야기를 이끄는 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "편하고 유머 있는 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "gangnam"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-185",
+   "name": "장지혜",
+   "birth_year": 2003,
+   "gender": "F",
+   "mbti": "ENFJ",
+   "interests": [
+    "여행",
+    "영화·드라마",
+    "음악",
+    "독서·글쓰기",
+    "전시·공연·아트",
+    "패션·뷰티"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원"
+   ],
+   "food_restrictions": "아니요",
+   "regions": [
+    "hongdae",
+    "gangnam",
+    "euljiro",
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "MEMBERSHIP_1M"
+  },
+  {
+   "seed_key": "xlsx-186",
+   "name": "이혜진",
+   "birth_year": 1992,
+   "gender": "F",
+   "mbti": "ISFP",
+   "interests": [
+    "맛집·카페 탐방",
+    "여행",
+    "영화·드라마",
+    "패션·뷰티"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "gangnam",
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-187",
+   "name": "홍다혜",
+   "birth_year": 2001,
+   "gender": "F",
+   "mbti": "ISFP",
+   "interests": [
+    "맛집·카페 탐방",
+    "여행",
+    "독서·글쓰기"
+   ],
+   "self_traits": [
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "편하고 유머 있는 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": "생선 알탕",
+   "regions": [
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-188",
+   "name": "이지원",
+   "birth_year": 1992,
+   "gender": "F",
+   "mbti": "INFP",
+   "interests": [
+    "운동",
+    "영화·드라마",
+    "전시·공연·아트"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함"
+   ],
+   "wanted_traits": [
+    "깊은 대화가 되는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": "곱창",
+   "regions": [
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-189",
+   "name": "최가현",
+   "birth_year": 2001,
+   "gender": "F",
+   "mbti": "ENTJ",
+   "interests": [
+    "운동",
+    "여행",
+    "영화·드라마"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": "날 것과 내장을 못 먹습니다",
+   "regions": [
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-190",
+   "name": "박규민",
+   "birth_year": 1999,
+   "gender": "M",
+   "mbti": "ISFP",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "자기계발·공부"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "gangnam"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-191",
+   "name": "박은혜",
+   "birth_year": 1997,
+   "gender": "F",
+   "mbti": "INTP",
+   "interests": [
+    "자기계발·공부",
+    "전시·공연·아트",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "열정 있는 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae",
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-192",
+   "name": "조인호",
+   "birth_year": 1990,
+   "gender": "M",
+   "mbti": "ESTJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "영화·드라마",
+    "독서·글쓰기",
+    "전시·공연·아트",
+    "패션·뷰티"
+   ],
+   "self_traits": [
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "이야기를 이끄는 편"
+   ],
+   "wanted_traits": [
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": "곱창류, 조개류 못먹어요~",
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-193",
+   "name": "이태웅",
+   "birth_year": 1994,
+   "gender": "M",
+   "mbti": "ISTJ",
+   "interests": [
+    "맛집·카페 탐방",
+    "여행",
+    "독서·글쓰기",
+    "전시·공연·아트",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": "향이 너무 강한 음식",
+   "regions": [
+    "hongdae",
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-194",
+   "name": "정다빈",
+   "birth_year": 1998,
+   "gender": "F",
+   "mbti": "INTP",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "편하고 유머 있는 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": "만두",
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-195",
+   "name": "정예진",
+   "birth_year": 2000,
+   "gender": "F",
+   "mbti": "ESFJ",
+   "interests": [
+    "운동",
+    "여행",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": "너무 매운 음식&향이 강한 음식은 어렵습니다ㅜㅜ",
+   "regions": [
+    "gangnam",
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-196",
+   "name": "강하린",
+   "birth_year": 1994,
+   "gender": "F",
+   "mbti": "ENTJ",
+   "interests": [
+    "맛집·카페 탐방",
+    "여행",
+    "독서·글쓰기",
+    "전시·공연·아트"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "열정 있는 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": "매운음식 고탄수",
+   "regions": [
+    "gangnam",
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-197",
+   "name": "김해원",
+   "birth_year": 2004,
+   "gender": "F",
+   "mbti": "INFP",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "영화·드라마",
+    "음악",
+    "독서·글쓰기",
+    "자기계발·공부"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원"
+   ],
+   "food_restrictions": "날 것, 복숭아(향료), 알로에",
+   "regions": [
+    "gangnam"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-198",
+   "name": "권기현",
+   "birth_year": 2001,
+   "gender": "M",
+   "mbti": "ESFJ",
+   "interests": [
+    "맛집·카페 탐방",
+    "여행",
+    "영화·드라마",
+    "음악",
+    "독서·글쓰기"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-199",
+   "name": "이다혜",
+   "birth_year": 1999,
+   "gender": "F",
+   "mbti": "INFJ",
+   "interests": [
+    "음악",
+    "독서·글쓰기",
+    "전시·공연·아트",
+    "패션·뷰티",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": "비린내 나는 거요..(ex: 생굴, 내장탕, 동태탕)",
+   "regions": [
+    "hongdae",
+    "gangnam",
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "MEMBERSHIP_1M"
+  },
+  {
+   "seed_key": "xlsx-200",
+   "name": "서아인",
+   "birth_year": 1991,
+   "gender": "F",
+   "mbti": "ISTP",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "영화·드라마",
+    "음악",
+    "독서·글쓰기",
+    "전시·공연·아트"
+   ],
+   "self_traits": [
+    "가볍고 유머 있는 대화를 좋아함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원"
+   ],
+   "food_restrictions": "향신료 강한 음식",
+   "regions": [
+    "hongdae",
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-201",
+   "name": "오경은",
+   "birth_year": 1997,
+   "gender": "F",
+   "mbti": "INTJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "독서·글쓰기",
+    "자기계발·공부"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": "내장류(곱창 막창), 닭발",
+   "regions": [
+    "gangnam",
+    "euljiro",
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-202",
+   "name": "민소영",
+   "birth_year": 2002,
+   "gender": "F",
+   "mbti": "ENFJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "영화·드라마",
+    "음악",
+    "독서·글쓰기",
+    "자기계발·공부"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-203",
+   "name": "김민준",
+   "birth_year": 1990,
+   "gender": "M",
+   "mbti": "ESTJ",
+   "interests": [
+    "운동",
+    "자기계발·공부"
+   ],
+   "self_traits": [
+    "경청을 잘 함",
+    "이야기를 이끄는 편"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae",
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-204",
+   "name": "서효정",
+   "birth_year": 1992,
+   "gender": "F",
+   "mbti": "ESFJ",
+   "interests": [
+    "맛집·카페 탐방",
+    "영화·드라마",
+    "자기계발·공부",
+    "전시·공연·아트"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "이야기를 이끄는 편"
+   ],
+   "wanted_traits": [
+    "편하고 유머 있는 사람",
+    "열정 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": "굴",
+   "regions": [
+    "hongdae",
+    "gangnam",
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-205",
+   "name": "김규민",
+   "birth_year": 1987,
+   "gender": "M",
+   "mbti": "INFJ",
+   "interests": [
+    "영화·드라마",
+    "독서·글쓰기"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": "술.닭발.곱창",
+   "regions": [
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-206",
+   "name": "조소율",
+   "birth_year": 1997,
+   "gender": "F",
+   "mbti": "ISFJ",
+   "interests": [
+    "영화·드라마",
+    "음악",
+    "독서·글쓰기",
+    "전시·공연·아트"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "gangnam"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "MEMBERSHIP_1M"
+  },
+  {
+   "seed_key": "xlsx-207",
+   "name": "최지선",
+   "birth_year": 1990,
+   "gender": "F",
+   "mbti": "ISFJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "전시·공연·아트"
+   ],
+   "self_traits": [
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "MEMBERSHIP_1M"
+  },
+  {
+   "seed_key": "xlsx-208",
+   "name": "장규리",
+   "birth_year": 1996,
+   "gender": "F",
+   "mbti": "INFJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "편하고 유머 있는 사람",
+    "열정 있는 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": "새우, 게 등 갑각류",
+   "regions": [
+    "gangnam",
+    "euljiro",
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-209",
+   "name": "한예진",
+   "birth_year": 2001,
+   "gender": "F",
+   "mbti": "ISFJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "독서·글쓰기"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "열정 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": "아주 매운 음식",
+   "regions": [
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-210",
+   "name": "권지현",
+   "birth_year": 2000,
+   "gender": "F",
+   "mbti": "ESTP",
+   "interests": [
+    "여행"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae",
+    "gangnam",
+    "euljiro",
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-211",
+   "name": "임성민",
+   "birth_year": 1999,
+   "gender": "M",
+   "mbti": "ISTJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "영화·드라마",
+    "음악"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae",
+    "gangnam",
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-212",
+   "name": "황해인",
+   "birth_year": 1998,
+   "gender": "F",
+   "mbti": "INFP",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "영화·드라마"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": "없습니다!",
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-213",
+   "name": "정은혜",
+   "birth_year": 2001,
+   "gender": "F",
+   "mbti": "ESFJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "영화·드라마",
+    "독서·글쓰기",
+    "자기계발·공부"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": "없어용",
+   "regions": [
+    "hongdae",
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-214",
+   "name": "문연지",
+   "birth_year": 1998,
+   "gender": "F",
+   "mbti": "INTJ",
+   "interests": [
+    "영화·드라마",
+    "음악",
+    "전시·공연·아트"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-215",
+   "name": "안정민",
+   "birth_year": 1999,
+   "gender": "M",
+   "mbti": "ISTJ",
+   "interests": [
+    "음악",
+    "독서·글쓰기"
+   ],
+   "self_traits": [
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "편하고 유머 있는 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae",
+    "gangnam",
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-216",
+   "name": "이연지",
+   "birth_year": 2000,
+   "gender": "F",
+   "mbti": "ISFP",
+   "interests": [
+    "여행",
+    "영화·드라마",
+    "독서·글쓰기"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": "없습니다.",
+   "regions": [
+    "gangnam",
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "MEMBERSHIP_1M"
+  },
+  {
+   "seed_key": "xlsx-217",
+   "name": "배소율",
+   "birth_year": 2006,
+   "gender": "F",
+   "mbti": "INTP",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "자기계발·공부",
+    "패션·뷰티",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "편하고 유머 있는 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원"
+   ],
+   "food_restrictions": "버섯과 가지",
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-218",
+   "name": "서유정",
+   "birth_year": 1993,
+   "gender": "F",
+   "mbti": "ISFP",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "MEMBERSHIP_1M"
+  },
+  {
+   "seed_key": "xlsx-219",
+   "name": "박진혁",
+   "birth_year": 1997,
+   "gender": "M",
+   "mbti": "ISFJ",
+   "interests": [
+    "맛집·카페 탐방",
+    "여행",
+    "영화·드라마"
+   ],
+   "self_traits": [
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": "아뇨",
+   "regions": [
+    "gangnam",
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-220",
+   "name": "송예은",
+   "birth_year": 1996,
+   "gender": "F",
+   "mbti": "ENTP",
+   "interests": [
+    "영화·드라마",
+    "독서·글쓰기",
+    "전시·공연·아트"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "이야기를 이끄는 편"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": "없음(해산물불호..)",
+   "regions": [
+    "hongdae",
+    "gangnam",
+    "euljiro",
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-222",
+   "name": "손다혜",
+   "birth_year": 1996,
+   "gender": "F",
+   "mbti": "ENFJ",
+   "interests": [
+    "운동",
+    "자기계발·공부",
+    "패션·뷰티"
+   ],
+   "self_traits": [
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "gangnam",
+    "euljiro",
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-223",
+   "name": "이민준",
+   "birth_year": 1998,
+   "gender": "M",
+   "mbti": "INFP",
+   "interests": [
+    "여행",
+    "음악",
+    "자기계발·공부",
+    "패션·뷰티"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함"
+   ],
+   "wanted_traits": [
+    "편하고 유머 있는 사람",
+    "열정 있는 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원"
+   ],
+   "food_restrictions": "해산물",
+   "regions": [
+    "gangnam"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-224",
+   "name": "박준혁",
+   "birth_year": 2000,
+   "gender": "M",
+   "mbti": "ISTJ",
+   "interests": [
+    "독서·글쓰기",
+    "자기계발·공부"
+   ],
+   "self_traits": [
+    "가볍고 유머 있는 대화를 좋아함",
+    "이야기를 이끄는 편",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "편하고 유머 있는 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-225",
+   "name": "조지수",
+   "birth_year": 1995,
+   "gender": "F",
+   "mbti": "ISFJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "패션·뷰티"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": "없어요!",
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "MEMBERSHIP_1M"
+  },
+  {
+   "seed_key": "xlsx-226",
+   "name": "최채아",
+   "birth_year": 1996,
+   "gender": "F",
+   "mbti": "INFP",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "영화·드라마",
+    "자기계발·공부"
+   ],
+   "self_traits": [
+    "가볍고 유머 있는 대화를 좋아함"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": "곱창(내장류), 닭발",
+   "regions": [
+    "gangnam"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "MEMBERSHIP_1M"
+  },
+  {
+   "seed_key": "xlsx-227",
+   "name": "김민재",
+   "birth_year": 1995,
+   "gender": "M",
+   "mbti": "ISTJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "패션·뷰티"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae",
+    "gangnam"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "MEMBERSHIP_1M"
+  },
+  {
+   "seed_key": "xlsx-228",
+   "name": "박소은",
+   "birth_year": 1999,
+   "gender": "F",
+   "mbti": "INFP",
+   "interests": [
+    "맛집·카페 탐방",
+    "영화·드라마",
+    "음악",
+    "전시·공연·아트"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함"
+   ],
+   "wanted_traits": [
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae",
+    "gangnam",
+    "euljiro",
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-229",
+   "name": "최지수",
+   "birth_year": 2003,
+   "gender": "F",
+   "mbti": "ISTJ",
+   "interests": [
+    "맛집·카페 탐방",
+    "음악",
+    "패션·뷰티",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": "닭고기만 아니면 됩니다✌🏻✌🏻",
+   "regions": [
+    "hongdae",
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-230",
+   "name": "박지현",
+   "birth_year": 1990,
+   "gender": "F",
+   "mbti": "ISTJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행"
+   ],
+   "self_traits": [
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "편하고 유머 있는 사람",
+    "열정 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": "없어요!",
+   "regions": [
+    "gangnam",
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "MEMBERSHIP_1M"
+  },
+  {
+   "seed_key": "xlsx-231",
+   "name": "이주은",
+   "birth_year": 2000,
+   "gender": "F",
+   "mbti": "ISFJ",
+   "interests": [
+    "맛집·카페 탐방",
+    "여행",
+    "음악",
+    "전시·공연·아트",
+    "패션·뷰티"
+   ],
+   "self_traits": [
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": "해산물",
+   "regions": [
+    "gangnam",
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-232",
+   "name": "한은솔",
+   "birth_year": 1994,
+   "gender": "F",
+   "mbti": "ISFP",
+   "interests": [
+    "맛집·카페 탐방",
+    "여행"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae",
+    "gangnam",
+    "euljiro",
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-233",
+   "name": "박연지",
+   "birth_year": 1996,
+   "gender": "F",
+   "mbti": "ESFJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "음악",
+    "독서·글쓰기"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": "날것 (육회, 회)",
+   "regions": [
+    "euljiro",
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-234",
+   "name": "송혜린",
+   "birth_year": 1994,
+   "gender": "F",
+   "mbti": "ISTJ",
+   "interests": [
+    "운동",
+    "여행",
+    "영화·드라마",
+    "독서·글쓰기",
+    "자기계발·공부"
+   ],
+   "self_traits": [
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "깊은 대화가 되는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae",
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-235",
+   "name": "한혁준",
+   "birth_year": 1987,
+   "gender": "M",
+   "mbti": "ENTP",
+   "interests": [
+    "운동",
+    "여행",
+    "영화·드라마",
+    "독서·글쓰기"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae",
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "MEMBERSHIP_1M"
+  },
+  {
+   "seed_key": "xlsx-236",
+   "name": "윤준영",
+   "birth_year": 1987,
+   "gender": "M",
+   "mbti": "ESTJ",
+   "interests": [
+    "운동",
+    "여행",
+    "독서·글쓰기"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "열정 있는 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae",
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "MEMBERSHIP_1M"
+  },
+  {
+   "seed_key": "xlsx-237",
+   "name": "안은채",
+   "birth_year": 1984,
+   "gender": "F",
+   "mbti": "ENTP",
+   "interests": [
+    "맛집·카페 탐방",
+    "여행",
+    "영화·드라마",
+    "음악",
+    "독서·글쓰기",
+    "자기계발·공부",
+    "전시·공연·아트",
+    "패션·뷰티"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "이야기를 이끄는 편"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": "곱창, 닭발, 마라",
+   "regions": [
+    "hongdae",
+    "gangnam",
+    "euljiro",
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-238",
+   "name": "박채희",
+   "birth_year": 1989,
+   "gender": "F",
+   "mbti": "ENFJ",
+   "interests": [
+    "운동",
+    "음악"
+   ],
+   "self_traits": [
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "열정 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae",
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-239",
+   "name": "강경은",
+   "birth_year": 1991,
+   "gender": "F",
+   "mbti": "ESTJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "자기계발·공부",
+    "전시·공연·아트",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함"
+   ],
+   "wanted_traits": [
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": "고수",
+   "regions": [
+    "gangnam",
+    "euljiro",
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-240",
+   "name": "김채은",
+   "birth_year": 1999,
+   "gender": "F",
+   "mbti": null,
+   "interests": [
+    "운동",
+    "여행"
+   ],
+   "self_traits": [
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": "마라 음식",
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-241",
+   "name": "백다인",
+   "birth_year": 2000,
+   "gender": "F",
+   "mbti": "ISTJ",
+   "interests": [
+    "운동",
+    "여행"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": "해산물",
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-242",
+   "name": "백우석",
+   "birth_year": 1993,
+   "gender": "M",
+   "mbti": "ENTP",
+   "interests": [
+    "운동",
+    "여행",
+    "영화·드라마",
+    "음악",
+    "독서·글쓰기",
+    "전시·공연·아트"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "이야기를 이끄는 편"
+   ],
+   "wanted_traits": [
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": "고수",
+   "regions": [
+    "hongdae",
+    "gangnam",
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-243",
+   "name": "안세진",
+   "birth_year": 2002,
+   "gender": "F",
+   "mbti": "ISFP",
+   "interests": [
+    "맛집·카페 탐방",
+    "여행",
+    "영화·드라마",
+    "자기계발·공부"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": "김치, 가지",
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-244",
+   "name": "김지윤",
+   "birth_year": 1994,
+   "gender": "F",
+   "mbti": "INTP",
+   "interests": [
+    "음악",
+    "독서·글쓰기",
+    "자기계발·공부",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원"
+   ],
+   "food_restrictions": "오이",
+   "regions": [
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-245",
+   "name": "홍은영",
+   "birth_year": 1992,
+   "gender": "F",
+   "mbti": "INFP",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "독서·글쓰기",
+    "자기계발·공부"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": "오이",
+   "regions": [
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-246",
+   "name": "안준혁",
+   "birth_year": 1991,
+   "gender": "M",
+   "mbti": null,
+   "interests": [
+    "맛집·카페 탐방",
+    "여행",
+    "음악"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "이야기를 이끄는 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae",
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-247",
+   "name": "김아현",
+   "birth_year": 2003,
+   "gender": "F",
+   "mbti": "ENFJ",
+   "interests": [
+    "운동",
+    "영화·드라마",
+    "음악",
+    "독서·글쓰기",
+    "자기계발·공부",
+    "전시·공연·아트"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원"
+   ],
+   "food_restrictions": "오이",
+   "regions": [
+    "hongdae",
+    "gangnam",
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-248",
+   "name": "송보미",
+   "birth_year": 2004,
+   "gender": "F",
+   "mbti": "ISFP",
+   "interests": [
+    "맛집·카페 탐방",
+    "영화·드라마",
+    "음악",
+    "독서·글쓰기",
+    "전시·공연·아트"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원"
+   ],
+   "food_restrictions": "고수나 향이 강한 향식료",
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-249",
+   "name": "손우성",
+   "birth_year": 1996,
+   "gender": "M",
+   "mbti": "ESTJ",
+   "interests": [
+    "맛집·카페 탐방",
+    "여행",
+    "음악"
+   ],
+   "self_traits": [
+    "가볍고 유머 있는 대화를 좋아함"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "편하고 유머 있는 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": "샤브샤브",
+   "regions": [
+    "hongdae",
+    "gangnam",
+    "euljiro",
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-250",
+   "name": "윤미진",
+   "birth_year": 1988,
+   "gender": "F",
+   "mbti": "ENFJ",
+   "interests": [
+    "맛집·카페 탐방",
+    "영화·드라마",
+    "음악",
+    "패션·뷰티"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "이야기를 이끄는 편",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": "날새우",
+   "regions": [
+    "hongdae",
+    "gangnam",
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-251",
+   "name": "박도훈",
+   "birth_year": 1995,
+   "gender": "M",
+   "mbti": "ENFP",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "음악"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "열정 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae",
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-252",
+   "name": "김지성",
+   "birth_year": 1991,
+   "gender": "M",
+   "mbti": "ISTJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "자기계발·공부"
+   ],
+   "self_traits": [
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "편하고 유머 있는 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "MEMBERSHIP_1M"
+  },
+  {
+   "seed_key": "xlsx-253",
+   "name": "이정은",
+   "birth_year": 1988,
+   "gender": "F",
+   "mbti": "ISTJ",
+   "interests": [
+    "운동",
+    "독서·글쓰기",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원"
+   ],
+   "food_restrictions": "아니요",
+   "regions": [
+    "gangnam"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-254",
+   "name": "윤주연",
+   "birth_year": 1996,
+   "gender": "F",
+   "mbti": "ISFP",
+   "interests": [
+    "운동",
+    "독서·글쓰기"
+   ],
+   "self_traits": [
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": "고수",
+   "regions": [
+    "hongdae",
+    "gangnam",
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-255",
+   "name": "김솔비",
+   "birth_year": 1999,
+   "gender": "F",
+   "mbti": "ISFJ",
+   "interests": [
+    "영화·드라마",
+    "음악",
+    "패션·뷰티",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": "없습니다!",
+   "regions": [
+    "hongdae",
+    "gangnam",
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-256",
+   "name": "김지유",
+   "birth_year": 1992,
+   "gender": "F",
+   "mbti": "ENTJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "영화·드라마"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원"
+   ],
+   "food_restrictions": "육류/해산물 유제품 가능(페스코)",
+   "regions": [
+    "hongdae",
+    "euljiro",
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-257",
+   "name": "정혜진",
+   "birth_year": 2001,
+   "gender": "F",
+   "mbti": "ENFP",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "음악",
+    "독서·글쓰기"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae",
+    "gangnam"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "MEMBERSHIP_1M"
+  },
+  {
+   "seed_key": "xlsx-258",
+   "name": "김시훈",
+   "birth_year": 2001,
+   "gender": "M",
+   "mbti": "ESTJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "영화·드라마",
+    "음악",
+    "자기계발·공부",
+    "전시·공연·아트",
+    "패션·뷰티",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": "마라, 와사비",
+   "regions": [
+    "hongdae",
+    "gangnam",
+    "euljiro",
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-259",
+   "name": "박상현",
+   "birth_year": 1999,
+   "gender": "M",
+   "mbti": "ENFJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "음악",
+    "독서·글쓰기",
+    "자기계발·공부",
+    "전시·공연·아트",
+    "패션·뷰티",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원"
+   ],
+   "food_restrictions": "고수",
+   "regions": [
+    "hongdae",
+    "gangnam",
+    "euljiro",
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-260",
+   "name": "윤현우",
+   "birth_year": 2001,
+   "gender": "M",
+   "mbti": "INTP",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "영화·드라마",
+    "음악",
+    "자기계발·공부",
+    "전시·공연·아트",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": "없습니다.",
+   "regions": [
+    "hongdae",
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "MEMBERSHIP_1M"
+  },
+  {
+   "seed_key": "xlsx-261",
+   "name": "김서은",
+   "birth_year": 1984,
+   "gender": "F",
+   "mbti": "ESFJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "영화·드라마",
+    "음악",
+    "자기계발·공부"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "가볍고 유머 있는 대화를 좋아함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": "굴",
+   "regions": [
+    "hongdae",
+    "gangnam",
+    "euljiro",
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-262",
+   "name": "이정원",
+   "birth_year": 1983,
+   "gender": "F",
+   "mbti": "ISFJ",
+   "interests": [
+    "자기계발·공부"
+   ],
+   "self_traits": [
+    "가볍고 유머 있는 대화를 좋아함"
+   ],
+   "wanted_traits": [
+    "열정 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae",
+    "gangnam",
+    "euljiro",
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-263",
+   "name": "백우석",
+   "birth_year": 1993,
+   "gender": "M",
+   "mbti": "ENTP",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "영화·드라마",
+    "음악",
+    "독서·글쓰기",
+    "전시·공연·아트",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함"
+   ],
+   "wanted_traits": [
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae",
+    "gangnam",
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-264",
+   "name": "정현진",
+   "birth_year": 1996,
+   "gender": "M",
+   "mbti": "INTJ",
+   "interests": [
+    "맛집·카페 탐방",
+    "영화·드라마",
+    "전시·공연·아트"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "이야기를 이끄는 편"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-265",
+   "name": "진세은",
+   "birth_year": 1992,
+   "gender": "F",
+   "mbti": "ESTP",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "음악"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "가볍고 유머 있는 대화를 좋아함"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "편하고 유머 있는 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원"
+   ],
+   "food_restrictions": "음식은 없지만 논알콜 선호합니다..!",
+   "regions": [
+    "hongdae",
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-266",
+   "name": "권기현",
+   "birth_year": 2001,
+   "gender": "M",
+   "mbti": "ESFJ",
+   "interests": [
+    "맛집·카페 탐방",
+    "영화·드라마",
+    "독서·글쓰기"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae",
+    "gangnam",
+    "euljiro",
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-267",
+   "name": "최아라",
+   "birth_year": 2002,
+   "gender": "F",
+   "mbti": "ISTJ",
+   "interests": [
+    "운동",
+    "자기계발·공부"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원"
+   ],
+   "food_restrictions": "새우, 조개",
+   "regions": [
+    "hongdae",
+    "gangnam"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-268",
+   "name": "박세진",
+   "birth_year": 1991,
+   "gender": "F",
+   "mbti": "ISTJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "영화·드라마",
+    "음악",
+    "독서·글쓰기",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": "없습니다!",
+   "regions": [
+    "hongdae",
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-269",
+   "name": "김서영",
+   "birth_year": 2000,
+   "gender": "F",
+   "mbti": "ESFJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "독서·글쓰기",
+    "전시·공연·아트"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae",
+    "gangnam",
+    "euljiro",
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-270",
+   "name": "윤하윤",
+   "birth_year": 2000,
+   "gender": "F",
+   "mbti": "ESTJ",
+   "interests": [
+    "맛집·카페 탐방",
+    "음악",
+    "독서·글쓰기",
+    "자기계발·공부",
+    "전시·공연·아트",
+    "패션·뷰티"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "편하고 유머 있는 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": "갑각류(새우 제외)",
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-271",
+   "name": "서유정",
+   "birth_year": 1993,
+   "gender": "F",
+   "mbti": "ISFP",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "MEMBERSHIP_1M"
+  },
+  {
+   "seed_key": "xlsx-272",
+   "name": "정도겸",
+   "birth_year": 1995,
+   "gender": "M",
+   "mbti": "INTP",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "음악",
+    "패션·뷰티"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae",
+    "gangnam"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "MEMBERSHIP_1M"
+  },
+  {
+   "seed_key": "xlsx-273",
+   "name": "윤주연",
+   "birth_year": 1996,
+   "gender": "F",
+   "mbti": "ISFP",
+   "interests": [
+    "운동",
+    "독서·글쓰기"
+   ],
+   "self_traits": [
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": "고수",
+   "regions": [
+    "hongdae",
+    "gangnam"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-274",
+   "name": "권로아",
+   "birth_year": 1991,
+   "gender": "F",
+   "mbti": "INFJ",
+   "interests": [
+    "맛집·카페 탐방",
+    "여행",
+    "자기계발·공부"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": "회 종류를 잘 못먹습니다..!",
+   "regions": [
+    "hongdae",
+    "gangnam",
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-275",
+   "name": "유시훈",
+   "birth_year": 2000,
+   "gender": "M",
+   "mbti": "INFJ",
+   "interests": [
+    "운동",
+    "영화·드라마",
+    "자기계발·공부"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": "콩국수..?",
+   "regions": [
+    "hongdae",
+    "gangnam",
+    "euljiro",
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-276",
+   "name": "이동준",
+   "birth_year": 1996,
+   "gender": "M",
+   "mbti": "ENFJ",
+   "interests": [
+    "운동",
+    "여행",
+    "독서·글쓰기",
+    "자기계발·공부"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "이야기를 이끄는 편"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "MEMBERSHIP_1M"
+  },
+  {
+   "seed_key": "xlsx-277",
+   "name": "정건희",
+   "birth_year": 1995,
+   "gender": "M",
+   "mbti": "ISTJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "영화·드라마",
+    "전시·공연·아트",
+    "패션·뷰티"
+   ],
+   "self_traits": [
+    "경청을 잘 함",
+    "이야기를 이끄는 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "MEMBERSHIP_1M"
+  },
+  {
+   "seed_key": "xlsx-278",
+   "name": "강유리",
+   "birth_year": 1996,
+   "gender": "F",
+   "mbti": "ESFJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "자기계발·공부",
+    "패션·뷰티"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": "없어용",
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-279",
+   "name": "김정은",
+   "birth_year": 1997,
+   "gender": "F",
+   "mbti": "INFP",
+   "interests": [
+    "여행",
+    "영화·드라마",
+    "음악",
+    "독서·글쓰기"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-280",
+   "name": "서진영",
+   "birth_year": 1997,
+   "gender": "M",
+   "mbti": "INTP",
+   "interests": [
+    "운동",
+    "여행"
+   ],
+   "self_traits": [
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "편하고 유머 있는 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "gangnam",
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-281",
+   "name": "조유리",
+   "birth_year": 2000,
+   "gender": "F",
+   "mbti": "ENFJ",
+   "interests": [
+    "맛집·카페 탐방",
+    "여행",
+    "영화·드라마",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": "완두콩",
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-282",
+   "name": "곽유림",
+   "birth_year": 1989,
+   "gender": "F",
+   "mbti": "ENFP",
+   "interests": [
+    "운동",
+    "여행"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "이야기를 이끄는 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "gangnam",
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-283",
+   "name": "심소연",
+   "birth_year": 1987,
+   "gender": "F",
+   "mbti": "ISTP",
+   "interests": [
+    "맛집·카페 탐방",
+    "영화·드라마",
+    "자기계발·공부"
+   ],
+   "self_traits": [
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "열정 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": "곱창",
+   "regions": [
+    "hongdae",
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-284",
+   "name": "최유빈",
+   "birth_year": 1996,
+   "gender": "F",
+   "mbti": "ISFJ",
+   "interests": [
+    "맛집·카페 탐방",
+    "여행",
+    "전시·공연·아트"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": "마라, 고수",
+   "regions": [
+    "gangnam",
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-285",
+   "name": "조도연",
+   "birth_year": 1995,
+   "gender": "F",
+   "mbti": "INFJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행",
+    "음악",
+    "패션·뷰티"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "이야기를 이끄는 편"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "편하고 유머 있는 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "gangnam"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-286",
+   "name": "김유진",
+   "birth_year": 1999,
+   "gender": "F",
+   "mbti": "ISTP",
+   "interests": [
+    "맛집·카페 탐방",
+    "여행",
+    "영화·드라마",
+    "자기계발·공부",
+    "패션·뷰티",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "가볍고 유머 있는 대화를 좋아함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": "붉은 생선 (연어, 참치, 방어)",
+   "regions": [
+    "hongdae"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-287",
+   "name": "김수경",
+   "birth_year": 2000,
+   "gender": "F",
+   "mbti": "ENFP",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "여행"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": "없습니다!",
+   "regions": [
+    "hongdae",
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-288",
+   "name": "백하경",
+   "birth_year": 1991,
+   "gender": "F",
+   "mbti": "ISFP",
+   "interests": [
+    "운동",
+    "여행",
+    "자기계발·공부",
+    "전시·공연·아트"
+   ],
+   "self_traits": [
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": "없습니다!",
+   "regions": [
+    "hongdae",
+    "gangnam"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-289",
+   "name": "신지원",
+   "birth_year": 1989,
+   "gender": "F",
+   "mbti": "INFJ",
+   "interests": [
+    "운동",
+    "여행",
+    "자기계발·공부"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": "갑각류, 생새우",
+   "regions": [
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-290",
+   "name": "신서현",
+   "birth_year": 1994,
+   "gender": "F",
+   "mbti": "ESFJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "영화·드라마",
+    "음악",
+    "독서·글쓰기",
+    "자기계발·공부",
+    "패션·뷰티",
+    "사진·영상"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae",
+    "gangnam",
+    "euljiro",
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-291",
+   "name": "김태영",
+   "birth_year": 1996,
+   "gender": "M",
+   "mbti": "ESFJ",
+   "interests": [
+    "맛집·카페 탐방",
+    "여행",
+    "음악"
+   ],
+   "self_traits": [
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "편하고 유머 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원",
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "gangnam",
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-292",
+   "name": "정윤성",
+   "birth_year": 1997,
+   "gender": "M",
+   "mbti": "INTP",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방",
+    "영화·드라마"
+   ],
+   "self_traits": [
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 다른 자극을 주는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람"
+   ],
+   "price_ranges": [
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae",
+    "gangnam",
+    "euljiro",
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-293",
+   "name": "한혁준",
+   "birth_year": 1987,
+   "gender": "M",
+   "mbti": "ENTP",
+   "interests": [
+    "운동",
+    "영화·드라마",
+    "음악",
+    "독서·글쓰기"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae",
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "MEMBERSHIP_1M"
+  },
+  {
+   "seed_key": "xlsx-294",
+   "name": "성혜민",
+   "birth_year": 1991,
+   "gender": "F",
+   "mbti": "INFP",
+   "interests": [
+    "운동",
+    "독서·글쓰기",
+    "전시·공연·아트"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": "생굴",
+   "regions": [
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-295",
+   "name": "민미진",
+   "birth_year": 1992,
+   "gender": "F",
+   "mbti": "ENTP",
+   "interests": [
+    "운동",
+    "여행",
+    "영화·드라마",
+    "독서·글쓰기"
+   ],
+   "self_traits": [
+    "활기차고 에너지 있는 편",
+    "깊은 대화를 좋아함",
+    "가볍고 유머 있는 대화를 좋아함",
+    "경청을 잘 함",
+    "이야기를 이끄는 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "나와 다른 자극을 주는 사람",
+    "깊은 대화가 되는 사람",
+    "편하고 유머 있는 사람",
+    "열정 있는 사람",
+    "잔잔하고 안정적인 사람"
+   ],
+   "price_ranges": [
+    "1~2만 원",
+    "2~3만 원"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae",
+    "euljiro"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  },
+  {
+   "seed_key": "xlsx-296",
+   "name": "박도윤",
+   "birth_year": 2003,
+   "gender": "M",
+   "mbti": "INTJ",
+   "interests": [
+    "운동",
+    "맛집·카페 탐방"
+   ],
+   "self_traits": [
+    "깊은 대화를 좋아함",
+    "잔잔하고 조용한 편"
+   ],
+   "wanted_traits": [
+    "나와 비슷한 사람",
+    "깊은 대화가 되는 사람"
+   ],
+   "price_ranges": [
+    "3만 원 이상"
+   ],
+   "food_restrictions": null,
+   "regions": [
+    "hongdae",
+    "gangnam",
+    "euljiro",
+    "jamsil"
+   ],
+   "date_choice_count": 1,
+   "pass_type": "SINGLE"
+  }
+ ]
+}

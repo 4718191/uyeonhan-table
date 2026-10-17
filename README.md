@@ -10,10 +10,10 @@
 
 ### 1. 코드 내려받기
 
-이 폴더를 iCloud 밖(예: `~/Developer/uyeonhan-sikttak`)으로 옮긴 뒤 작업하는 것을 권장합니다. iCloud 폴더 안에서는 `node_modules`와 git 파일이 동기화되며 느려지거나 충돌할 수 있습니다.
+이 폴더를 iCloud 밖(예: `~/Developer/uyeonhan-table`)으로 옮긴 뒤 작업하는 것을 권장합니다. iCloud 폴더 안에서는 `node_modules`와 git 파일이 동기화되며 느려지거나 충돌할 수 있습니다.
 
 ```bash
-cd ~/Developer/uyeonhan-sikttak
+cd ~/Developer/uyeonhan-table
 npm install
 ```
 

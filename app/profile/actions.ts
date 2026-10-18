@@ -93,5 +93,5 @@ export async function saveProfile(_: ProfileState, formData: FormData): Promise<
     : await supabase.from("profiles").insert({ ...row, user_id: user.id });
   if (dbError) return { error: "저장하지 못했어요. 잠시 후 다시 시도해 주세요.", values: v };
 
-  redirect(profile ? "/home?saved=profile" : "/apply");
+  redirect(profile ? "/profile?saved=1" : "/apply");
 }

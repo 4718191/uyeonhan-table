@@ -39,7 +39,7 @@ export default async function PayPage({ params }: { params: Promise<{ id: string
               value: "OWNED",
               name: `보유 ${PASS_LABELS[owned.type]}`,
               price: 0,
-              note: `${membershipEnd(owned)}까지 사용 가능`,
+              note: `${fmtEventDate(membershipEnd(owned)!)}까지 사용 가능`,
             } : null}
             single={{ value: "SINGLE", name: "1회권", price: PASS_PRICES.SINGLE }}
             memberships={(["MEMBERSHIP_1M", "MEMBERSHIP_3M", "MEMBERSHIP_6M"] as const).map((k) => ({

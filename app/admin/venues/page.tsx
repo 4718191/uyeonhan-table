@@ -59,13 +59,13 @@ export default async function VenuesPage({ searchParams }: { searchParams: Promi
                       <td>{v.address ?? "-"}{v.map_url && <> · <a href={v.map_url} target="_blank" rel="noreferrer" className="underline">지도</a></>}</td>
                       <td className="whitespace-nowrap">{v.price_range ?? "-"}</td>
                       <td>{v.rating ?? "-"}</td>
-                      <td>
+                      <td className="min-w-[300px]">
                         {avail.length === 0 ? <span className="text-stone-500">열린 수용 인원 없음</span> : (
                           <ul className="flex flex-col gap-1.5">
                             {avail.map((a) => {
                               const st = RES[a.reservation_status] ?? { label: a.reservation_status, tone: "line" as const };
                               return (
-                                <li key={a.id} className="flex flex-wrap items-center gap-2">
+                                <li key={a.id} className="flex items-center gap-2 whitespace-nowrap">
                                   <span className="whitespace-nowrap">{fmtEventDate(a.slot_date)} {fmtTime(a.start_time)} · {a.capacity}명</span>
                                   <Badge tone={st.tone}>{st.label}</Badge>
                                   {a.reservation_status !== "RESERVED" && (

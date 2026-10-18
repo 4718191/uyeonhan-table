@@ -118,14 +118,14 @@ function describe(app: ApplicationView) {
   const canceled = app.application_status === "CANCELED";
 
   const passText = app.pass
-    ? `${PASS_LABELS[app.pass.type]}${app.pass.valid_until ? ` (${membershipEnd(app.pass)}까지)` : ""} · ${PAYMENT_LABELS[app.payment_status]}`
+    ? `${PASS_LABELS[app.pass.type]}${app.pass.valid_until ? ` (${fmtEventDate(membershipEnd(app.pass)!)}까지)` : ""} · ${PAYMENT_LABELS[app.payment_status]}`
     : PAYMENT_LABELS[app.payment_status];
 
   const matchStep = m === "REALLOCATING" ? "재배치 중" : m === "MATCHING" ? "매칭 중" : "매칭 대기";
   const resultDone = ["CONFIRMED", "NO_MATCH", "ALTERNATIVE_OFFERED", "TRANSFERRED", "EXCEPTION"].includes(m);
   const steps: { name: string; state: StepState }[] = [
     { name: "신청 완료", state: "done" },
-    { name: "결제 완료", state: paid || resultDone ? "done" : canceled ? "todo" : "now" },
+    { name: "결제 완료", state: paid || resultDone || app.payment_status === "REFUNDED" ? "done" : canceled ? "todo" : "now" },
     { name: matchStep, state: resultDone ? "done" : paid && !canceled ? "now" : "todo" },
     { name: "매칭 결과", state: resultDone ? "now" : "todo" },
   ];

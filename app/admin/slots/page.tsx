@@ -37,7 +37,7 @@ export default async function SlotsPage() {
   return (
     <>
       <h1 className="text-2xl font-bold">회차 생성·관리</h1>
-      <div className="grid gap-6 xl:grid-cols-[1fr_340px]">
+      <div className="grid gap-6 2xl:grid-cols-[1fr_360px]">
         <Panel title="회차 목록" aside={<span className="text-xs text-stone-600">신청 수는 한 사람이 여러 회차를 후보로 고른 경우 각각 셉니다</span>}>
           <div className="overflow-x-auto">
             <table className={tableCls}>
@@ -53,13 +53,13 @@ export default async function SlotsPage() {
                     <tr key={s.id}>
                       <td className="whitespace-nowrap font-semibold">{fmtEventDate(s.event_date)} {fmtTime(s.start_time)}</td>
                       <td className="whitespace-nowrap">{REGIONS[s.region as RegionCode]}</td>
-                      <td>{s.capacity}명</td>
+                      <td className="whitespace-nowrap">{s.capacity}명</td>
                       <td className="whitespace-nowrap">
                         {fmtDeadline(s.apply_deadline)}
                         {s.match_at !== s.apply_deadline && <span className="block text-xs text-stone-600">매칭 {fmtDeadline(s.match_at)}</span>}
                         {passed && <span className="block text-xs text-stone-600">마감 지남</span>}
                       </td>
-                      <td>{c.applied} · {c.paid}</td>
+                      <td className="whitespace-nowrap">{c.applied} · {c.paid}</td>
                       <td><Badge tone={st.tone}>{st.label}</Badge></td>
                       <td>
                         {(s.status === "OPEN" || s.status === "CLOSED") && !passed && (

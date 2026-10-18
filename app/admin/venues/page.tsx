@@ -32,7 +32,7 @@ export default async function VenuesPage({ searchParams }: { searchParams: Promi
   return (
     <>
       <h1 className="text-2xl font-bold">식당 재고·자동화 규칙</h1>
-      <div className="grid gap-6 xl:grid-cols-[1fr_340px]">
+      <div className="grid gap-6 2xl:grid-cols-[1fr_360px]">
         <Panel title="가상 식당 재고" aside={
           <nav aria-label="지역 필터" className="flex flex-wrap gap-1.5 text-xs">
             {[["", "전체"], ...Object.entries(REGIONS)].map(([c, l]) => (
@@ -54,9 +54,9 @@ export default async function VenuesPage({ searchParams }: { searchParams: Promi
                     .sort((a, b) => (a.slot_date + a.start_time).localeCompare(b.slot_date + b.start_time));
                   return (
                     <tr key={v.id}>
-                      <td className="font-semibold">{v.name}</td>
+                      <td className="min-w-[140px] font-semibold">{v.name}</td>
                       <td className="whitespace-nowrap">{REGIONS[v.region as RegionCode]}</td>
-                      <td>{v.address ?? "-"}{v.map_url && <> · <a href={v.map_url} target="_blank" rel="noreferrer" className="underline">지도</a></>}</td>
+                      <td className="min-w-[140px]">{v.address ?? "-"}{v.map_url && <> · <a href={v.map_url} target="_blank" rel="noreferrer" className="underline">지도</a></>}</td>
                       <td className="whitespace-nowrap">{v.price_range ?? "-"}</td>
                       <td>{v.rating ?? "-"}</td>
                       <td className="min-w-[300px]">

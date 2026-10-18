@@ -16,7 +16,7 @@ export const tableCls = "w-full border-collapse text-left text-sm [&_td]:border-
 export const inputCls = "min-h-10 w-full rounded-lg border-[1.5px] border-stone-400 bg-white px-3 text-sm";
 export const labelCls = "flex flex-col gap-1 text-sm font-semibold";
 export const btnCls = "min-h-10 rounded-lg bg-stone-900 px-4 text-sm font-semibold text-white disabled:opacity-50";
-export const btnLineCls = "min-h-9 rounded-lg border-[1.5px] border-stone-900 bg-white px-3 text-xs font-semibold disabled:opacity-50";
+export const btnLineCls = "min-h-9 whitespace-nowrap rounded-lg border-[1.5px] border-stone-900 bg-white px-3 text-xs font-semibold disabled:opacity-50";
 
 export function Badge({ children, tone = "line" }: { children: React.ReactNode; tone?: "solid" | "line" | "muted" }) {
   const cls = tone === "solid" ? "bg-stone-900 text-white" : tone === "muted" ? "border border-dashed border-stone-400 text-stone-500" : "border border-stone-900";

@@ -90,10 +90,10 @@ const icons = {
 };
 
 export function BottomNav({ current, chatHref }: { current: "home" | "chat" | "history" | "me"; chatHref?: string }) {
-  const items: { key: keyof typeof icons; label: string; href?: string }[] = [
+  const items: { key: keyof typeof icons; label: string; href?: string; hint?: string }[] = [
     { key: "home", label: "홈", href: "/home" },
-    { key: "chat", label: chatHref ? "단체방" : "단체방 · 확정 후", href: chatHref },
-    { key: "history", label: "참가 이력 · 준비 중" },
+    { key: "chat", label: "단체방", href: chatHref, hint: "매칭이 확정되면 열려요" },
+    { key: "history", label: "참가 이력", hint: "준비 중이에요" },
     { key: "me", label: "내 정보", href: "/profile" },
   ];
   return (
@@ -110,8 +110,9 @@ export function BottomNav({ current, chatHref }: { current: "home" | "chat" | "h
         const cls = "flex min-h-14 flex-col items-center justify-center gap-1 text-center text-xs";
         if (!it.href) {
           return (
-            <span key={it.key} aria-disabled="true" className={`${cls} text-stone-400`}>
+            <span key={it.key} aria-disabled="true" title={it.hint} className={`${cls} text-stone-400`}>
               {inner}
+              {it.hint && <span className="sr-only"> ({it.hint})</span>}
             </span>
           );
         }

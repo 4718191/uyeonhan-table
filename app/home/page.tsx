@@ -101,7 +101,7 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
           </ul>
         </Card>
       </div>
-      <BottomNav current="home" />
+      <BottomNav current="home" chatHref={app?.match_status === "CONFIRMED" ? "/chat" : undefined} />
     </Screen>
   );
 }
@@ -157,14 +157,18 @@ function describe(app: ApplicationView) {
     desc = "조건이 맞는 4~6명을 묶고 식당을 배정하는 중이에요.";
   } else if (m === "REALLOCATING") {
     title = "다른 테이블을 찾고 있어요";
-    desc = "처음 배정된 테이블이 조건을 채우지 못해, 신청한 날짜·지역 안에서 다른 테이블을 자동으로 찾는 중이에요.";
+    desc = "처음 회차에서 조건에 맞는 테이블을 찾지 못해, 신청한 다른 날짜·지역에서 자동으로 다시 찾고 있어요.";
+    note = app.placement_reason ?? undefined;
   } else if (m === "CONFIRMED") {
     title = "매칭이 확정됐어요";
-    desc = "확정된 날짜와 식당, 단체방을 확인해 주세요.";
-    note = "매칭 확정 상세 화면은 곧 열려요.";
+    const slot = app.slots.find((s) => s.id === app.confirmed_slot_id);
+    desc = slot ? `${fmtEventDate(slot.event_date)} ${fmtTime(slot.start_time)} · ${REGIONS[slot.region as RegionCode]}` : "확정된 날짜와 식당을 확인해 주세요.";
+    note = "식당과 함께할 분들을 확인하고, 단체방에서 인사해 보세요.";
+    action = { href: "/table", label: "매칭 결과 보기" };
   } else if (m === "NO_MATCH" || m === "ALTERNATIVE_OFFERED") {
     title = "이번 회차는 매칭되지 않았어요";
     desc = "대체 일정 이동, 이용권 보관, 환불 중에서 고를 수 있어요. (멤버십은 일정 이동 또는 기한 연장)";
+    note = app.placement_reason ? `사유: ${app.placement_reason}` : undefined;
   } else if (m === "TRANSFERRED") {
     title = "일정이 이동됐어요";
     desc = "옮긴 회차에서 다시 자동 매칭이 진행돼요.";

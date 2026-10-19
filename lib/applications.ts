@@ -22,6 +22,7 @@ export type ApplicationView = {
   payment_status: string;
   match_status: string;
   attendance_status: string | null;
+  placement_reason: string | null;
   confirmed_slot_id: string | null;
   created_at: string;
   pass: { id: string; type: string; price: number; valid_until: string | null; extension_weeks: number } | null;
@@ -31,7 +32,7 @@ export type ApplicationView = {
 
 const one = <T,>(x: T | T[] | null | undefined): T | null => (Array.isArray(x) ? (x[0] ?? null) : (x ?? null));
 
-const SELECT = `id, profile_id, application_status, payment_status, match_status, attendance_status, confirmed_slot_id, created_at,
+const SELECT = `id, profile_id, application_status, payment_status, match_status, attendance_status, placement_reason, confirmed_slot_id, created_at,
   passes(id, type, price, valid_until, extension_weeks),
   payments(amount, status, refunded_amount),
   application_slots(event_slots(id, event_date, start_time, region, apply_deadline, status))`;

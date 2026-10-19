@@ -85,3 +85,19 @@ export async function toggleSlot(formData: FormData) {
   }
   revalidatePath("/admin/slots");
 }
+
+// 정원 변경 (모집 중인 회차만). 식당 좌석보다 크게 잡으면 식당 배정 실패 예외가 생길 수 있다.
+export async function updateCapacity(formData: FormData) {
+  const { supabase, profile } = await requireAdmin();
+  const id = String(formData.get("id") ?? "");
+  const capacity = Number(formData.get("capacity"));
+  if (!Number.isInteger(capacity) || capacity < 4 || capacity > 200) return;
+  const { data: cur } = await supabase.from("event_slots").select("capacity").eq("id", id).eq("status", "OPEN").maybeSingle();
+  if (!cur || cur.capacity === capacity) return;
+  await supabase.from("event_slots").update({ capacity }).eq("id", id).eq("status", "OPEN");
+  await logStatus(supabase, {
+    entity: "event_slot", entityId: id, field: "capacity", from: String(cur.capacity), to: String(capacity),
+    actor: "ADMIN", actorProfileId: profile?.id, reason: "정원 변경",
+  });
+  revalidatePath("/admin/slots");
+}

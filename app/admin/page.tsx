@@ -2,6 +2,8 @@ import { requireAdmin } from "@/lib/auth";
 import { Panel } from "@/components/admin";
 import { JobButtons } from "./JobButtons";
 
+export const maxDuration = 60;
+
 // A-1 운영 대시보드 (10/21 지표 구현 예정). 지금은 기본 숫자와 시연 도구.
 export default async function AdminPage() {
   const { supabase } = await requireAdmin();

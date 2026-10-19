@@ -1,9 +1,9 @@
 import { requireAdmin } from "@/lib/auth";
 import { REGIONS, type RegionCode } from "@/lib/constants";
 import { addDays, fmtDeadline, fmtEventDate, fmtTime, todayKST } from "@/lib/time";
-import { Badge, Panel, btnLineCls, tableCls } from "@/components/admin";
+import { Badge, Panel, btnLineCls, inputCls, tableCls } from "@/components/admin";
 import { CreateSlotForm } from "./CreateSlotForm";
-import { toggleSlot } from "./actions";
+import { toggleSlot, updateCapacity } from "./actions";
 
 const STATUS: Record<string, { label: string; tone: "solid" | "line" | "muted" }> = {
   OPEN: { label: "모집 중", tone: "line" },
@@ -53,7 +53,16 @@ export default async function SlotsPage() {
                     <tr key={s.id}>
                       <td className="whitespace-nowrap font-semibold">{fmtEventDate(s.event_date)} {fmtTime(s.start_time)}</td>
                       <td className="whitespace-nowrap">{REGIONS[s.region as RegionCode]}</td>
-                      <td className="whitespace-nowrap">{s.capacity}명</td>
+                      <td className="whitespace-nowrap">
+                        {s.status === "OPEN" ? (
+                          <form action={updateCapacity} className="flex items-center gap-1">
+                            <input type="hidden" name="id" value={s.id} />
+                            <label><span className="sr-only">정원</span>
+                              <input name="capacity" type="number" min={4} max={200} defaultValue={s.capacity} className={`${inputCls} min-h-8 w-16 px-2`} /></label>
+                            <button className={btnLineCls}>저장</button>
+                          </form>
+                        ) : `${s.capacity}명`}
+                      </td>
                       <td className="whitespace-nowrap">
                         {fmtDeadline(s.apply_deadline)}
                         {s.match_at !== s.apply_deadline && <span className="block text-xs text-stone-600">매칭 {fmtDeadline(s.match_at)}</span>}

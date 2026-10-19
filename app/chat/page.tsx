@@ -42,7 +42,7 @@ export default async function ChatPage() {
             return (
               <section key={m.id} className="flex flex-col gap-1.5 rounded-xl border-[1.5px] border-stone-400 bg-white p-3.5 text-sm leading-relaxed">
                 <span className="text-xs font-bold">{KIND_LABEL[m.kind] ?? "안내"}</span>
-                <p className="whitespace-pre-line">{m.body}</p>
+                <p className="whitespace-pre-line [overflow-wrap:anywhere]">{linkify(m.body)}</p>
               </section>
             );
           }
@@ -50,7 +50,7 @@ export default async function ChatPage() {
           return (
             <div key={m.id} className={`flex max-w-[80%] flex-col gap-0.5 ${mine ? "self-end items-end" : "self-start"}`}>
               {!mine && <span className="text-xs text-stone-600">{names.get(m.sender_profile_id ?? "") ?? "참가자"}</span>}
-              <p className={`rounded-2xl px-3.5 py-2 text-[15px] ${mine ? "bg-stone-900 text-white" : "border-[1.5px] border-stone-300 bg-white"}`}>{m.body}</p>
+              <p className={`whitespace-pre-line rounded-2xl px-3.5 py-2 text-[15px] [overflow-wrap:anywhere] ${mine ? "bg-stone-900 text-white" : "border-[1.5px] border-stone-300 bg-white"}`}>{linkify(m.body)}</p>
               <span className="text-[11px] text-stone-500">{fmtDateTime(m.created_at)}</span>
             </div>
           );
@@ -60,5 +60,16 @@ export default async function ChatPage() {
       <SendForm roomId={table.roomId} />
       <AutoRefresh />
     </div>
+  );
+}
+
+// 공지 속 긴 주소는 짧은 링크로 보여 준다 (지도 주소는 "지도 보기")
+function linkify(text: string) {
+  return text.split(/(https?:\/\/\S+?)(?=\)|\s|$)/g).map((part, i) =>
+    /^https?:\/\//.test(part) ? (
+      <a key={i} href={part} target="_blank" rel="noreferrer" className="font-semibold underline">
+        {/map\.naver\.com|maps?\.(google|kakao)/.test(part) ? "지도 보기" : "링크 열기"}
+      </a>
+    ) : part,
   );
 }

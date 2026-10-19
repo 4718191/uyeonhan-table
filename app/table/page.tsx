@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import { requireParticipant } from "@/lib/auth";
 import { getLatestApplication } from "@/lib/applications";
 import { getMyTable } from "@/lib/table";
+import { mapLink } from "@/lib/map";
 import { REGIONS, type RegionCode } from "@/lib/constants";
 import { fmtEventDate, fmtTime } from "@/lib/time";
 import { BottomNav, Card, Screen, TopBar, btnPrimary } from "@/components/mobile";
@@ -39,7 +40,7 @@ export default async function TablePage() {
             <dt className="text-stone-600">주소</dt>
             <dd>
               {table.venue?.address ?? "-"}
-              {table.venue?.map_url && <> · <a href={table.venue.map_url} target="_blank" rel="noreferrer" className="underline">지도</a></>}
+              {table.venue && mapLink(table.venue) && <> · <a href={mapLink(table.venue)!} target="_blank" rel="noreferrer" className="underline">지도 보기</a></>}
             </dd>
             <dt className="text-stone-600">예약명</dt><dd>우연한 식탁 {table.tableNo}번 테이블</dd>
             <dt className="text-stone-600">인원</dt><dd>{table.members.length}명</dd>

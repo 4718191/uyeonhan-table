@@ -165,9 +165,17 @@ function describe(app: ApplicationView) {
     desc = slot ? `${fmtEventDate(slot.event_date)} ${fmtTime(slot.start_time)} · ${REGIONS[slot.region as RegionCode]}` : "확정된 날짜와 식당을 확인해 주세요.";
     note = "식당과 함께할 분들을 확인하고, 단체방에서 인사해 보세요.";
     action = { href: "/table", label: "매칭 결과 보기" };
-  } else if (m === "NO_MATCH" || m === "ALTERNATIVE_OFFERED") {
+  } else if (m === "ALTERNATIVE_OFFERED") {
     title = "이번 회차는 매칭되지 않았어요";
-    desc = "대체 일정 이동, 이용권 보관, 환불 중에서 고를 수 있어요. (멤버십은 일정 이동 또는 기한 연장)";
+    desc = app.pass?.type === "SINGLE"
+      ? "추천 대체 일정으로 옮기거나, 이용권을 보관하거나, 환불받을 수 있어요."
+      : "추천 대체 일정으로 옮기거나, 멤버십 기한을 연장할 수 있어요.";
+    note = app.placement_reason ? `사유: ${app.placement_reason}` : undefined;
+  } else if (m === "NO_MATCH") {
+    title = "매칭이 종료됐어요";
+    desc = app.pass?.type === "SINGLE"
+      ? "옮길 수 있는 다른 일정이 없어요. 이용권을 보관하거나 환불받을 수 있어요."
+      : "옮길 수 있는 다른 일정이 없어요. 멤버십 기한을 연장할 수 있어요.";
     note = app.placement_reason ? `사유: ${app.placement_reason}` : undefined;
   } else if (m === "TRANSFERRED") {
     title = "일정이 이동됐어요";

@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 import { requireParticipant } from "@/lib/auth";
-import { getLatestApplication } from "@/lib/applications";
+import { getApplication, getApplications } from "@/lib/applications";
 import { getMyTable } from "@/lib/table";
 import { REGIONS, type RegionCode } from "@/lib/constants";
 import { fmtEventDate } from "@/lib/time";
@@ -8,12 +8,16 @@ import { Card, Screen, TopBar } from "@/components/mobile";
 import { FeedbackForm, ReportForm } from "./FeedbackForm";
 
 // 식사 후 피드백 (FDB-02~04)과 신고·차단 (SAF-01)
-export default async function FeedbackPage() {
+export default async function FeedbackPage({ searchParams }: { searchParams: Promise<{ app?: string }> }) {
+  const { app: appId } = await searchParams;
   const { supabase, profile } = await requireParticipant();
-  const app = await getLatestApplication(supabase, profile.id);
-  if (!app || app.match_status !== "CONFIRMED") redirect("/home");
+  // ?app= 로 고른 모임, 없으면 가장 최근에 확정된 모임
+  const app = appId
+    ? await getApplication(supabase, appId)
+    : (await getApplications(supabase, profile.id)).find((a) => a.match_status === "CONFIRMED") ?? null;
+  if (!app || app.profile_id !== profile.id || app.match_status !== "CONFIRMED") redirect("/history");
   const table = await getMyTable(app.id, profile.id);
-  if (!table) redirect("/home");
+  if (!table) redirect("/history");
   const { data: done } = await supabase.from("feedbacks").select("id").eq("table_id", table.tableId).eq("profile_id", profile.id).maybeSingle();
   const others = table.members.filter((m) => !m.me).map((m) => ({ id: m.profileId, name: m.name }));
 
@@ -29,9 +33,9 @@ export default async function FeedbackPage() {
         ) : done ? (
           <Card><p className="text-sm font-semibold">이 모임의 피드백을 이미 남겼어요. 고마워요!</p></Card>
         ) : (
-          <FeedbackForm others={others} />
+          <FeedbackForm applicationId={app.id} others={others} />
         )}
-        <ReportForm others={others} />
+        <ReportForm applicationId={app.id} others={others} />
       </div>
     </Screen>
   );

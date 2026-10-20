@@ -7,6 +7,7 @@ import { createAdminClient } from "@/lib/supabase/admin";
 import { todayKST } from "@/lib/time";
 import { CancelAttendance } from "./CancelAttendance";
 import { CheckInButton } from "./CheckInButton";
+import { ensureContentPosted } from "@/modules/events/jobs";
 import { DEMO_MODE } from "@/lib/demo";
 import { mapLink } from "@/lib/map";
 import { REGIONS, type RegionCode } from "@/lib/constants";
@@ -30,6 +31,7 @@ export default async function TablePage() {
   const canCancel = !closed && app.attendance_status === "SCHEDULED" && table.slot.event_date >= todayKST();
   const canCheckIn = !closed && app.application_status === "SUBMITTED" && app.attendance_status === "SCHEDULED" && (DEMO_MODE || sameDay);
   const { data: fb } = await supabase.from("feedbacks").select("id").eq("table_id", table.tableId).eq("profile_id", profile.id).maybeSingle();
+  if (table.roomId) await ensureContentPosted(table.roomId, table.slot, table.members, table.tableNo);
   // 대화 콘텐츠 (CON-01): 행사 시작 시각에 단체방에 게시된 것을 여기서도 보여 준다
   const { data: content } = table.roomId
     ? await createAdminClient().from("chat_messages").select("body").eq("room_id", table.roomId).eq("kind", "CONTENT").limit(1).maybeSingle()
@@ -64,7 +66,7 @@ export default async function TablePage() {
           {canCheckIn && DEMO_MODE && !sameDay && <p className="text-xs text-stone-600">시연 모드라 모임 날짜 전에도 체크인할 수 있어요. 실제로는 모임 당일에만 열려요.</p>}
           {app.attendance_status === "ATTENDED" && (
             fb ? <p className="text-sm font-semibold">체크인 완료 · 피드백을 남겨 주셔서 고마워요.</p>
-              : <Link href="/feedback" className={btnPrimary}>체크인 완료 · 피드백 남기기</Link>
+              : <Link href={`/feedback?app=${app.id}`} className={btnPrimary}>체크인 완료 · 피드백 남기기</Link>
           )}
           {closed && app.attendance_status === "SCHEDULED" && <p className="text-sm text-stone-600">체크인 기록이 없어 운영팀이 참석 여부를 확인하고 있어요.</p>}
           {table.roomId && <Link href="/chat" className={app.attendance_status === "ATTENDED" || canCheckIn ? btnSecondary : btnPrimary}>단체방 입장</Link>}

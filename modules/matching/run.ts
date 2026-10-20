@@ -180,7 +180,17 @@ async function execute(
   for (const ids of byTable.values()) for (let i = 0; i < ids.length; i++) for (let j = i + 1; j < ids.length; j++) rel.met.add(pairKey(ids[i], ids[j]));
   // 서로 "또 만나고 싶어요"를 고른 사이는 이전 만남 감점을 하지 않는다 (FDB-04 → 다음 매칭 반영)
   const { data: wants } = await db.from("person_preferences").select("from_profile, to_profile").eq("kind", "WANT_AGAIN");
+  const metBefore = new Set(rel.met);
   applyMutualWantAgain(rel.met, (wants ?? []) as { from_profile: string; to_profile: string }[]);
+
+  // 18장 완료 조건 11 확인용: 이번 후보들 사이에서 관계·피드백이 몇 쌍 반영됐는지 센다
+  const cand = new Set(people.map((p) => p.profileId));
+  const inCand = (k: string) => { const [a, b] = k.split("|"); return cand.has(a) && cand.has(b); };
+  const relationSummary = {
+    blocked: [...rel.blocked].filter(inCand).length,                                   // 차단·신고·비선호 → 같은 테이블 제외
+    met: [...rel.met].filter(inCand).length,                                           // 이전 만남 → 새로운 사람 점수 감점
+    wantAgain: [...metBefore].filter((k) => inCand(k) && !rel.met.has(k)).length,     // 서로 또 만나고 싶음 → 감점 제외
+  };
 
   // ── 3. 테이블 구성 ──
   const plan = planBatch(people, slots.map((s) => ({ id: s.id, capacity: s.capacity })), weights, rel);
@@ -366,7 +376,7 @@ async function execute(
     reallocated_count: reallocated,
     confirmed_count: confirmed,
     failed_count: failed,
-    failure_summary: { reasons, unpaid, dataMissing: exceptions.filter((e) => e.type === "DATA_MISSING").length, venueShortage: placed.length - confirmedTables.length },
+    failure_summary: { reasons, unpaid, relations: { ...relationSummary, metSeated: placed.reduce((s, t) => s + t.check.metPairs, 0), conflictsSeated: placed.reduce((s, t) => s + t.check.conflicts, 0) }, dataMissing: exceptions.filter((e) => e.type === "DATA_MISSING").length, venueShortage: placed.length - confirmedTables.length },
   }).eq("id", runId);
 
   return { candidates: people.length, tables: confirmedTables.length, confirmed, reallocated, failed, exceptions: exceptions.length };

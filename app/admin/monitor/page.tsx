@@ -14,7 +14,7 @@ type Run = {
   candidate_count: number | null; created_count: number | null; split_merge_count: number | null;
   reallocated_count: number | null; confirmed_count: number | null; failed_count: number | null;
   settings_snapshot: Record<string, number> | null;
-  failure_summary: { reasons?: Record<string, number>; unpaid?: number; venueShortage?: number; dataMissing?: number; error?: string } | null;
+  failure_summary: { relations?: { blocked: number; met: number; wantAgain: number; metSeated: number; conflictsSeated: number }; reasons?: Record<string, number>; unpaid?: number; venueShortage?: number; dataMissing?: number; error?: string } | null;
 };
 
 // A-5 자동 매칭·재배치·확정 모니터
@@ -85,6 +85,17 @@ export default async function MonitorPage() {
                 latest.split_merge_count ? `다른 희망 지역으로 재배치해 만든 테이블 ${latest.split_merge_count}개` : null,
               ].filter(Boolean).join(" · ") || "남은 사람 없이 모두 확정됐어요."}
             </p>
+          )}
+
+          {latest.failure_summary?.relations && (
+            <div className="rounded-lg border border-stone-300 p-3 text-sm">
+              <p className="font-semibold">이전 만남·피드백 반영 (이번 후보끼리)</p>
+              <ul className="mt-1 flex list-disc flex-col gap-0.5 pl-5">
+                <li>차단·신고·&quot;만나고 싶지 않아요&quot; 관계 <b>{latest.failure_summary.relations.blocked}쌍</b> → 같은 테이블 배정 제외 (확정 테이블 안 충돌 <b>{latest.failure_summary.relations.conflictsSeated}건</b>)</li>
+                <li>이전에 같은 테이블이었던 <b>{latest.failure_summary.relations.met}쌍</b> → &quot;새로운 사람&quot; 점수 감점 (그래도 같은 테이블이 된 쌍 {latest.failure_summary.relations.metSeated}쌍)</li>
+                <li>서로 &quot;또 만나고 싶어요&quot;를 고른 <b>{latest.failure_summary.relations.wantAgain}쌍</b> → 감점에서 제외</li>
+              </ul>
+            </div>
           )}
 
           {[...bySlot.entries()].map(([slotId, list]) => {

@@ -2,17 +2,18 @@
 
 import { redirect } from "next/navigation";
 import { requireParticipant } from "@/lib/auth";
-import { getLatestApplication } from "@/lib/applications";
+import { getApplication } from "@/lib/applications";
 import { notify } from "@/lib/notify";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { getMyTable } from "@/lib/table";
 
 export type FeedbackState = { error?: string; ok?: string } | undefined;
 
-async function myTable() {
+// 피드백은 신청 하나(= 참석한 모임 하나)에 남긴다. 다음 모임을 신청해도 지난 모임에 남길 수 있다.
+async function myTable(applicationId: string) {
   const { supabase, profile } = await requireParticipant();
-  const app = await getLatestApplication(supabase, profile.id);
-  if (!app || app.match_status !== "CONFIRMED" || app.attendance_status !== "ATTENDED") return null;
+  const app = await getApplication(supabase, applicationId);
+  if (!app || app.profile_id !== profile.id || app.match_status !== "CONFIRMED" || app.attendance_status !== "ATTENDED") return null;
   const table = await getMyTable(app.id, profile.id);
   return table ? { profile, table } : null;
 }
@@ -23,8 +24,8 @@ const score = (v: FormDataEntryValue | null) => {
 };
 
 // FDB-02·03·04: 만족도(분위기·대화·식당), 재참여·추천 의향, 사람별 선호(비공개)
-export async function submitFeedback(_: FeedbackState, formData: FormData): Promise<FeedbackState> {
-  const ctx = await myTable();
+export async function submitFeedback(applicationId: string, _: FeedbackState, formData: FormData): Promise<FeedbackState> {
+  const ctx = await myTable(applicationId);
   if (!ctx) return { error: "체크인한 모임에만 피드백을 남길 수 있어요." };
   const { profile, table } = ctx;
   const values = {
@@ -52,10 +53,10 @@ export async function submitFeedback(_: FeedbackState, formData: FormData): Prom
 }
 
 // SAF-01 신고·차단: 신고 내용은 상대에게 공개되지 않고, 신고한 사람과 신고된 사람은 다음 매칭부터 같은 테이블에 배정되지 않는다
-export async function reportUser(_: FeedbackState, formData: FormData): Promise<FeedbackState> {
+export async function reportUser(applicationId: string, _: FeedbackState, formData: FormData): Promise<FeedbackState> {
   const { supabase, profile } = await requireParticipant();
-  const app = await getLatestApplication(supabase, profile.id);
-  const table = app && app.match_status === "CONFIRMED" ? await getMyTable(app.id, profile.id) : null;
+  const app = await getApplication(supabase, applicationId);
+  const table = app && app.profile_id === profile.id && app.match_status === "CONFIRMED" ? await getMyTable(app.id, profile.id) : null;
   const to = String(formData.get("to") ?? "");
   const target = table?.members.find((m) => m.profileId === to && !m.me);
   if (!table || !target) return { error: "같은 테이블 참가자만 신고할 수 있어요." };

@@ -36,7 +36,7 @@ export async function checkIn(applicationId: string): Promise<AttendCancelState>
     .eq("id", app.id).eq("attendance_status", "SCHEDULED").select("id");
   if (changed?.length) {
     await logStatus(admin, { entity: "application", entityId: app.id, field: "attendance_status", from: "SCHEDULED", to: "ATTENDED", actor: "PARTICIPANT", actorProfileId: profile.id, reason: "앱 체크인" });
-    await notify(admin, { profileId: profile.id, key: "CHECKED_IN", title: "체크인했어요", body: "즐거운 식사 되세요! 식사 후 피드백을 남겨 주시면 다음 매칭에 반영돼요.", link: "/feedback" });
+    await notify(admin, { profileId: profile.id, key: "CHECKED_IN", title: "체크인했어요", body: "즐거운 식사 되세요! 식사 후 피드백을 남겨 주시면 다음 매칭에 반영돼요.", link: `/feedback?app=${app.id}` });
   }
   revalidatePath("/table");
   return undefined;

@@ -7,6 +7,7 @@ import { REGIONS, type RegionCode } from "@/lib/constants";
 import { fmtDateTime, fmtEventDate } from "@/lib/time";
 import { TopBar } from "@/components/mobile";
 import { AutoRefresh, ScrollToEnd, SendForm } from "./ChatClient";
+import { ensureContentPosted } from "@/modules/events/jobs";
 
 const KIND_LABEL: Record<string, string> = {
   NOTICE: "공지 · 확정 즉시 자동 게시",
@@ -22,6 +23,7 @@ export default async function ChatPage() {
   const table = await getMyTable(app.id, profile.id);
   if (!table?.roomId) redirect("/home");
 
+  await ensureContentPosted(table.roomId, table.slot, table.members, table.tableNo);
   // 내 테이블의 단체방임을 위에서 확인했으므로 서버에서 해당 방 메시지만 읽는다
   const { data: messages } = await createAdminClient()
     .from("chat_messages")

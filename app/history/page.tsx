@@ -68,8 +68,8 @@ export default async function HistoryPage({ searchParams }: { searchParams: Prom
                       {status}
                       {a.attendance_status === "ATTENDED" && t && (fbDone.has(t.id) ? " · 피드백 제출 완료" : " · 피드백 미제출")}
                     </span>
-                    {a.attendance_status === "ATTENDED" && t && !fbDone.has(t.id) && hasChat(a) && (
-                      <Link href="/feedback" className="text-sm font-semibold underline">피드백 남기기</Link>
+                    {a.attendance_status === "ATTENDED" && t && !fbDone.has(t.id) && (
+                      <Link href={`/feedback?app=${a.id}`} className="text-sm font-semibold underline">피드백 남기기</Link>
                     )}
                   </li>
                 );

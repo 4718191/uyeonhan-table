@@ -3,9 +3,10 @@ import { requireParticipant } from "@/lib/auth";
 import { getLatestApplication, hasChat, membershipEnd, nextDeadline, type ApplicationView } from "@/lib/applications";
 import { REGIONS, type RegionCode } from "@/lib/constants";
 import { PASS_LABELS, PAYMENT_LABELS, won } from "@/lib/labels";
-import { fmtDeadline, fmtEventDate, fmtTime, todayKST } from "@/lib/time";
+import { addDays, fmtDeadline, fmtEventDate, fmtTime, todayKST } from "@/lib/time";
 import { BottomNav, Card, Screen, btnPrimary } from "@/components/mobile";
 import { CancelButton } from "./CancelButton";
+import { createAdminClient } from "@/lib/supabase/admin";
 
 // P-5 홈·신청 상태: 신청·결제·매칭 상태와 다음 행동을 한 화면에서 보여 준다 (MVP 8장 사용성)
 export default async function HomePage({ searchParams }: { searchParams: Promise<{ saved?: string }> }) {
@@ -18,7 +19,13 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
   const { data: resolution } = app && ["ALTERNATIVE_OFFERED", "NO_MATCH"].includes(app.match_status)
     ? await supabase.from("match_resolutions").select("status, choice").eq("application_id", app.id).maybeSingle()
     : { data: null };
-  const view = app ? describe(app, resolution) : null;
+  // 참석한 모임에 피드백을 냈는지 (테이블 구성원 정보는 서버에서만 읽는다)
+  let feedbackDone = false;
+  if (app?.attendance_status === "ATTENDED") {
+    const { data: tm } = await createAdminClient().from("table_members").select("table_id").eq("application_id", app.id).eq("active", true).maybeSingle();
+    if (tm) feedbackDone = !!(await supabase.from("feedbacks").select("id").eq("table_id", tm.table_id).eq("profile_id", profile.id).maybeSingle()).data;
+  }
+  const view = app ? describe(app, resolution, feedbackDone) : null;
 
   return (
     <Screen>
@@ -120,7 +127,7 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
 type StepState = "done" | "now" | "todo";
 
 // 신청 하나의 네 가지 상태(신청·결제·매칭·참석)를 화면 문구로 바꾼다
-function describe(app: ApplicationView, resolution: { status: string; choice: string | null } | null) {
+function describe(app: ApplicationView, resolution: { status: string; choice: string | null } | null, feedbackDone = false) {
   const deadline = nextDeadline(app);
   const firstDeadline = app.slots.map((s) => s.apply_deadline).sort()[0];
   const beforeDeadline = !!firstDeadline && new Date(firstDeadline) > new Date();
@@ -183,12 +190,15 @@ function describe(app: ApplicationView, resolution: { status: string; choice: st
     title = "매칭이 확정됐어요";
     const slot = app.slots.find((s) => s.id === app.confirmed_slot_id);
     desc = slot ? `${fmtEventDate(slot.event_date)} ${fmtTime(slot.start_time)} · ${REGIONS[slot.region as RegionCode]}` : "확정된 날짜와 식당을 확인해 주세요.";
-    note = "식당과 함께할 분들을 확인하고, 단체방에서 인사해 보세요.";
+    // STA-02 다음 안내 일정: 행사 1일 전 10:00 리마인드, 시작 시각에 대화 주제
+    note = slot
+      ? `다음 안내: ${fmtEventDate(addDays(slot.event_date, -1))} 10:00 리마인드 · ${fmtEventDate(slot.event_date)} ${fmtTime(slot.start_time)} 대화 주제가 단체방에 올라와요.`
+      : "식당과 함께할 분들을 확인하고, 단체방에서 인사해 보세요.";
     action = { href: "/table", label: "매칭 결과 보기" };
     if (app.attendance_status === "ATTENDED") {
       title = "참석 완료";
-      note = "식사는 즐거우셨나요? 피드백은 다음 매칭에 반영돼요.";
-      action = { href: "/feedback", label: "피드백 남기기" };
+      note = feedbackDone ? "피드백을 보내 주셔서 고마워요. 다음 매칭에 반영돼요." : "식사는 즐거우셨나요? 피드백은 다음 매칭에 반영돼요.";
+      action = feedbackDone ? { href: "/history", label: "다음 모임 보기" } : { href: `/feedback?app=${app.id}`, label: "피드백 남기기" };
     }
   } else if ((m === "ALTERNATIVE_OFFERED" || m === "NO_MATCH") && resolution?.status === "DONE") {
     // 매칭 실패 해결을 마친 상태 (보관·환불·기한 연장)
@@ -196,6 +206,9 @@ function describe(app: ApplicationView, resolution: { status: string; choice: st
     if (resolution.choice === "STORE") {
       title = "1회권을 보관했어요";
       desc = "다음에 신청할 때 결제 단계에서 보관한 1회권을 추가 결제 없이 쓸 수 있어요.";
+    } else if (resolution.choice === "REFUND" && app.payment_status !== "REFUNDED") {
+      title = "환불을 확인하고 있어요";
+      desc = "자동 환불이 처리되지 않아 운영팀이 확인하고 있어요. 처리되면 바로 알려 드릴게요.";
     } else if (resolution.choice === "REFUND") {
       title = "환불이 완료됐어요";
       desc = `${won(app.payment?.refunded_amount ?? app.payment?.amount ?? 0)}을 원결제수단으로 자동 환불했어요. (모의 환불)`;

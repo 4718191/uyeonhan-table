@@ -75,3 +75,9 @@ export function deadlineForEvent(eventDate: string) {
   d.setUTCDate(d.getUTCDate() - back);
   return new Date(d.getTime() - KST_OFFSET).toISOString();
 }
+
+/** 지금 시각 (KST, "HH:MM:SS") — 회차 start_time과 비교할 때 쓴다 */
+export function nowTimeKST() {
+  const p = kst(new Date());
+  return `${pad(p.h)}:${pad(p.min)}:00`;
+}

@@ -80,16 +80,29 @@ export async function resolveMatch(applicationId: string, _: ResolveState, formD
       body = "다음에 신청할 때 결제 단계에서 보관한 1회권을 추가 결제 없이 쓸 수 있어요.";
     } else if (choice === "REFUND") {
       const amount = app.payment?.amount ?? 0;
-      // 모의 자동 환불 (PAY-03): 환불 요청 → 처리 → 완료를 바로 진행한다
-      await must(admin.from("payments").update({ status: "REFUNDED", refunded_amount: amount, refunded_at: now }).eq("application_id", app.id).in("status", ["PAID", "REFUND_AVAILABLE"]));
-      await must(admin.from("applications").update({ match_status: "NO_MATCH", payment_status: "REFUNDED", placement_reason: `${app.placement_reason ?? "매칭 실패"} → 환불 ${won(amount)}` }).eq("id", app.id));
+      // 자동 환불 (PAY-03, 12장): 환불 요청 → 자동 환불 처리 중 → 환불 완료. 해커톤은 모의 환불이라 바로 완료한다.
+      await must(admin.from("applications").update({ match_status: "NO_MATCH", payment_status: "REFUND_PROCESSING", placement_reason: `${app.placement_reason ?? "매칭 실패"} → 환불 요청 ${won(amount)}` }).eq("id", app.id));
+      await must(admin.from("payments").update({ status: "REFUND_PROCESSING" }).eq("application_id", app.id).in("status", ["PAID", "REFUND_AVAILABLE"]));
       changes.push(
         { entity: "application", entityId: app.id, field: "match_status", from: app.match_status, to: "NO_MATCH", ...by, reason: "환불 선택" },
         { entity: "application", entityId: app.id, field: "payment_status", from: fromPay, to: "REFUND_REQUESTED", ...by, reason: "매칭 실패로 환불 요청" },
-        { entity: "application", entityId: app.id, field: "payment_status", from: "REFUND_REQUESTED", to: "REFUNDED", actor: "SYSTEM", reason: `원결제수단 모의 자동 환불 ${won(amount)}` },
+        { entity: "application", entityId: app.id, field: "payment_status", from: "REFUND_REQUESTED", to: "REFUND_PROCESSING", actor: "SYSTEM", reason: "원결제수단 자동 환불 처리 시작" },
       );
-      title = "환불이 완료됐어요";
-      body = `${won(amount)} · 원결제수단으로 자동 환불했어요. (모의 환불)`;
+      try {
+        await must(admin.from("payments").update({ status: "REFUNDED", refunded_amount: amount, refunded_at: now }).eq("application_id", app.id).eq("status", "REFUND_PROCESSING"));
+        await must(admin.from("applications").update({ payment_status: "REFUNDED", placement_reason: `${app.placement_reason ?? "매칭 실패"} → 환불 ${won(amount)}` }).eq("id", app.id));
+        changes.push({ entity: "application", entityId: app.id, field: "payment_status", from: "REFUND_PROCESSING", to: "REFUNDED", actor: "SYSTEM", reason: `원결제수단 모의 자동 환불 ${won(amount)}` });
+        title = "환불이 완료됐어요";
+        body = `${won(amount)} · 원결제수단으로 자동 환불했어요. 처리 상태: 환불 완료 (모의 환불)`;
+      } catch (e) {
+        // 자동 환불 실패만 운영자 예외로 (PRD 15장). 선택은 되돌리지 않고 운영자가 이어서 처리한다.
+        await admin.from("applications").update({ payment_status: "REFUND_FAILED" }).eq("id", app.id);
+        await admin.from("payments").update({ status: "REFUND_FAILED" }).eq("application_id", app.id);
+        await admin.from("exception_cases").insert({ type: "REFUND_FAILED", application_id: app.id, reason: `자동 환불 실패 (${won(amount)}): ${e instanceof Error ? e.message : String(e)}` });
+        changes.push({ entity: "application", entityId: app.id, field: "payment_status", from: "REFUND_PROCESSING", to: "REFUND_FAILED", actor: "SYSTEM", reason: "자동 환불 실패, 운영자 확인 필요" });
+        title = "환불을 확인하고 있어요";
+        body = `${won(amount)} 자동 환불이 처리되지 않아 운영팀이 확인하고 있어요. 처리되면 바로 알려 드릴게요.`;
+      }
     } else if (choice === "EXTEND") {
       const pass = app.pass!;
       await must(admin.from("passes").update({ extension_weeks: pass.extension_weeks + 1 }).eq("id", pass.id).eq("extension_weeks", pass.extension_weeks));

@@ -29,8 +29,8 @@ function Scale({ name, label }: { name: string; label: string }) {
   );
 }
 
-export function FeedbackForm({ others }: { others: { id: string; name: string }[] }) {
-  const [state, action, pending] = useActionState(submitFeedback, undefined);
+export function FeedbackForm({ applicationId, others }: { applicationId: string; others: { id: string; name: string }[] }) {
+  const [state, action, pending] = useActionState(submitFeedback.bind(null, applicationId), undefined);
   return (
     <form action={action} className="flex flex-col gap-4">
       <Card>
@@ -60,8 +60,8 @@ export function FeedbackForm({ others }: { others: { id: string; name: string }[
   );
 }
 
-export function ReportForm({ others }: { others: { id: string; name: string }[] }) {
-  const [state, action, pending] = useActionState(reportUser, undefined);
+export function ReportForm({ applicationId, others }: { applicationId: string; others: { id: string; name: string }[] }) {
+  const [state, action, pending] = useActionState(reportUser.bind(null, applicationId), undefined);
   return (
     <details className="rounded-xl border-[1.5px] border-stone-400 bg-white p-4">
       <summary className="cursor-pointer text-sm font-semibold">불쾌한 일이 있었나요? 신고·차단하기</summary>

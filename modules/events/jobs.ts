@@ -2,7 +2,7 @@ import "server-only";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { REGIONS, type RegionCode } from "@/lib/constants";
 import { mapLink } from "@/lib/map";
-import { addDays, fmtEventDate, fmtTime, todayKST } from "@/lib/time";
+import { addDays, fmtEventDate, fmtTime, nowTimeKST, todayKST } from "@/lib/time";
 import { contentText, tableContent } from "@/modules/content/topics";
 import { tablesOnDates, upcomingEventDates, type EventTable } from "./tables";
 
@@ -44,6 +44,8 @@ async function post(kind: Kind, trigger: "CRON" | "ADMIN"): Promise<EventJobResu
   let targets: EventTable[] = [];
   for (const d of dates) {
     targets = await pending(db, await tablesOnDates(db, [d]), kind);
+    // CON-03: 실제 실행에서는 회차 시작 시각이 지난 테이블에만 대화 콘텐츠를 올린다
+    if (trigger === "CRON" && kind === "CONTENT") targets = targets.filter((t) => t.slot.start_time <= nowTimeKST());
     if (targets.length) { date = d; break; }
   }
   if (!date) return { ok: true, message: `${what}를 보낼 테이블이 없어요. (대상 행사에는 이미 모두 보냈어요)` };
@@ -54,7 +56,11 @@ async function post(kind: Kind, trigger: "CRON" | "ADMIN"): Promise<EventJobResu
     body: kind === "REMINDER" ? reminderText(t) : contentText(tableContent(t.members, t.no ?? 0)),
   }));
   const { error } = await db.from("chat_messages").insert(messages);
-  if (error) return { ok: false, message: `${what} 게시 실패: ${error.message}` };
+  if (error) {
+    // 다른 경로에서 먼저 올린 방이 있으면(유일 키 충돌) 한 방씩 다시 넣고 이미 있는 방은 건너뛴다
+    if (error.code !== "23505") return { ok: false, message: `${what} 게시 실패: ${error.message}` };
+    for (const m of messages) await db.from("chat_messages").insert(m);
+  }
 
   const notes = targets.flatMap((t) => t.members.map((m) => kind === "REMINDER"
     ? { profile_id: m.profileId, template_key: "EVENT_REMINDER", title: "내일 우연한 식탁에서 만나요", body: `${label(t)} · ${t.venue?.name ?? ""} · 예약명 우연한 식탁 ${t.no}번 테이블`, link: "/chat", sent_at: now, delivery_status: "SENT" }
@@ -67,3 +73,16 @@ async function post(kind: Kind, trigger: "CRON" | "ADMIN"): Promise<EventJobResu
 
 export const runRemind = (trigger: "CRON" | "ADMIN") => post("REMINDER", trigger);
 export const runPostContent = (trigger: "CRON" | "ADMIN") => post("CONTENT", trigger);
+
+/**
+ * CON-03 보완: 회차 시작 시각이 지났는데 아직 대화 콘텐츠가 없는 단체방이면 바로 올린다.
+ * 매일 한 번 도는 예약 작업(19:30)이 회차 시작 시각과 어긋날 때를 메운다. 참가자가 단체방·확정 상세를 열 때 호출한다.
+ * 단체방마다 한 번만 올라가도록 DB 유일 키(0003)가 막는다.
+ */
+export async function ensureContentPosted(roomId: string, slot: { event_date: string; start_time: string }, members: { interests: string[]; selfTraits: string[] }[], tableNo: number | null) {
+  if (slot.event_date !== todayKST() || slot.start_time > nowTimeKST()) return;
+  const db = createAdminClient();
+  const { data } = await db.from("chat_messages").select("id").eq("room_id", roomId).eq("kind", "CONTENT").limit(1);
+  if (data?.length) return;
+  await db.from("chat_messages").insert({ room_id: roomId, kind: "CONTENT", delivery_status: "SENT", body: contentText(tableContent(members, tableNo ?? 0)) });
+}

@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 import { requireParticipant } from "@/lib/auth";
-import { getActiveMembership, getApplication, membershipEnd, nextDeadline } from "@/lib/applications";
+import { getActiveMembership, getApplication, getStoredSingle, membershipEnd, nextDeadline } from "@/lib/applications";
 import { PASS_PRICES, REGIONS, type RegionCode } from "@/lib/constants";
 import { PASS_LABELS } from "@/lib/labels";
 import { fmtDeadline, fmtEventDate } from "@/lib/time";
@@ -15,7 +15,7 @@ export default async function PayPage({ params }: { params: Promise<{ id: string
   if (!app || app.profile_id !== profile.id) redirect("/home");
   if (app.application_status !== "SUBMITTED" || app.payment_status !== "PENDING") redirect("/home");
 
-  const owned = await getActiveMembership(supabase, profile.id);
+  const [owned, stored] = await Promise.all([getActiveMembership(supabase, profile.id), getStoredSingle(supabase, profile.id)]);
   const deadline = nextDeadline(app);
   const dates = [...new Set(app.slots.map((s) => s.event_date))].map(fmtEventDate);
   const regions = [...new Set(app.slots.map((s) => REGIONS[s.region as RegionCode]))];
@@ -40,6 +40,11 @@ export default async function PayPage({ params }: { params: Promise<{ id: string
               name: `보유 ${PASS_LABELS[owned.type]}`,
               price: 0,
               note: `${fmtEventDate(membershipEnd(owned)!)}까지 사용 가능`,
+            } : stored ? {
+              value: "STORED",
+              name: "보관한 1회권",
+              price: 0,
+              note: "매칭 실패로 보관해 둔 이용권 · 추가 결제 없음",
             } : null}
             single={{ value: "SINGLE", name: "1회권", price: PASS_PRICES.SINGLE }}
             memberships={(["MEMBERSHIP_1M", "MEMBERSHIP_3M", "MEMBERSHIP_6M"] as const).map((k) => ({

@@ -53,11 +53,11 @@ export function Chip({
 
 // 큰 선택 상자 (일정·지역·이용권)
 export function OptionBox({
-  name, value, type = "checkbox", defaultChecked, children,
-}: { name: string; value: string; type?: "checkbox" | "radio"; defaultChecked?: boolean; children: React.ReactNode }) {
+  name, value, type = "checkbox", defaultChecked, checked, onChange, children,
+}: { name: string; value: string; type?: "checkbox" | "radio"; defaultChecked?: boolean; checked?: boolean; onChange?: () => void; children: React.ReactNode }) {
   return (
     <label className="flex min-h-14 cursor-pointer items-center gap-3 rounded-xl border-[1.5px] border-stone-400 bg-white px-3.5 text-[15px] has-checked:border-[2.5px] has-checked:border-stone-900">
-      <input type={type} name={name} value={value} defaultChecked={defaultChecked} className="h-5 w-5 accent-stone-900" />
+      <input type={type} name={name} value={value} defaultChecked={defaultChecked} checked={checked} onChange={onChange} className="h-5 w-5 accent-stone-900" />
       {children}
     </label>
   );

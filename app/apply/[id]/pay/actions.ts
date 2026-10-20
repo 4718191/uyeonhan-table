@@ -3,7 +3,7 @@
 import { redirect } from "next/navigation";
 import { requireParticipant } from "@/lib/auth";
 import { createAdminClient } from "@/lib/supabase/admin";
-import { getActiveMembership, getApplication, nextDeadline } from "@/lib/applications";
+import { getActiveMembership, getApplication, getStoredSingle, nextDeadline } from "@/lib/applications";
 import { PASS_PRICES } from "@/lib/constants";
 import { logStatus } from "@/lib/history";
 import { PASS_LABELS, won } from "@/lib/labels";
@@ -35,6 +35,10 @@ export async function payApplication(applicationId: string, _: PayState, formDat
     const owned = await getActiveMembership(supabase, profile.id);
     if (!owned) return { error: "사용할 수 있는 멤버십이 없어요. 이용권을 다시 골라 주세요." };
     pass = owned;
+  } else if (choice === "STORED") {
+    const stored = await getStoredSingle(supabase, profile.id);
+    if (!stored) return { error: "보관한 1회권이 없어요. 이용권을 다시 골라 주세요." };
+    pass = stored;
   } else if (choice in PASS_PRICES) {
     amount = PASS_PRICES[choice as keyof typeof PASS_PRICES];
   } else {
@@ -52,7 +56,16 @@ export async function payApplication(applicationId: string, _: PayState, formDat
     return { error: "결제를 처리하지 못했어요. 잠시 후 다시 시도해 주세요." };
   }
 
-  // 2) 새 이용권 발급 (보유 멤버십 사용이면 생략)
+  // 보관한 1회권은 한 번만 쓸 수 있게 먼저 꺼낸다
+  if (choice === "STORED") {
+    const { data: took } = await admin.from("passes").update({ stored: false }).eq("id", pass!.id).eq("stored", true).select("id");
+    if (!took || took.length === 0) {
+      await admin.from("payments").delete().eq("id", payment.id);
+      return { error: "보관한 1회권을 이미 사용했어요. 이용권을 다시 골라 주세요." };
+    }
+  }
+
+  // 2) 새 이용권 발급 (보유 멤버십·보관 1회권 사용이면 생략)
   if (!pass) {
     const months = MONTHS[choice];
     const { data: created, error: passError } = await admin
@@ -82,13 +95,13 @@ export async function payApplication(applicationId: string, _: PayState, formDat
   await logStatus(admin, {
     entity: "application", entityId: app.id, field: "payment_status",
     from: "PENDING", to: "PAID", actor: "PARTICIPANT", actorProfileId: profile.id,
-    reason: choice === "OWNED" ? `보유 ${PASS_LABELS[pass!.type]} 사용` : `${PASS_LABELS[choice]} 모의 결제 ${won(amount)}`,
+    reason: choice === "OWNED" ? `보유 ${PASS_LABELS[pass!.type]} 사용` : choice === "STORED" ? "보관한 1회권 사용" : `${PASS_LABELS[choice]} 모의 결제 ${won(amount)}`,
   });
   await notify(admin, {
     profileId: profile.id,
     key: "PAYMENT_DONE",
     title: "결제가 완료됐어요",
-    body: `${choice === "OWNED" ? `보유 ${PASS_LABELS[pass!.type]}` : `${PASS_LABELS[choice]} ${won(amount)}`} · 자동 매칭은 ${fmtDeadline(deadline)} 이후 진행돼요.`,
+    body: `${choice === "OWNED" ? `보유 ${PASS_LABELS[pass!.type]}` : choice === "STORED" ? "보관한 1회권" : `${PASS_LABELS[choice]} ${won(amount)}`} · 자동 매칭은 ${fmtDeadline(deadline)} 이후 진행돼요.`,
     link: "/home",
   });
 

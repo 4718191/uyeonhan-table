@@ -25,7 +25,7 @@ export default async function MonitorPage() {
     supabase.from("event_slots").select("id, event_date, start_time, region, match_at").eq("status", "OPEN").order("match_at").limit(8),
     supabase.from("applications")
       .select("id, match_status, placement_reason, reallocation_count, updated_at, profiles(name)")
-      .eq("application_status", "SUBMITTED").in("match_status", ["REALLOCATING", "ALTERNATIVE_OFFERED", "NO_MATCH", "EXCEPTION"])
+      .eq("application_status", "SUBMITTED").in("match_status", ["REALLOCATING", "ALTERNATIVE_OFFERED", "TRANSFERRED", "NO_MATCH", "EXCEPTION"])
       .order("updated_at", { ascending: false }).limit(300),
   ]);
   const latest = (runs?.[0] ?? null) as Run | null;

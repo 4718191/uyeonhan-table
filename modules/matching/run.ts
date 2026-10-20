@@ -109,7 +109,7 @@ async function execute(
     );
     apps.push(...(rows as AppRow[]));
   }
-  const active = apps.filter((a) => a.application_status === "SUBMITTED" && ["WAITING", "REALLOCATING"].includes(a.match_status));
+  const active = apps.filter((a) => a.application_status === "SUBMITTED" && ["WAITING", "REALLOCATING", "TRANSFERRED"].includes(a.match_status));
   const unpaidApps = active.filter((a) => a.payment_status !== "PAID"); // 결제 안 한 신청은 후보에서 제외 (PRD 15장)
   const unpaid = unpaidApps.length;
   const paid = active.filter((a) => a.payment_status === "PAID");
@@ -337,7 +337,7 @@ async function execute(
         recommended.length
           ? `${fmtEventDate(here.event_date)} 회차: ${reason}. 추천 일정: ${recommended.map(slotLabel).join(" / ")}. ${options} 중에서 고를 수 있어요.`
           : `${fmtEventDate(here.event_date)} 회차: ${reason}. 이동할 수 있는 다른 일정이 없어 이번 신청의 매칭을 마쳤어요. ${single ? "이용권 보관 또는 환불" : "멤버십 기한 연장"}을 선택할 수 있어요.`,
-        "/home");
+        "/resolve");
     }
   }
   for (const group of chunk(updates, 25)) await Promise.all(group.map((f) => f()));
@@ -406,7 +406,7 @@ export async function resetLatestRun(): Promise<MatchResult> {
   for (const ids of chunk(appIds, 80)) {
     await db.from("applications")
       .update({ match_status: "WAITING", confirmed_slot_id: null, attendance_status: null, placement_reason: null, reallocation_count: 0 })
-      .in("id", ids).eq("application_status", "SUBMITTED").in("match_status", ["CONFIRMED", "REALLOCATING", "ALTERNATIVE_OFFERED", "NO_MATCH", "EXCEPTION"])
+      .in("id", ids).eq("application_status", "SUBMITTED").in("match_status", ["CONFIRMED", "REALLOCATING", "ALTERNATIVE_OFFERED", "TRANSFERRED", "NO_MATCH", "EXCEPTION"])
       .or(`confirmed_slot_id.is.null,confirmed_slot_id.in.(${slotIds.join(",")})`);
     await db.from("match_resolutions").delete().in("application_id", ids);
     await db.from("applications").update({ payment_status: "PAID" }).in("id", ids).eq("payment_status", "REFUND_AVAILABLE");

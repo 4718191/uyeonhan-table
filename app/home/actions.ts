@@ -39,7 +39,12 @@ export async function cancelApplication(applicationId: string): Promise<CancelSt
   }];
   let message = "신청을 취소했어요.";
 
-  if (app.payment_status === "PAID" && app.pass?.type === "SINGLE" && app.payment) {
+  if (app.payment_status === "PAID" && app.pass?.type === "SINGLE" && app.payment?.amount === 0) {
+    // 보관한 1회권으로 신청했으면 다시 보관한다
+    await admin.from("passes").update({ stored: true }).eq("id", app.pass.id);
+    message = "신청을 취소하고 1회권을 다시 보관했어요.";
+    await notify(admin, { profileId: profile.id, key: "APPLICATION_CANCELED", title: "신청이 취소됐어요", body: message, link: "/home" });
+  } else if (app.payment_status === "PAID" && app.pass?.type === "SINGLE" && app.payment) {
     const amount = app.payment.amount;
     await admin
       .from("payments")

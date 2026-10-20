@@ -4,7 +4,7 @@ import { addDays, todayKST } from "@/lib/time";
 
 // 신청 조회 공통 (참가자 홈·결제·취소에서 함께 쓴다)
 
-export const ACTIVE_MATCH = ["WAITING", "MATCHING", "REALLOCATING"] as const;
+export const ACTIVE_MATCH = ["WAITING", "MATCHING", "REALLOCATING", "TRANSFERRED"] as const;
 
 export type SlotInfo = {
   id: string;
@@ -80,7 +80,8 @@ export function isOngoing(app: ApplicationView | null) {
 /** 다음 마감 시각: 아직 지나지 않은 후보 회차 마감 중 가장 이른 것 */
 export function nextDeadline(app: ApplicationView) {
   const now = Date.now();
-  const future = app.slots.map((s) => s.apply_deadline).filter((d) => new Date(d).getTime() > now).sort();
+  // 이미 매칭을 마친 회차(일정 이동 전 회차 등)는 빼고, 아직 열려 있는 회차만 본다
+  const future = app.slots.filter((s) => s.status === "OPEN").map((s) => s.apply_deadline).filter((d) => new Date(d).getTime() > now).sort();
   return future[0] ?? null;
 }
 
@@ -103,4 +104,18 @@ export async function getActiveMembership(db: SupabaseClient, profileId: string)
     const end = membershipEnd(p);
     return end !== null && end >= today;
   }) ?? null;
+}
+
+/** 매칭 실패 때 보관해 둔 1회권 (다음 신청 결제에 쓴다) */
+export async function getStoredSingle(db: SupabaseClient, profileId: string) {
+  const { data } = await db
+    .from("passes")
+    .select("id, type, price")
+    .eq("profile_id", profileId)
+    .eq("type", "SINGLE")
+    .eq("stored", true)
+    .order("created_at")
+    .limit(1)
+    .maybeSingle();
+  return data;
 }

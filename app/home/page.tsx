@@ -15,7 +15,10 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
     getLatestApplication(supabase, profile.id),
     supabase.from("notifications").select("id", { count: "exact", head: true }).eq("profile_id", profile.id).is("read_at", null),
   ]);
-  const view = app ? describe(app) : null;
+  const { data: resolution } = app && ["ALTERNATIVE_OFFERED", "NO_MATCH"].includes(app.match_status)
+    ? await supabase.from("match_resolutions").select("status, choice").eq("application_id", app.id).maybeSingle()
+    : { data: null };
+  const view = app ? describe(app, resolution) : null;
 
   return (
     <Screen>
@@ -78,9 +81,17 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
               <h3 className="text-[15px] font-bold">신청 내용</h3>
               <dl className="grid grid-cols-[64px_1fr] gap-y-2 text-sm">
                 <dt className="text-stone-600">날짜</dt>
-                <dd>{[...new Set(app.slots.map((s) => `${fmtEventDate(s.event_date)} ${fmtTime(s.start_time)}`))].join(", ")}</dd>
+                <dd>{[...new Set(view.slots.map((s) => `${fmtEventDate(s.event_date)} ${fmtTime(s.start_time)}`))].join(", ")}</dd>
                 <dt className="text-stone-600">지역</dt>
-                <dd>{[...new Set(app.slots.map((s) => REGIONS[s.region as RegionCode]))].join(", ")}</dd>
+                <dd>{[...new Set(view.slots.map((s) => REGIONS[s.region as RegionCode]))].join(", ")}</dd>
+                {view.pastSlots.length > 0 && (
+                  <>
+                    <dt className="text-stone-600">이전 회차</dt>
+                    <dd className="text-stone-600">
+                      {view.pastSlots.map((s) => `${fmtEventDate(s.event_date)} ${REGIONS[s.region as RegionCode]}`).join(", ")} (매칭 실패 후 이동)
+                    </dd>
+                  </>
+                )}
                 <dt className="text-stone-600">이용권</dt>
                 <dd>{view.passText}</dd>
               </dl>
@@ -109,7 +120,7 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
 type StepState = "done" | "now" | "todo";
 
 // 신청 하나의 네 가지 상태(신청·결제·매칭·참석)를 화면 문구로 바꾼다
-function describe(app: ApplicationView) {
+function describe(app: ApplicationView, resolution: { status: string; choice: string | null } | null) {
   const deadline = nextDeadline(app);
   const firstDeadline = app.slots.map((s) => s.apply_deadline).sort()[0];
   const beforeDeadline = !!firstDeadline && new Date(firstDeadline) > new Date();
@@ -121,8 +132,8 @@ function describe(app: ApplicationView) {
     ? `${PASS_LABELS[app.pass.type]}${app.pass.valid_until ? ` (${fmtEventDate(membershipEnd(app.pass)!)}까지)` : ""} · ${PAYMENT_LABELS[app.payment_status]}`
     : PAYMENT_LABELS[app.payment_status];
 
-  const matchStep = m === "REALLOCATING" ? "재배치 중" : m === "MATCHING" ? "매칭 중" : "매칭 대기";
-  const resultDone = ["CONFIRMED", "NO_MATCH", "ALTERNATIVE_OFFERED", "TRANSFERRED", "EXCEPTION"].includes(m);
+  const matchStep = m === "REALLOCATING" ? "재배치 중" : m === "MATCHING" ? "매칭 중" : m === "TRANSFERRED" ? "일정 이동·대기" : "매칭 대기";
+  const resultDone = ["CONFIRMED", "NO_MATCH", "ALTERNATIVE_OFFERED", "EXCEPTION"].includes(m);
   const steps: { name: string; state: StepState }[] = [
     { name: "신청 완료", state: "done" },
     { name: "결제 완료", state: paid || resultDone || app.payment_status === "REFUNDED" ? "done" : canceled ? "todo" : "now" },
@@ -142,7 +153,8 @@ function describe(app: ApplicationView) {
     title = "신청이 취소됐어요";
     desc = app.payment_status === "REFUNDED" && app.payment?.refunded_amount
       ? `${won(app.payment.refunded_amount)}을 모의 환불했어요.`
-      : app.pass && app.pass.type !== "SINGLE" ? "멤버십은 그대로 다시 쓸 수 있어요." : "결제 전에 취소한 신청이에요.";
+      : app.pass && app.pass.type !== "SINGLE" ? "멤버십은 그대로 다시 쓸 수 있어요."
+      : app.pass && app.payment?.amount === 0 ? "보관한 1회권은 다음 신청 때 다시 쓸 수 있어요." : "결제 전에 취소한 신청이에요.";
     reapply = true;
   } else if (app.payment_status === "PENDING") {
     title = "결제를 기다리고 있어요";
@@ -165,21 +177,39 @@ function describe(app: ApplicationView) {
     desc = slot ? `${fmtEventDate(slot.event_date)} ${fmtTime(slot.start_time)} · ${REGIONS[slot.region as RegionCode]}` : "확정된 날짜와 식당을 확인해 주세요.";
     note = "식당과 함께할 분들을 확인하고, 단체방에서 인사해 보세요.";
     action = { href: "/table", label: "매칭 결과 보기" };
+  } else if ((m === "ALTERNATIVE_OFFERED" || m === "NO_MATCH") && resolution?.status === "DONE") {
+    // 매칭 실패 해결을 마친 상태 (보관·환불·기한 연장)
+    reapply = true;
+    if (resolution.choice === "STORE") {
+      title = "1회권을 보관했어요";
+      desc = "다음에 신청할 때 결제 단계에서 보관한 1회권을 추가 결제 없이 쓸 수 있어요.";
+    } else if (resolution.choice === "REFUND") {
+      title = "환불이 완료됐어요";
+      desc = `${won(app.payment?.refunded_amount ?? app.payment?.amount ?? 0)}을 원결제수단으로 자동 환불했어요. (모의 환불)`;
+    } else {
+      title = "멤버십 기한을 연장했어요";
+      desc = app.pass?.valid_until ? `이제 ${fmtEventDate(membershipEnd(app.pass)!)}까지 횟수 제한 없이 신청할 수 있어요.` : "매칭 실패 1회로 이용 기한을 1주 늘렸어요.";
+    }
+    note = app.placement_reason ? `처리 내역: ${app.placement_reason}` : undefined;
   } else if (m === "ALTERNATIVE_OFFERED") {
     title = "이번 회차는 매칭되지 않았어요";
     desc = app.pass?.type === "SINGLE"
       ? "추천 대체 일정으로 옮기거나, 이용권을 보관하거나, 환불받을 수 있어요."
       : "추천 대체 일정으로 옮기거나, 멤버십 기한을 연장할 수 있어요.";
     note = app.placement_reason ? `사유: ${app.placement_reason}` : undefined;
+    if (resolution?.status === "PENDING") action = { href: "/resolve", label: "해결 방법 고르기" };
   } else if (m === "NO_MATCH") {
     title = "매칭이 종료됐어요";
     desc = app.pass?.type === "SINGLE"
       ? "옮길 수 있는 다른 일정이 없어요. 이용권을 보관하거나 환불받을 수 있어요."
       : "옮길 수 있는 다른 일정이 없어요. 멤버십 기한을 연장할 수 있어요.";
     note = app.placement_reason ? `사유: ${app.placement_reason}` : undefined;
+    if (resolution?.status === "PENDING") action = { href: "/resolve", label: "해결 방법 고르기" };
+    else reapply = true;
   } else if (m === "TRANSFERRED") {
-    title = "일정이 이동됐어요";
-    desc = "옮긴 회차에서 다시 자동 매칭이 진행돼요.";
+    title = "일정을 옮겼어요";
+    desc = deadline ? `옮긴 회차에서 ${fmtDeadline(deadline)} 이후 자동으로 다시 매칭돼요. 기존 결제를 그대로 써요.` : "옮긴 회차에서 자동으로 다시 매칭돼요.";
+    note = app.placement_reason ?? undefined;
   } else {
     title = "운영팀이 확인하고 있어요";
     desc = "자동으로 해결되지 않은 문제가 있어 운영팀이 확인 중이에요. 처리되면 알려 드릴게요.";
@@ -197,5 +227,10 @@ function describe(app: ApplicationView) {
     }
   }
 
-  return { steps, title, desc, note, action, cancel, cancelClosed, reapply, passText };
+  // 일정을 옮긴 신청은 옮긴 회차만 신청 내용으로 보여 주고, 원래 회차는 이전 회차로 따로 표시한다
+  const moved = m === "TRANSFERRED";
+  const slots = moved ? app.slots.filter((s) => s.status === "OPEN") : app.slots;
+  const pastSlots = moved ? app.slots.filter((s) => s.status !== "OPEN") : [];
+
+  return { steps, title, desc, note, action, cancel, cancelClosed, reapply, passText, slots, pastSlots };
 }

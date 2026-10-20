@@ -93,7 +93,7 @@ export function BottomNav({ current, chatHref }: { current: "home" | "chat" | "h
   const items: { key: keyof typeof icons; label: string; href?: string; hint?: string }[] = [
     { key: "home", label: "홈", href: "/home" },
     { key: "chat", label: "단체방", href: chatHref, hint: "매칭이 확정되면 열려요" },
-    { key: "history", label: "참가 이력", hint: "준비 중이에요" },
+    { key: "history", label: "참가 이력", href: "/history" },
     { key: "me", label: "내 정보", href: "/profile" },
   ];
   return (

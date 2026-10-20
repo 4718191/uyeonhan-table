@@ -178,6 +178,10 @@ async function execute(
     byTable.set(m.table_id, [...(byTable.get(m.table_id) ?? []), app.profile_id]);
   }
   for (const ids of byTable.values()) for (let i = 0; i < ids.length; i++) for (let j = i + 1; j < ids.length; j++) rel.met.add(pairKey(ids[i], ids[j]));
+  // 서로 "또 만나고 싶어요"를 고른 사이는 이전 만남 감점을 하지 않는다 (FDB-04 → 다음 매칭 반영)
+  const { data: wants } = await db.from("person_preferences").select("from_profile, to_profile").eq("kind", "WANT_AGAIN");
+  const wantSet = new Set((wants ?? []).map((w) => `${w.from_profile}>${w.to_profile}`));
+  for (const w of wants ?? []) if (wantSet.has(`${w.to_profile}>${w.from_profile}`)) rel.met.delete(pairKey(w.from_profile, w.to_profile));
 
   // ── 3. 테이블 구성 ──
   const plan = planBatch(people, slots.map((s) => ({ id: s.id, capacity: s.capacity })), weights, rel);

@@ -67,6 +67,12 @@ export async function getLatestApplication(db: SupabaseClient, profileId: string
   return data ? toView(data as Row) : null;
 }
 
+/** 내 신청 전체 (최근 순) */
+export async function getApplications(db: SupabaseClient, profileId: string) {
+  const { data } = await db.from("applications").select(SELECT).eq("profile_id", profileId).order("created_at", { ascending: false }).limit(50);
+  return (data ?? []).map((r) => toView(r as Row));
+}
+
 export async function getApplication(db: SupabaseClient, id: string) {
   const { data } = await db.from("applications").select(SELECT).eq("id", id).maybeSingle();
   return data ? toView(data as Row) : null;

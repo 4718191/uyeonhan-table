@@ -185,6 +185,11 @@ function describe(app: ApplicationView, resolution: { status: string; choice: st
     desc = slot ? `${fmtEventDate(slot.event_date)} ${fmtTime(slot.start_time)} · ${REGIONS[slot.region as RegionCode]}` : "확정된 날짜와 식당을 확인해 주세요.";
     note = "식당과 함께할 분들을 확인하고, 단체방에서 인사해 보세요.";
     action = { href: "/table", label: "매칭 결과 보기" };
+    if (app.attendance_status === "ATTENDED") {
+      title = "참석 완료";
+      note = "식사는 즐거우셨나요? 피드백은 다음 매칭에 반영돼요.";
+      action = { href: "/feedback", label: "피드백 남기기" };
+    }
   } else if ((m === "ALTERNATIVE_OFFERED" || m === "NO_MATCH") && resolution?.status === "DONE") {
     // 매칭 실패 해결을 마친 상태 (보관·환불·기한 연장)
     reapply = true;

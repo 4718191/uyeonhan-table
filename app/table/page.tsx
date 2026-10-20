@@ -6,10 +6,12 @@ import { getMyTable } from "@/lib/table";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { todayKST } from "@/lib/time";
 import { CancelAttendance } from "./CancelAttendance";
+import { CheckInButton } from "./CheckInButton";
+import { DEMO_MODE } from "@/lib/demo";
 import { mapLink } from "@/lib/map";
 import { REGIONS, type RegionCode } from "@/lib/constants";
 import { fmtEventDate, fmtTime } from "@/lib/time";
-import { BottomNav, Card, Screen, TopBar, btnPrimary } from "@/components/mobile";
+import { BottomNav, Card, Screen, TopBar, btnPrimary, btnSecondary } from "@/components/mobile";
 
 // P-7 매칭 확정 상세: 날짜·시간·식당·예약명·함께할 사람(제한된 소개)·단체방 입장
 export default async function TablePage() {
@@ -23,7 +25,11 @@ export default async function TablePage() {
   const me = table.members.find((m) => m.me);
   const shared = [...new Set(others.flatMap((o) => o.interests.filter((i) => me?.interests.includes(i))))];
   const sameDay = table.slot.event_date === todayKST();
-  const canCancel = app.attendance_status === "SCHEDULED" && table.slot.event_date >= todayKST();
+  const slot = app.slots.find((s) => s.id === app.confirmed_slot_id);
+  const closed = slot?.status === "CLOSED";
+  const canCancel = !closed && app.attendance_status === "SCHEDULED" && table.slot.event_date >= todayKST();
+  const canCheckIn = !closed && app.application_status === "SUBMITTED" && app.attendance_status === "SCHEDULED" && (DEMO_MODE || sameDay);
+  const { data: fb } = await supabase.from("feedbacks").select("id").eq("table_id", table.tableId).eq("profile_id", profile.id).maybeSingle();
   // 대화 콘텐츠 (CON-01): 행사 시작 시각에 단체방에 게시된 것을 여기서도 보여 준다
   const { data: content } = table.roomId
     ? await createAdminClient().from("chat_messages").select("body").eq("room_id", table.roomId).eq("kind", "CONTENT").limit(1).maybeSingle()
@@ -54,7 +60,14 @@ export default async function TablePage() {
             <dt className="text-stone-600">예약명</dt><dd>우연한 식탁 {table.tableNo}번 테이블</dd>
             <dt className="text-stone-600">인원</dt><dd>{table.members.length}명</dd>
           </dl>
-          {table.roomId && <Link href="/chat" className={btnPrimary}>단체방 입장</Link>}
+          {canCheckIn && <CheckInButton applicationId={app.id} />}
+          {canCheckIn && DEMO_MODE && !sameDay && <p className="text-xs text-stone-600">시연 모드라 모임 날짜 전에도 체크인할 수 있어요. 실제로는 모임 당일에만 열려요.</p>}
+          {app.attendance_status === "ATTENDED" && (
+            fb ? <p className="text-sm font-semibold">체크인 완료 · 피드백을 남겨 주셔서 고마워요.</p>
+              : <Link href="/feedback" className={btnPrimary}>체크인 완료 · 피드백 남기기</Link>
+          )}
+          {closed && app.attendance_status === "SCHEDULED" && <p className="text-sm text-stone-600">체크인 기록이 없어 운영팀이 참석 여부를 확인하고 있어요.</p>}
+          {table.roomId && <Link href="/chat" className={app.attendance_status === "ATTENDED" || canCheckIn ? btnSecondary : btnPrimary}>단체방 입장</Link>}
         </Card>
 
         <Card>

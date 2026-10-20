@@ -1,5 +1,6 @@
 import "server-only";
 import { runMatching } from "@/modules/matching/run";
+import { runPostContent, runRemind } from "@/modules/events/jobs";
 
 // 예약 작업 실행기 (시스템_설계.md 3장)
 // Vercel Cron과 운영자 "지금 실행" 버튼이 같은 함수를 호출한다.
@@ -25,6 +26,10 @@ export async function runJob(job: JobName, trigger: JobTrigger): Promise<JobResu
     const r = await runMatching(trigger);
     return { job, ok: r.ok, message: r.message };
   }
-  // TODO(10/20): remind, post-content, close-event
+  if (job === "remind" || job === "post-content") {
+    const r = await (job === "remind" ? runRemind : runPostContent)(trigger);
+    return { job, ok: r.ok, message: r.message };
+  }
+  // TODO: close-event (체크인·피드백 태스크에서 구현)
   return { job, ok: false, message: `${JOB_LABELS[job]}: 아직 구현 전입니다 (trigger=${trigger}).` };
 }

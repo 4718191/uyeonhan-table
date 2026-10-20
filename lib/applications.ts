@@ -77,6 +77,13 @@ export function isOngoing(app: ApplicationView | null) {
   return !!app && app.application_status === "SUBMITTED" && (ACTIVE_MATCH as readonly string[]).includes(app.match_status);
 }
 
+/** 단체방을 쓸 수 있는지: 확정된 신청 (당일 취소자는 행사 당일 단체방을 나갈 수 없어 그대로 둔다) */
+export function hasChat(app: ApplicationView | null) {
+  if (!app || app.match_status !== "CONFIRMED") return false;
+  if (app.application_status === "SUBMITTED") return true;
+  return app.slots.some((s) => s.id === app.confirmed_slot_id && s.event_date === todayKST());
+}
+
 /** 다음 마감 시각: 아직 지나지 않은 후보 회차 마감 중 가장 이른 것 */
 export function nextDeadline(app: ApplicationView) {
   const now = Date.now();

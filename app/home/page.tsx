@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { requireParticipant } from "@/lib/auth";
-import { getLatestApplication, membershipEnd, nextDeadline, type ApplicationView } from "@/lib/applications";
+import { getLatestApplication, hasChat, membershipEnd, nextDeadline, type ApplicationView } from "@/lib/applications";
 import { REGIONS, type RegionCode } from "@/lib/constants";
 import { PASS_LABELS, PAYMENT_LABELS, won } from "@/lib/labels";
-import { fmtDeadline, fmtEventDate, fmtTime } from "@/lib/time";
+import { fmtDeadline, fmtEventDate, fmtTime, todayKST } from "@/lib/time";
 import { BottomNav, Card, Screen, btnPrimary } from "@/components/mobile";
 import { CancelButton } from "./CancelButton";
 
@@ -112,7 +112,7 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
           </ul>
         </Card>
       </div>
-      <BottomNav current="home" chatHref={app?.match_status === "CONFIRMED" ? "/chat" : undefined} />
+      <BottomNav current="home" chatHref={hasChat(app) ? "/chat" : undefined} />
     </Screen>
   );
 }
@@ -149,7 +149,15 @@ function describe(app: ApplicationView, resolution: { status: string; choice: st
   let cancelClosed: string | undefined;
   let reapply = false;
 
-  if (canceled) {
+  if (canceled && app.attendance_status === "CANCELED_LATE") {
+    // 확정 후 취소: 환불 없음
+    title = "참석을 취소했어요";
+    desc = "매칭 마감 이후 취소라 환불되지 않아요.";
+    note = app.slots.some((s) => s.id === app.confirmed_slot_id && s.event_date === todayKST())
+      ? "당일 취소는 노쇼와 같이 이용 제한 검토 대상이에요."
+      : undefined;
+    reapply = true;
+  } else if (canceled) {
     title = "신청이 취소됐어요";
     desc = app.payment_status === "REFUNDED" && app.payment?.refunded_amount
       ? `${won(app.payment.refunded_amount)}을 모의 환불했어요.`

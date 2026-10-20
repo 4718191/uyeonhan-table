@@ -3,6 +3,9 @@ import { redirect } from "next/navigation";
 import { requireParticipant } from "@/lib/auth";
 import { getLatestApplication } from "@/lib/applications";
 import { getMyTable } from "@/lib/table";
+import { createAdminClient } from "@/lib/supabase/admin";
+import { todayKST } from "@/lib/time";
+import { CancelAttendance } from "./CancelAttendance";
 import { mapLink } from "@/lib/map";
 import { REGIONS, type RegionCode } from "@/lib/constants";
 import { fmtEventDate, fmtTime } from "@/lib/time";
@@ -19,6 +22,12 @@ export default async function TablePage() {
   const others = table.members.filter((m) => !m.me);
   const me = table.members.find((m) => m.me);
   const shared = [...new Set(others.flatMap((o) => o.interests.filter((i) => me?.interests.includes(i))))];
+  const sameDay = table.slot.event_date === todayKST();
+  const canCancel = app.attendance_status === "SCHEDULED" && table.slot.event_date >= todayKST();
+  // 대화 콘텐츠 (CON-01): 행사 시작 시각에 단체방에 게시된 것을 여기서도 보여 준다
+  const { data: content } = table.roomId
+    ? await createAdminClient().from("chat_messages").select("body").eq("room_id", table.roomId).eq("kind", "CONTENT").limit(1).maybeSingle()
+    : { data: null };
 
   return (
     <Screen>
@@ -68,12 +77,25 @@ export default async function TablePage() {
         </Card>
 
         <Card>
+          <h2 className="text-base font-bold">대화 콘텐츠</h2>
+          {content ? (
+            <p className="whitespace-pre-line text-sm leading-relaxed">{content.body}</p>
+          ) : (
+            <p className="text-sm text-stone-600">
+              우리 테이블의 공통 관심사와 대화 성향에 맞춘 대화 주제와 아이스브레이킹 게임이 모임 당일 {fmtTime(table.slot.start_time)}에 단체방에 올라와요.
+            </p>
+          )}
+        </Card>
+
+        <Card>
           <h2 className="text-base font-bold">취소·노쇼 정책</h2>
           <ul className="flex list-disc flex-col gap-1 pl-5 text-[13px] leading-relaxed">
             <li>매칭 마감 이후 취소는 환불되지 않아요.</li>
             <li>당일 취소와 노쇼는 이용 제한 대상이에요.</li>
             <li>행사 당일에는 단체방을 나갈 수 없어요. 지각·변경 연락은 단체방으로 해 주세요.</li>
           </ul>
+          {canCancel && <CancelAttendance applicationId={app.id} sameDay={sameDay} />}
+          {app.attendance_status === "CANCELED_LATE" && <p className="text-sm font-semibold">참석을 취소했어요. (당일 취소, 이용 제한 검토 대상)</p>}
         </Card>
       </div>
       <BottomNav current="home" chatHref="/chat" />

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { requireProfile } from "@/lib/auth";
 import { signOut } from "@/app/login/actions";
-import { getActiveMembership, getLatestApplication, membershipEnd } from "@/lib/applications";
+import { getActiveMembership, getLatestApplication, hasChat, membershipEnd } from "@/lib/applications";
 import { PASS_LABELS } from "@/lib/labels";
 import { fmtEventDate } from "@/lib/time";
 import { BottomNav, Card, Screen, TopBar, btnPrimary } from "@/components/mobile";
@@ -67,7 +67,7 @@ export default async function ProfilePage({ searchParams }: { searchParams: Prom
           <button className="min-h-11 text-sm text-stone-600 underline">로그아웃</button>
         </form>
       </div>
-      <BottomNav current="me" chatHref={latest?.match_status === "CONFIRMED" ? "/chat" : undefined} />
+      <BottomNav current="me" chatHref={hasChat(latest) ? "/chat" : undefined} />
     </Screen>
   );
 }

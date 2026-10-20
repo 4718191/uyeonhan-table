@@ -34,7 +34,7 @@ export default async function MonitorPage() {
 
   const { data: tables } = latest
     ? await supabase.from("dining_tables")
-        .select("id, table_no, size, total_score, status, scores, slot_id, confirmed_at, event_slots(event_date, start_time, region), venue_availability(venues(name)), table_members(applications(placement_reason, reallocation_count, profiles(name, birth_year, gender, mbti, interests, wanted_traits)))")
+        .select("id, table_no, size, total_score, status, scores, slot_id, confirmed_at, event_slots(event_date, start_time, region), venue_availability(venues(name)), table_members(active, applications(placement_reason, reallocation_count, profiles(name, birth_year, gender, mbti, interests, wanted_traits)))")
         .eq("match_run_id", latest.id).order("table_no")
     : { data: [] };
   const bySlot = new Map<string, typeof tables>();
@@ -137,7 +137,7 @@ type Prof = { name: string; birth_year: number | null; gender: string | null; mb
 type TableRow = {
   id: string; table_no: number | null; size: number; total_score: number | null; status: string; confirmed_at: string | null;
   scores: { age?: number; gender?: number; mbti?: number; interest?: number; wanted?: number; newPeople?: number; step?: number; ageGap?: number; metPairs?: number; conflicts?: number; verified?: boolean } | null;
-  venue_availability: unknown; table_members: { applications: unknown }[];
+  venue_availability: unknown; table_members: { active: boolean; applications: unknown }[];
 };
 
 const PARTS: [key: "age" | "gender" | "mbti" | "interest" | "wanted" | "newPeople", label: string, w: string][] = [
@@ -148,7 +148,7 @@ const PARTS: [key: "age" | "gender" | "mbti" | "interest" | "wanted" | "newPeopl
 // 7.2 매칭 결과 표시: 테이블 하나를 펼치면 구성 근거(연령·성비·MBTI·관심사·조건 충족·이전 만남·충돌·점수·재배치·확정 시각)를 보여 준다
 function TableDetail({ t, weights }: { t: TableRow; weights: Record<string, number> }) {
   const venue = one<{ name: string }>(one<{ venues: unknown }>(t.venue_availability)?.venues);
-  const members = t.table_members.map((m) => {
+  const members = t.table_members.filter((m) => m.active).map((m) => {
     const a = one<Member>(m.applications);
     return a ? { ...a, p: one<Prof>(a.profiles) } : null;
   }).filter((m): m is Member & { p: Prof | null } => !!m);
@@ -182,7 +182,7 @@ function TableDetail({ t, weights }: { t: TableRow; weights: Record<string, numb
         <span>{t.size}명</span>
         <span className="whitespace-nowrap">{t.total_score}점</span>
         <span className="whitespace-nowrap">{venue?.name ?? "식당 미배정"}</span>
-        <Badge tone={t.status === "CONFIRMED" ? "solid" : "line"}>{t.status === "CONFIRMED" ? "자동 확정" : "운영 확인 필요"}</Badge>
+        <Badge tone={t.status === "CONFIRMED" ? "solid" : t.status === "DISSOLVED" ? "muted" : "line"}>{t.status === "CONFIRMED" ? "자동 확정" : t.status === "DISSOLVED" ? "취소로 해제" : "운영 확인 필요"}</Badge>
         <span className="text-xs text-stone-600">{members.map((m) => m.p?.name).filter(Boolean).join(", ")}</span>
       </summary>
       <div className="grid gap-4 border-t border-stone-300 p-3 lg:grid-cols-2">

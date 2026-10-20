@@ -32,6 +32,13 @@ export const MAX_AGE_GAP = 8;
 
 export const pairKey = (a: string, b: string) => (a < b ? `${a}|${b}` : `${b}|${a}`);
 
+/** 서로 "또 만나고 싶어요"를 고른 사이는 이전 만남(met)에서 빼서 감점하지 않는다 (FDB-04 → 다음 매칭 반영) */
+export function applyMutualWantAgain(met: Set<string>, wants: { from_profile: string; to_profile: string }[]) {
+  const set = new Set(wants.map((w) => `${w.from_profile}>${w.to_profile}`));
+  for (const w of wants) if (set.has(`${w.to_profile}>${w.from_profile}`)) met.delete(pairKey(w.from_profile, w.to_profile));
+  return met;
+}
+
 function pairs<T>(xs: T[]): [T, T][] {
   const out: [T, T][] = [];
   for (let i = 0; i < xs.length; i++) for (let j = i + 1; j < xs.length; j++) out.push([xs[i], xs[j]]);

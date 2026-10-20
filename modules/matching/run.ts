@@ -6,7 +6,7 @@ import { REGIONS, type RegionCode } from "@/lib/constants";
 import { fmtDeadline, fmtEventDate, fmtTime } from "@/lib/time";
 import { mapLink } from "@/lib/map";
 import { planBatch, type PlannedTable } from "./plan";
-import { MAX_AGE_GAP, MAX_SIZE, MIN_SIZE, pairKey, type Person, type Relations, type Weights } from "./score";
+import { MAX_AGE_GAP, MAX_SIZE, MIN_SIZE, applyMutualWantAgain, pairKey, type Person, type Relations, type Weights } from "./score";
 
 // 자동 매칭 실행 (PRD 7장, MVP 3·5장). Vercel Cron(마감 시각)과 운영자 "지금 실행" 버튼이 같은 함수를 쓴다.
 // 같은 마감 시각(match_at)은 한 번만 실행된다: match_runs.run_key 유일 키 (중복 테이블·중복 단체방 방지, PRD 7.3).
@@ -180,8 +180,7 @@ async function execute(
   for (const ids of byTable.values()) for (let i = 0; i < ids.length; i++) for (let j = i + 1; j < ids.length; j++) rel.met.add(pairKey(ids[i], ids[j]));
   // 서로 "또 만나고 싶어요"를 고른 사이는 이전 만남 감점을 하지 않는다 (FDB-04 → 다음 매칭 반영)
   const { data: wants } = await db.from("person_preferences").select("from_profile, to_profile").eq("kind", "WANT_AGAIN");
-  const wantSet = new Set((wants ?? []).map((w) => `${w.from_profile}>${w.to_profile}`));
-  for (const w of wants ?? []) if (wantSet.has(`${w.to_profile}>${w.from_profile}`)) rel.met.delete(pairKey(w.from_profile, w.to_profile));
+  applyMutualWantAgain(rel.met, (wants ?? []) as { from_profile: string; to_profile: string }[]);
 
   // ── 3. 테이블 구성 ──
   const plan = planBatch(people, slots.map((s) => ({ id: s.id, capacity: s.capacity })), weights, rel);

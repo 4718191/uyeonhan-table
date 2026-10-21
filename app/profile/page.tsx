@@ -63,9 +63,12 @@ export default async function ProfilePage({ searchParams }: { searchParams: Prom
         </Card>
 
         <Link href="/profile/edit" className={btnPrimary}>회원 정보 수정</Link>
-        <form action={signOut} className="text-center">
-          <button className="min-h-11 text-sm text-stone-600 underline">로그아웃</button>
-        </form>
+        <div className="flex items-center justify-center gap-4">
+          <form action={signOut}>
+            <button className="min-h-11 text-sm text-stone-600 underline">로그아웃</button>
+          </form>
+          <Link href="/profile/withdraw" className="min-h-11 py-3 text-sm text-stone-500 underline">회원 탈퇴</Link>
+        </div>
       </div>
       <BottomNav current="me" chatHref={hasChat(latest) ? "/chat" : undefined} />
     </Screen>

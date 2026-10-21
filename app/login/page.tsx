@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useActionState } from "react";
+import { Suspense, useActionState } from "react";
+import { useSearchParams } from "next/navigation";
 import { signIn } from "./actions";
 
 export default function LoginPage() {
@@ -9,6 +10,7 @@ export default function LoginPage() {
   return (
     <main className="mx-auto flex min-h-screen max-w-md flex-col justify-center gap-6 px-6">
       <h1 className="text-2xl font-bold">로그인</h1>
+      <Suspense fallback={null}><WithdrawnNotice /></Suspense>
       <p className="text-sm text-stone-600">가입한 계정이나 시연용 테스트 계정으로 로그인해요.</p>
       <form action={action} className="flex flex-col gap-4">
         <label className="flex flex-col gap-1 text-sm font-semibold">
@@ -29,4 +31,9 @@ export default function LoginPage() {
       </p>
     </main>
   );
+}
+
+function WithdrawnNotice() {
+  const withdrawn = useSearchParams().get("withdrawn");
+  return withdrawn ? <p role="status" className="text-sm font-semibold">탈퇴가 완료됐어요. 그동안 이용해 주셔서 고마워요.</p> : null;
 }

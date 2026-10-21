@@ -8,6 +8,7 @@ const JOBS: { job: string; label: string }[] = [
   { job: "remind", label: "리마인드 발송" },
   { job: "post-content", label: "대화 콘텐츠 게시" },
   { job: "close-event", label: "행사 종료 처리" },
+  { job: "demo-reapply", label: "재참여 시뮬레이션" },
 ];
 
 export function JobButtons() {

@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "seed": "tsx --env-file=.env.local scripts/seed/seed.ts",
+    "demo:reset": "tsx --env-file=.env.local scripts/demo-reset.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

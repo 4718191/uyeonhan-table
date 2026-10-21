@@ -47,7 +47,9 @@ export default async function MonitorPage() {
       <Panel title="다음 자동 매칭">
         {nextAt ? (
           <p className="text-sm">
-            <b>{fmtDeadline(nextAt)}</b>에 자동 실행 예정 ·{" "}
+            {new Date(nextAt) > new Date()
+              ? <><b>{fmtDeadline(nextAt)}</b>에 자동 실행 예정 ·{" "}</>
+              : <><b>{fmtDeadline(nextAt)}</b> 마감이 지나 다음 자동 실행(화 24:00) 때 처리 예정 ·{" "}</>}
             {nextBatch.map((s) => `${fmtEventDate(s.event_date)} ${fmtTime(s.start_time)} ${REGIONS[s.region as RegionCode]}`).join(", ")}
           </p>
         ) : <p className="text-sm text-stone-600">매칭을 기다리는 회차가 없어요.</p>}

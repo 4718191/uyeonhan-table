@@ -2,6 +2,7 @@ import "server-only";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { REGIONS, type RegionCode } from "@/lib/constants";
 import { logStatus } from "@/lib/history";
+import { deliver } from "@/lib/delivery";
 import { fmtDeadline, fmtEventDate, fmtTime, todayKST } from "@/lib/time";
 
 // 행사 종료 처리 (FDB-01, PRD 14·15장)
@@ -57,7 +58,7 @@ export async function runCloseEvent(trigger: "CRON" | "ADMIN") {
       body: `${recs.map((s) => `${fmtEventDate(s.event_date)} ${fmtTime(s.start_time)} ${REGIONS[s.region as RegionCode]}`).join(" / ")} · 가장 빠른 신청 마감 ${fmtDeadline(recs[0].apply_deadline)}`,
       link: "/history", sent_at: now, delivery_status: "SENT" });
   }
-  for (let i = 0; i < notes.length; i += 300) await db.from("notifications").insert(notes.slice(i, i + 300));
+  await deliver(db, "notifications", notes, "행사 종료 알림");
   await logStatus(db, [
     ...slotIds.map((id) => ({ entity: "event_slot" as const, entityId: id, field: "status", from: "MATCHED", to: "CLOSED", actor: "SYSTEM" as const, reason: trigger === "CRON" ? "행사 종료" : "행사 종료 (운영자 시연 실행)" })),
     ...noShow.map((a) => ({ entity: "application" as const, entityId: a.id, field: "attendance_status", from: "SCHEDULED", to: "SCHEDULED", actor: "SYSTEM" as const, reason: "노쇼 후보: 행사 종료까지 체크인 없음 (운영자 확인 필요)" })),
@@ -88,10 +89,10 @@ async function remindFeedback(db: Db, beforeDate: string | null, now: string) {
 
   const targets = apps.filter((a) => !done.has(`${a.profile_id}:${tableOf.get(a.id)}`) && !already.has(`/feedback?app=${a.id}`));
   if (!targets.length) return 0;
-  await db.from("notifications").insert(targets.map((a) => ({
+  await deliver(db, "notifications", targets.map((a) => ({
     profile_id: a.profile_id, template_key: "FEEDBACK_REMINDER", title: "지난 모임 피드백을 기다리고 있어요",
     body: "1분이면 충분해요. 남겨 주신 평가와 선호는 다음 매칭에 반영되고, 상대에게는 공개되지 않아요. (안내는 이번 한 번만 보내요)",
-    link: `/feedback?app=${a.id}`, sent_at: now, delivery_status: "SENT",
-  })));
+    link: `/feedback?app=${a.id}`, sent_at: now,
+  })), "피드백 리마인드");
   return targets.length;
 }

@@ -2,6 +2,7 @@ import "server-only";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { REGIONS, type RegionCode } from "@/lib/constants";
 import { mapLink } from "@/lib/map";
+import { deliver } from "@/lib/delivery";
 import { addDays, fmtEventDate, fmtTime, nowTimeKST, todayKST } from "@/lib/time";
 import { contentText, tableContent } from "@/modules/content/topics";
 import { tablesOnDates, upcomingEventDates, type EventTable } from "./tables";
@@ -55,20 +56,16 @@ async function post(kind: Kind, trigger: "CRON" | "ADMIN"): Promise<EventJobResu
     room_id: t.roomId!, kind, delivery_status: "SENT",
     body: kind === "REMINDER" ? reminderText(t) : contentText(tableContent(t.members, t.no ?? 0)),
   }));
-  const { error } = await db.from("chat_messages").insert(messages);
-  if (error) {
-    // 다른 경로에서 먼저 올린 방이 있으면(유일 키 충돌) 한 방씩 다시 넣고 이미 있는 방은 건너뛴다
-    if (error.code !== "23505") return { ok: false, message: `${what} 게시 실패: ${error.message}` };
-    for (const m of messages) await db.from("chat_messages").insert(m);
-  }
+  // 실패하면 자동 재시도, 이미 올라간 방은 건너뜀, 반복 실패만 운영자 예외 (INF-08)
+  const posted = await deliver(db, "chat_messages", messages, what);
 
   const notes = targets.flatMap((t) => t.members.map((m) => kind === "REMINDER"
     ? { profile_id: m.profileId, template_key: "EVENT_REMINDER", title: "내일 우연한 식탁에서 만나요", body: `${label(t)} · ${t.venue?.name ?? ""} · 예약명 우연한 식탁 ${t.no}번 테이블`, link: "/chat", sent_at: now, delivery_status: "SENT" }
     : { profile_id: m.profileId, template_key: "EVENT_CONTENT", title: "오늘의 대화 주제가 올라왔어요", body: "단체방에서 대화 주제와 아이스브레이킹 게임을 확인해 보세요.", link: "/chat", sent_at: now, delivery_status: "SENT" }));
-  for (let i = 0; i < notes.length; i += 300) await db.from("notifications").insert(notes.slice(i, i + 300));
+  await deliver(db, "notifications", notes, `${what} 알림`);
 
   const people = targets.reduce((s, t) => s + t.members.length, 0);
-  return { ok: true, message: `${fmtEventDate(date)} 행사 ${targets.length}개 테이블(${people}명)에 ${what}를 보냈어요.` };
+  return { ok: posted.failed === 0, message: `${fmtEventDate(date)} 행사 ${targets.length}개 테이블(${people}명)에 ${what}를 보냈어요.${posted.failed ? ` 발송 실패 ${posted.failed}건은 예외 처리함에 올렸어요.` : ""}` };
 }
 
 export const runRemind = (trigger: "CRON" | "ADMIN") => post("REMINDER", trigger);
@@ -84,5 +81,5 @@ export async function ensureContentPosted(roomId: string, slot: { event_date: st
   const db = createAdminClient();
   const { data } = await db.from("chat_messages").select("id").eq("room_id", roomId).eq("kind", "CONTENT").limit(1);
   if (data?.length) return;
-  await db.from("chat_messages").insert({ room_id: roomId, kind: "CONTENT", delivery_status: "SENT", body: contentText(tableContent(members, tableNo ?? 0)) });
+  await deliver(db, "chat_messages", [{ room_id: roomId, kind: "CONTENT", body: contentText(tableContent(members, tableNo ?? 0)) }], "대화 콘텐츠");
 }

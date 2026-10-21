@@ -21,14 +21,29 @@ export default async function AttendancePage() {
     .in("confirmed_slot_id", (slots ?? []).map((s) => s.id)).not("attendance_status", "is", null).limit(2000);
   const apps = (rows ?? []) as Row[];
 
+  // 당일 취소(이용 제한 대상)와 마감 전 취소(사전 취소)를 따로 센다
+  const lateIds = apps.filter((a) => a.attendance_status === "CANCELED_LATE").map((a) => a.id);
+  const { data: sameDayHist } = lateIds.length
+    ? await supabase.from("status_history").select("entity_id").eq("field", "attendance_status").eq("to_value", "CANCELED_LATE").like("reason", "당일 취소%").in("entity_id", lateIds)
+    : { data: [] };
+  const sameDayIds = new Set((sameDayHist ?? []).map((h) => h.entity_id as string));
+  const { data: early } = await supabase.from("applications").select("application_slots(event_slots(event_date))")
+    .eq("application_status", "CANCELED").is("attendance_status", null);
+  const earlyByDate = new Map<string, number>();
+  for (const e of early ?? []) {
+    const ds = new Set(((e.application_slots as { event_slots: unknown }[]) ?? []).map((x) => one<{ event_date: string }>(x.event_slots)?.event_date).filter(Boolean) as string[]);
+    ds.forEach((d) => earlyByDate.set(d, (earlyByDate.get(d) ?? 0) + 1));
+  }
+
   // 회차(날짜)별 참석 현황
-  const byDate = new Map<string, { confirmed: number; attended: number; canceled: number; candidates: number; noShow: number; closed: boolean }>();
+  const byDate = new Map<string, { confirmed: number; attended: number; canceled: number; sameDay: number; candidates: number; noShow: number; closed: boolean }>();
   for (const a of apps) {
     const s = slotById.get(a.confirmed_slot_id!);
     if (!s) continue;
-    const c = byDate.get(s.event_date) ?? { confirmed: 0, attended: 0, canceled: 0, candidates: 0, noShow: 0, closed: s.status === "CLOSED" };
+    const c = byDate.get(s.event_date) ?? { confirmed: 0, attended: 0, canceled: 0, sameDay: 0, candidates: 0, noShow: 0, closed: s.status === "CLOSED" };
     c.confirmed++;
     if (a.attendance_status === "ATTENDED") c.attended++;
+    else if (a.attendance_status === "CANCELED_LATE" && sameDayIds.has(a.id)) c.sameDay++;
     else if (a.attendance_status === "CANCELED_LATE" || a.attendance_status === "CANCELED_EARLY") c.canceled++;
     else if (a.attendance_status === "NO_SHOW") c.noShow++;
     else if (a.attendance_status === "SCHEDULED" && s.status === "CLOSED" && a.application_status === "SUBMITTED") c.candidates++;
@@ -51,19 +66,19 @@ export default async function AttendancePage() {
 
       <Panel title="회차별 참석 현황">
         <table className={tableCls}>
-          <thead><tr><th>행사일</th><th>상태</th><th>확정</th><th>체크인(참석)</th><th>확정 후 취소</th><th>노쇼 후보</th><th>노쇼 확정</th></tr></thead>
+          <thead><tr><th>행사일</th><th>상태</th><th>마감 전 취소</th><th>확정</th><th>체크인(참석)</th><th>확정 후 취소</th><th>당일 취소</th><th>노쇼 후보</th><th>노쇼 확정</th></tr></thead>
           <tbody>
             {[...byDate.entries()].map(([d, c]) => (
               <tr key={d}>
                 <td className="whitespace-nowrap font-semibold">{fmtEventDate(d)}</td>
                 <td><Badge tone={c.closed ? "muted" : "line"}>{c.closed ? "종료" : "진행 예정"}</Badge></td>
-                <td>{c.confirmed}명</td><td>{c.attended}명</td><td>{c.canceled}명</td>
+                <td>{earlyByDate.get(d) ?? 0}명</td><td>{c.confirmed}명</td><td>{c.attended}명</td><td>{c.canceled}명</td><td className={c.sameDay ? "font-bold" : ""}>{c.sameDay}명</td>
                 <td className={c.candidates ? "font-bold" : ""}>{c.candidates}명</td><td>{c.noShow}명</td>
               </tr>
             ))}
           </tbody>
         </table>
-        <p className="text-xs text-stone-600">행사가 끝날 때까지 체크인하지 않은 확정자만 노쇼 후보로 올라와요. 체크인한 사람과 미리 취소한 사람은 자동으로 기록돼요.</p>
+        <p className="text-xs text-stone-600">마감 전 취소(사전 취소)는 환불돼요. 확정 후 취소는 환불이 없고, 그중 당일 취소는 노쇼와 같이 이용 제한 횟수에 들어가요. 행사가 끝날 때까지 체크인하지 않은 확정자만 노쇼 후보로 올라와요.</p>
       </Panel>
 
       <Panel title="노쇼 후보 확인" aside={<span className="text-xs text-stone-600">{candidates.length}명</span>}>

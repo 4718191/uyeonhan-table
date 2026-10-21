@@ -1,6 +1,7 @@
 import "server-only";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { REGIONS, type RegionCode } from "@/lib/constants";
+import { deliver } from "@/lib/delivery";
 import { logStatus, type StatusChange } from "@/lib/history";
 import { notify, type NotifyInput } from "@/lib/notify";
 import { fmtEventDate, fmtTime, todayKST } from "@/lib/time";
@@ -53,8 +54,8 @@ export async function cancelConfirmed(applicationId: string, profileId: string):
   }];
 
   if (sameDay) {
-    if (table.roomId) await db.from("chat_messages").insert({ room_id: table.roomId, kind: "NOTICE", delivery_status: "SENT",
-      body: `${me?.name ?? "참가자"}님이 오늘 참석을 취소했어요. 남은 분들은 예정대로 만나요.` });
+    if (table.roomId) await deliver(db, "chat_messages", [{ room_id: table.roomId, kind: "NOTICE",
+      body: `${me?.name ?? "참가자"}님이 오늘 참석을 취소했어요. 남은 분들은 예정대로 만나요.` }], "단체방 인원 변경 안내");
     await logStatus(db, changes);
     await notify(db, notes);
     return { ok: true, message: "참석을 취소했어요. 당일 취소는 환불되지 않고 이용 제한 검토 대상이에요." };
@@ -66,8 +67,8 @@ export async function cancelConfirmed(applicationId: string, profileId: string):
 
   if (remaining.length >= MIN_SIZE) {
     await db.from("dining_tables").update({ size: remaining.length }).eq("id", table.id);
-    if (table.roomId) await db.from("chat_messages").insert({ room_id: table.roomId, kind: "NOTICE", delivery_status: "SENT",
-      body: `참가자 1명이 참석을 취소했어요. ${remaining.length}명으로 예정대로 진행해요. 예약명은 그대로예요.` });
+    if (table.roomId) await deliver(db, "chat_messages", [{ room_id: table.roomId, kind: "NOTICE",
+      body: `참가자 1명이 참석을 취소했어요. ${remaining.length}명으로 예정대로 진행해요. 예약명은 그대로예요.` }], "단체방 인원 변경 안내");
     remaining.forEach((m) => notes.push({ profileId: m.profileId, key: "TABLE_CHANGED", title: "테이블 인원이 바뀌었어요", body: `${slotLabel(table.slot)} 모임은 ${remaining.length}명으로 예정대로 진행해요.`, link: "/chat" }));
     await logStatus(db, [...changes, { entity: "table", entityId: table.id, field: "size", from: String(table.members.length), to: String(remaining.length), actor: "SYSTEM", reason: "확정 후 취소, 4명 이상이라 유지" }]);
     await notify(db, notes);
@@ -77,8 +78,8 @@ export async function cancelConfirmed(applicationId: string, profileId: string):
   // 4명 미만 → 테이블 해제 후 남은 사람 자동 재배치
   await db.from("dining_tables").update({ status: "DISSOLVED", size: remaining.length }).eq("id", table.id);
   changes.push({ entity: "table", entityId: table.id, field: "status", from: "CONFIRMED", to: "DISSOLVED", actor: "SYSTEM", reason: `확정 후 취소로 ${remaining.length}명 남음 (4명 미만)` });
-  if (table.roomId) await db.from("chat_messages").insert({ room_id: table.roomId, kind: "NOTICE", delivery_status: "SENT",
-    body: `참가자가 취소해 ${remaining.length}명이 남아 이 테이블은 해제됐어요. 남은 분들은 같은 날 다른 테이블로 자동으로 옮기거나, 옮길 테이블이 없으면 다른 일정·환불을 고를 수 있게 안내해 드릴게요.` });
+  if (table.roomId) await deliver(db, "chat_messages", [{ room_id: table.roomId, kind: "NOTICE",
+    body: `참가자가 취소해 ${remaining.length}명이 남아 이 테이블은 해제됐어요. 남은 분들은 같은 날 다른 테이블로 자동으로 옮기거나, 옮길 테이블이 없으면 다른 일정·환불을 고를 수 있게 안내해 드릴게요.` }], "단체방 인원 변경 안내");
   await db.from("table_members").update({ active: false, left_at: new Date().toISOString() }).eq("table_id", table.id).eq("active", true);
 
   const result = await reallocate(db, table, remaining, changes, notes);
@@ -134,8 +135,8 @@ async function reallocate(db: Db, from: EventTable, people: EventTable["members"
       const reason = `확정 테이블(${from.no}번) 인원 부족으로 해제 → 같은 회차 ${target.no}번 테이블로 자동 재배치`;
       await db.from("applications").update({ placement_reason: reason }).eq("id", p.appId);
       changes.push({ entity: "application", entityId: p.appId, field: "table", from: String(from.no), to: String(target.no), actor: "SYSTEM", reason });
-      if (target.roomId) await db.from("chat_messages").insert({ room_id: target.roomId, kind: "NOTICE", delivery_status: "SENT",
-        body: `${p.name}님이 함께하게 됐어요. 이제 ${target.members.length}명이에요. 장소·시간·예약명은 그대로예요.` });
+      if (target.roomId) await deliver(db, "chat_messages", [{ room_id: target.roomId, kind: "NOTICE",
+        body: `${p.name}님이 함께하게 됐어요. 이제 ${target.members.length}명이에요. 장소·시간·예약명은 그대로예요.` }], "단체방 인원 변경 안내");
       notes.push({ profileId: p.profileId, key: "TABLE_MOVED", title: "같은 날 다른 테이블로 옮겼어요",
         body: `${slotLabel(from.slot)} · ${target.venue?.name ?? ""} · 예약명 우연한 식탁 ${target.no}번 테이블. 단체방에서 새로운 분들과 인사해 보세요.`, link: "/table" });
       target.members.forEach((m) => m.appId !== p.appId && notes.push({ profileId: m.profileId, key: "TABLE_CHANGED", title: "새로운 분이 함께해요", body: `${p.name}님이 테이블에 합류했어요.`, link: "/chat" }));

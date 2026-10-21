@@ -11,8 +11,8 @@ export async function GET(_: Request, { params }: { params: Promise<{ kind: stri
   if (kind === "applicants") {
     const rows = await loadApplicants(supabase);
     csv = toCsv(
-      ["신청ID", "이름", "연락처", "출생연도", "성별", "신청 시각", "희망 날짜", "희망 지역", "확정 회차", "이용권", "신청 상태", "결제 상태", "결제 금액", "환불 금액", "매칭 상태", "참석 상태", "배치 사유", "이전 참석", "노쇼", "신고받음", "이용 제한"],
-      rows.map((r) => [r.id, r.name, r.phone, r.birthYear, r.gender, r.created, r.dates, r.regions, r.confirmed, r.pass, r.application, r.payment, r.amount, r.refunded, r.match, r.attendance, r.reason, r.history.attended, r.history.noShow, r.history.reported, r.restriction]),
+      ["신청ID", "이름", "연락처", "출생연도", "성별", "신청 시각", "희망 날짜", "희망 지역", "확정 회차", "이용권", "신청 상태", "결제 상태", "결제 금액", "환불 금액", "매칭 상태", "참석 상태", "배치 사유", "이전 참석", "노쇼", "신고받음", "이용 제한", "이용권 사용", "프로필"],
+      rows.map((r) => [r.id, r.name, r.phone, r.birthYear, r.gender, r.created, r.dates, r.regions, r.confirmed, r.pass, r.application, r.payment, r.amount, r.refunded, r.match, r.attendance, r.reason, r.history.attended, r.history.noShow, r.history.reported, r.restriction, r.passUse, r.profile]),
     );
   } else if (kind === "tables") {
     const { data } = await supabase.from("dining_tables")

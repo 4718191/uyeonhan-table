@@ -37,6 +37,7 @@ export default async function AdminPage() {
     supabase.from("event_slots").select("id").eq("status", "CLOSED"),
     supabase.from("event_slots").select("id, event_date, status").order("event_date"),
   ]);
+  const { data: runs } = await supabase.from("match_runs").select("slot_ids, candidate_count, confirmed_count, reallocated_count, failed_count");
 
   // 신청 완료 이상(이후 취소한 신청 포함)과 그중 결제를 마친 신청
   const submitted = apps.filter((a) => a.application_status !== "DRAFT");
@@ -70,8 +71,11 @@ export default async function AdminPage() {
   const perDate = dates.map((d) => {
     const mine = apps.filter((a) => ((a.application_slots as { event_slots: unknown }[]) ?? []).some((x) => one<{ event_date: string }>(x.event_slots)?.event_date === d));
     const conf = apps.filter((a) => a.match_status === "CONFIRMED" && (slots ?? []).some((s) => s.id === a.confirmed_slot_id && s.event_date === d));
+    // 이 날짜를 대상으로 한 자동 매칭 실행 결과
+    const ids = new Set((slots ?? []).filter((s) => s.event_date === d).map((s) => s.id));
+    const run = (runs ?? []).find((r) => ((r.slot_ids as string[]) ?? []).some((id) => ids.has(id)));
     return {
-      d, status: statusOf(d), applied: mine.length,
+      d, status: statusOf(d), applied: mine.length, run,
       paid: mine.filter((a) => a.payment_status !== "PENDING").length,
       confirmed: conf.length, attended: conf.filter((a) => a.attendance_status === "ATTENDED").length,
     };
@@ -93,13 +97,18 @@ export default async function AdminPage() {
 
       <Panel title="회차별 현황">
         <table className={tableCls}>
-          <thead><tr><th>행사일</th><th>상태</th><th>신청</th><th>결제 완료</th><th>자동 확정</th><th>체크인</th></tr></thead>
+          <thead><tr><th>행사일</th><th>상태</th><th>신청</th><th>결제 완료</th><th>매칭 후보</th><th>자동 확정</th><th>다른 날짜로 재배치</th><th>매칭 실패</th><th>체크인</th></tr></thead>
           <tbody>
             {perDate.map((r) => (
               <tr key={r.d}>
                 <td className="whitespace-nowrap font-semibold">{fmtEventDate(r.d)}</td>
                 <td><Badge tone={r.status === "모집 중" ? "line" : r.status === "종료" ? "muted" : "solid"}>{r.status}</Badge></td>
-                <td>{r.applied}명</td><td>{r.paid}명</td><td>{r.confirmed}명</td><td>{r.attended}명</td>
+                <td>{r.applied}명</td><td>{r.paid}명</td>
+                <td>{r.run ? `${r.run.candidate_count ?? 0}명` : "-"}</td>
+                <td>{r.confirmed}명</td>
+                <td>{r.run ? `${r.run.reallocated_count ?? 0}명` : "-"}</td>
+                <td>{r.run ? `${r.run.failed_count ?? 0}명` : "-"}</td>
+                <td>{r.attended}명</td>
               </tr>
             ))}
           </tbody>

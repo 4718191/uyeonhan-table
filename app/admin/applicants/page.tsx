@@ -2,6 +2,7 @@ import Link from "next/link";
 import { requireAdmin } from "@/lib/auth";
 import { loadApplicants } from "@/lib/admin-data";
 import { REGIONS } from "@/lib/constants";
+import { fmtEventDate } from "@/lib/time";
 import { won } from "@/lib/labels";
 import { Badge, Panel, btnCls, btnLineCls, inputCls, tableCls } from "@/components/admin";
 
@@ -20,6 +21,7 @@ export default async function ApplicantsPage({ searchParams }: { searchParams: P
     (!sp.pay || PAY_FILTER[sp.pay]?.includes(r.raw.payment)) &&
     (!sp.match || MATCH_FILTER[sp.match]?.includes(r.raw.match)) &&
     (!sp.region || r.raw.regions.includes(sp.region)) &&
+    (!sp.date || r.raw.dates.includes(sp.date)) &&
     (!sp.canceled || r.raw.application === "CANCELED"));
 
   const count = (f: (r: typeof all[number]) => boolean) => all.filter(f).length;
@@ -33,6 +35,7 @@ export default async function ApplicantsPage({ searchParams }: { searchParams: P
     ["자동 환불 실패", `${count((r) => r.raw.payment === "REFUND_FAILED")}건`],
   ];
   const shown = rows.slice(0, 300);
+  const allDates = [...new Set(all.flatMap((r) => r.raw.dates))].sort();
 
   return (
     <>
@@ -44,15 +47,14 @@ export default async function ApplicantsPage({ searchParams }: { searchParams: P
       <Panel title="신청자 목록" aside={
         <span className="flex gap-2">
           {/* 파일 다운로드라 페이지 이동(Link)이 아니라 일반 링크를 쓴다 */}
-          {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
           <a href="/admin/export/applicants" download className={btnLineCls + " inline-flex items-center"}>참가자 CSV</a>
-          {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
           <a href="/admin/export/tables" download className={btnLineCls + " inline-flex items-center"}>테이블 결과 CSV</a>
         </span>}>
-        <form className="grid grid-cols-2 gap-2 md:grid-cols-6">
+        <form className="grid grid-cols-2 gap-2 md:grid-cols-7">
           <input name="q" defaultValue={sp.q} placeholder="이름 검색" className={inputCls} />
           <select name="pay" defaultValue={sp.pay ?? ""} className={inputCls}><option value="">결제 상태 전체</option>{Object.keys(PAY_FILTER).map((k) => <option key={k}>{k}</option>)}</select>
           <select name="match" defaultValue={sp.match ?? ""} className={inputCls}><option value="">매칭 상태 전체</option>{Object.keys(MATCH_FILTER).map((k) => <option key={k}>{k}</option>)}</select>
+          <select name="date" defaultValue={sp.date ?? ""} className={inputCls}><option value="">희망 날짜 전체</option>{allDates.map((d) => <option key={d} value={d}>{fmtEventDate(d)}</option>)}</select>
           <select name="region" defaultValue={sp.region ?? ""} className={inputCls}><option value="">지역 전체</option>{Object.entries(REGIONS).map(([k, v]) => <option key={k} value={k}>{v}</option>)}</select>
           <label className="flex items-center gap-2 text-sm"><input type="checkbox" name="canceled" value="1" defaultChecked={!!sp.canceled} className="h-4 w-4 accent-stone-900" />취소만</label>
           <span className="flex gap-2"><button className={btnCls}>검색</button><Link href="/admin/applicants" className={btnLineCls + " inline-flex items-center"}>초기화</Link></span>
@@ -64,10 +66,15 @@ export default async function ApplicantsPage({ searchParams }: { searchParams: P
             <tbody>
               {shown.map((r) => (
                 <tr key={r.id}>
-                  <td className="whitespace-nowrap font-semibold">{r.name}<div className="text-xs font-normal text-stone-600">{r.created}</div></td>
+                  <td className="min-w-[140px] font-semibold">
+                    <details><summary className="cursor-pointer whitespace-nowrap">{r.name}</summary>
+                      <p className="mt-1 max-w-[280px] text-xs font-normal text-stone-700">{r.phone && `연락처 ${r.phone} / `}{r.profile || "프로필 정보 없음"}</p>
+                    </details>
+                    <div className="text-xs font-normal text-stone-600">{r.created}</div>
+                  </td>
                   <td className="whitespace-nowrap">{r.birthYear} · {r.gender}</td>
                   <td className="min-w-[160px] text-xs">{r.dates}<br />{r.regions}</td>
-                  <td className="whitespace-nowrap text-xs">{r.pass}<br /><Badge tone={r.raw.payment === "PAID" ? "solid" : r.raw.payment.startsWith("REFUND") ? "line" : "muted"}>{r.payment}</Badge>{r.refunded ? ` ${won(r.refunded)}` : ""}</td>
+                  <td className="whitespace-nowrap text-xs">{r.pass}{r.passUse && <div className="text-stone-600">{r.passUse}</div>}<Badge tone={r.raw.payment === "PAID" ? "solid" : r.raw.payment.startsWith("REFUND") ? "line" : "muted"}>{r.payment}</Badge>{r.refunded ? ` ${won(r.refunded)}` : ""}</td>
                   <td className="min-w-[160px] text-xs"><b>{r.match}</b>{r.reason && <div className="text-stone-600">{r.reason}</div>}</td>
                   <td className="whitespace-nowrap text-xs">{r.confirmed || "-"}<br />{r.attendance}</td>
                   <td className="whitespace-nowrap text-xs">참석 {r.history.attended} · 노쇼 {r.history.noShow} · 신고 {r.history.reported}</td>

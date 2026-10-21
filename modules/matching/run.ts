@@ -6,6 +6,7 @@ import { REGIONS, type RegionCode } from "@/lib/constants";
 import { fmtDeadline, fmtEventDate, fmtTime } from "@/lib/time";
 import { mapLink } from "@/lib/map";
 import { isRestricted } from "@/lib/restrictions";
+import { deliver } from "@/lib/delivery";
 import { planBatch, type PlannedTable } from "./plan";
 import { MAX_AGE_GAP, MAX_SIZE, MIN_SIZE, applyMutualWantAgain, pairKey, type Person, type Relations, type Weights } from "./score";
 
@@ -282,7 +283,7 @@ async function execute(
   const notices = confirmedTables.map((t) => ({
     room_id: roomByTable.get(t.id)!, kind: "NOTICE", body: noticeText(slotById.get(t.slotId)!, t), delivery_status: "SENT",
   }));
-  if (notices.length) await must(db.from("chat_messages").insert(notices).select("id"), "확정 안내 게시");
+  await deliver(db, "chat_messages", notices, "확정 공지");
 
   // 확정된 사람
   const tableUpdates: (() => PromiseLike<unknown>)[] = [];
@@ -376,7 +377,7 @@ async function execute(
   if (full.length) await db.from("venue_availability").update({ reservation_status: "RESERVED" }).in("id", full);
 
   if (exceptions.length) await db.from("exception_cases").insert(exceptions);
-  for (const rows of chunk(notes, 300)) await db.from("notifications").insert(rows);
+  await deliver(db, "notifications", notes, "매칭 결과 알림");
   for (const rows of chunk(changes, 300)) await db.from("status_history").insert(rows);
 
   const reasons: Record<string, number> = {};

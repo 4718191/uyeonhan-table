@@ -20,6 +20,23 @@ export default async function SafetyPage() {
     supabase.from("person_preferences").select("*", { count: "exact", head: true }).eq("kind", "WANT_AGAIN"),
     supabase.from("user_blocks").select("*", { count: "exact", head: true }),
   ]);
+  // 개인별: 비선호·차단·신고를 받은 사람 (누가 했는지는 운영자에게도 목록으로만 보여 준다)
+  const [{ data: avoidRows }, { data: blockRows }, { data: reportRows }] = await Promise.all([
+    supabase.from("person_preferences").select("to_profile").eq("kind", "AVOID"),
+    supabase.from("user_blocks").select("blocked"),
+    supabase.from("safety_reports").select("reported"),
+  ]);
+  const recv = new Map<string, { avoid: number; block: number; report: number }>();
+  const bump = (id: string, k: "avoid" | "block" | "report") => { const c = recv.get(id) ?? { avoid: 0, block: 0, report: 0 }; c[k]++; recv.set(id, c); };
+  (avoidRows ?? []).forEach((r) => bump(r.to_profile, "avoid"));
+  (blockRows ?? []).forEach((r) => bump(r.blocked, "block"));
+  (reportRows ?? []).forEach((r) => bump(r.reported, "report"));
+  const { data: recvProfiles } = recv.size
+    ? await supabase.from("profiles").select("id, name, restriction_level, restricted_until").in("id", [...recv.keys()])
+    : { data: [] };
+  const persons = (recvProfiles ?? []).map((p) => ({ ...p, ...recv.get(p.id)! }))
+    .sort((a, b) => b.report * 3 + b.block * 2 + b.avoid - (a.report * 3 + a.block * 2 + a.avoid));
+
   const open = (reports ?? []).filter((r) => r.status === "OPEN");
   const done = (reports ?? []).filter((r) => r.status !== "OPEN");
   const avg = (k: "mood" | "conversation" | "venue" | "rejoin_intent" | "recommend_intent") =>
@@ -45,6 +62,25 @@ export default async function SafetyPage() {
           사람별 선호(비공개): 또 만나고 싶어요 <b>{want ?? 0}건</b> · 만나고 싶지 않아요 <b>{avoid ?? 0}건</b> · 차단 <b>{blocks ?? 0}건</b>.
           만나고 싶지 않아요·차단·신고 관계는 다음 매칭에서 같은 테이블에 배정되지 않아요.
         </p>
+      </Panel>
+
+      <Panel title="개인별 비선호·차단·신고" aside={<span className="text-xs text-stone-600">받은 사람 {persons.length}명</span>}>
+        {persons.length === 0 ? <p className="text-sm text-stone-600">없어요.</p> : (
+          <table className={tableCls}>
+            <thead><tr><th>참가자</th><th>만나고 싶지 않아요</th><th>차단</th><th>신고</th><th>현재 제한</th></tr></thead>
+            <tbody>
+              {persons.map((p) => (
+                <tr key={p.id}>
+                  <td className="whitespace-nowrap font-semibold">{p.name}</td>
+                  <td>{p.avoid}회</td><td>{p.block}회</td>
+                  <td>{p.report ? <Badge tone="solid">{p.report}회</Badge> : "0회"}</td>
+                  <td className="text-xs">{restrictionText(p)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
+        <p className="text-xs text-stone-600">받은 사람 기준으로만 모아 보여요. 비선호·차단은 상대에게 알리지 않고, 해당 두 사람은 다음 매칭부터 같은 테이블에 배정되지 않아요. 반복되면 신고 검토나 이용 제한을 판단하는 근거로 써요.</p>
       </Panel>
 
       <Panel title="미처리 신고" aside={<span className="text-xs text-stone-600">{open.length}건</span>}>

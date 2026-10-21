@@ -16,6 +16,7 @@ export type ApplicantRow = {
   dates: string; regions: string; confirmed: string; pass: string;
   application: string; payment: string; amount: number; refunded: number | null; match: string; attendance: string; reason: string;
   history: { attended: number; noShow: number; reported: number }; restriction: string;
+  profile: string; passUse: string;
   raw: { payment: string; match: string; attendance: string | null; application: string; regions: string[]; dates: string[] };
 };
 
@@ -23,7 +24,7 @@ export async function loadApplicants(db: SupabaseClient): Promise<ApplicantRow[]
   const rows: Record<string, unknown>[] = [];
   for (let from = 0; ; from += 1000) {
     const { data } = await db.from("applications")
-      .select("id, profile_id, created_at, application_status, payment_status, match_status, attendance_status, placement_reason, confirmed_slot_id, profiles(name, phone, birth_year, gender, restriction_level, restricted_until), passes(type), payments(amount, refunded_amount), application_slots(event_slots(id, event_date, region))")
+      .select("id, profile_id, created_at, application_status, payment_status, match_status, attendance_status, placement_reason, confirmed_slot_id, profiles(name, phone, birth_year, gender, job, mbti, interests, self_traits, wanted_traits, price_ranges, food_restrictions, restriction_level, restricted_until), passes(type, stored, valid_until, extension_weeks), payments(amount, refunded_amount), application_slots(event_slots(id, event_date, region))")
       .order("created_at", { ascending: false }).range(from, from + 999);
     rows.push(...((data ?? []) as Record<string, unknown>[]));
     if (!data || data.length < 1000) break;
@@ -40,7 +41,8 @@ export async function loadApplicants(db: SupabaseClient): Promise<ApplicantRow[]
   (reps ?? []).forEach((r) => { const h = hist.get(r.reported); if (h) h.reported++; });
 
   return rows.map((r) => {
-    const p = one<{ name: string; phone: string | null; birth_year: number | null; gender: string | null; restriction_level: number; restricted_until: string | null }>(r.profiles);
+    const p = one<{ name: string; phone: string | null; birth_year: number | null; gender: string | null; job: string | null; mbti: string | null; interests: string[] | null; self_traits: string[] | null; wanted_traits: string[] | null; price_ranges: string[] | null; food_restrictions: string | null; restriction_level: number; restricted_until: string | null }>(r.profiles);
+    const pass = one<{ type: string; stored: boolean; valid_until: string | null; extension_weeks: number }>(r.passes);
     const pay = one<{ amount: number; refunded_amount: number | null }>(r.payments);
     const slots = ((r.application_slots as { event_slots: unknown }[]) ?? []).map((x) => one<{ id: string; event_date: string; region: string }>(x.event_slots)).filter(Boolean) as { id: string; event_date: string; region: string }[];
     const conf = slots.find((s) => s.id === r.confirmed_slot_id);
@@ -59,6 +61,12 @@ export async function loadApplicants(db: SupabaseClient): Promise<ApplicantRow[]
       reason: (r.placement_reason as string) ?? "",
       history: hist.get(r.profile_id as string) ?? { attended: 0, noShow: 0, reported: 0 },
       restriction: p ? restrictionText(p) : "",
+      profile: p ? [p.job, p.mbti && `MBTI ${p.mbti}`, p.interests?.length && `관심사 ${p.interests.join("·")}`, p.self_traits?.length && `성향 ${p.self_traits.join("·")}`,
+        p.wanted_traits?.length && `만나고 싶은 사람 ${p.wanted_traits.join("·")}`, p.price_ranges?.length && `가격대 ${p.price_ranges.join("·")}`, p.food_restrictions && `못 먹는 음식 ${p.food_restrictions}`].filter(Boolean).join(" / ") : "",
+      // 이용권 사용 내역: 새로 결제 / 보유 멤버십 사용 / 보관한 1회권 사용 / 보관 중
+      passUse: !pass ? "" : pass.type === "SINGLE"
+        ? (pass.stored ? "1회권 보관 중" : (pay?.amount === 0 ? "보관한 1회권 사용" : "1회권 결제"))
+        : `${pay?.amount ? "멤버십 결제" : "보유 멤버십 사용"}${pass.valid_until ? ` · ${fmtEventDate(pass.valid_until)}까지${pass.extension_weeks ? ` (+${pass.extension_weeks}주 연장)` : ""}` : ""}`,
       raw: { payment: r.payment_status as string, match: r.match_status as string, attendance: (r.attendance_status as string) ?? null, application: r.application_status as string, regions, dates },
     };
   });

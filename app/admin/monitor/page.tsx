@@ -14,7 +14,7 @@ type Run = {
   candidate_count: number | null; created_count: number | null; split_merge_count: number | null;
   reallocated_count: number | null; confirmed_count: number | null; failed_count: number | null;
   settings_snapshot: Record<string, number> | null;
-  failure_summary: { relations?: { blocked: number; met: number; wantAgain: number; metSeated: number; conflictsSeated: number }; reasons?: Record<string, number>; unpaid?: number; venueShortage?: number; dataMissing?: number; error?: string } | null;
+  failure_summary: { restricted?: number; relations?: { blocked: number; met: number; wantAgain: number; metSeated: number; conflictsSeated: number }; reasons?: Record<string, number>; unpaid?: number; venueShortage?: number; dataMissing?: number; error?: string } | null;
 };
 
 // A-5 자동 매칭·재배치·확정 모니터
@@ -80,6 +80,7 @@ export default async function MonitorPage() {
               {latest.failure_summary.error ? `오류: ${latest.failure_summary.error}` : [
                 ...Object.entries(latest.failure_summary.reasons ?? {}).map(([k, v]) => `${k} ${v}명`),
                 latest.failure_summary.unpaid ? `결제 미완료로 제외 ${latest.failure_summary.unpaid}명` : null,
+                latest.failure_summary.restricted ? `이용 제한으로 제외 ${latest.failure_summary.restricted}명` : null,
                 latest.failure_summary.venueShortage ? `식당 부족 ${latest.failure_summary.venueShortage}개 테이블` : null,
                 latest.failure_summary.dataMissing ? `데이터 누락 ${latest.failure_summary.dataMissing}명` : null,
                 latest.split_merge_count ? `다른 희망 지역으로 재배치해 만든 테이블 ${latest.split_merge_count}개` : null,

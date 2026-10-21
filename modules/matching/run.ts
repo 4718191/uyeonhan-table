@@ -5,6 +5,7 @@ import { createAdminClient } from "@/lib/supabase/admin";
 import { REGIONS, type RegionCode } from "@/lib/constants";
 import { fmtDeadline, fmtEventDate, fmtTime } from "@/lib/time";
 import { mapLink } from "@/lib/map";
+import { isRestricted } from "@/lib/restrictions";
 import { planBatch, type PlannedTable } from "./plan";
 import { MAX_AGE_GAP, MAX_SIZE, MIN_SIZE, applyMutualWantAgain, pairKey, type Person, type Relations, type Weights } from "./score";
 
@@ -103,7 +104,7 @@ async function execute(
   for (const ids of chunk(appIds, 80)) {
     const rows = await must(
       db.from("applications")
-        .select("id, profile_id, application_status, payment_status, match_status, reallocation_count, placement_reason, passes(type), profiles(id, name, birth_year, gender, mbti, interests, self_traits, wanted_traits), application_slots(slot_id, event_slots(id, event_date, start_time, region, capacity, match_at, status))")
+        .select("id, profile_id, application_status, payment_status, match_status, reallocation_count, placement_reason, passes(type), profiles(id, name, birth_year, gender, mbti, interests, self_traits, wanted_traits, restriction_level, restricted_until), application_slots(slot_id, event_slots(id, event_date, start_time, region, capacity, match_at, status))")
         .in("id", ids),
       "신청 조회",
     );
@@ -140,13 +141,20 @@ async function execute(
 
   // 매칭에 꼭 필요한 정보가 없으면 운영자 예외 (PRD 15장 데이터 누락)
   const people: Person[] = [];
+  const restrictedApps: AppRow[] = [];
   const appById = new Map<string, AppRow>();
   for (const a of paid) {
     const p = one(a.profiles as Record<string, unknown> | null) as {
       id: string; name: string; birth_year: number | null; gender: "F" | "M" | null; mbti: string | null;
       interests: string[] | null; self_traits: string[] | null; wanted_traits: string[] | null;
+      restriction_level: number; restricted_until: string | null;
     } | null;
     appById.set(a.id, a);
+    // SAF-02: 영구 제한·참가 제한 기간인 사람은 매칭에서 뺀다
+    if (p && isRestricted(p)) {
+      restrictedApps.push(a);
+      continue;
+    }
     if (!p || !p.birth_year || !p.gender) {
       exceptions.push({ type: "DATA_MISSING", application_id: a.id, reason: "출생연도·성별이 없어 매칭 조건을 확인할 수 없음" });
       setStatus(a, "EXCEPTION", "데이터 누락");
@@ -157,6 +165,12 @@ async function execute(
       interests: p.interests ?? [], selfTraits: p.self_traits ?? [], wantedTraits: p.wanted_traits ?? [],
       slotIds: a.application_slots.map((s) => s.slot_id).filter((id) => slotById.has(id)),
     });
+  }
+
+  for (const a of restrictedApps) {
+    await db.from("applications").update({ match_status: "NO_MATCH", placement_reason: "이용 제한 기간이라 매칭에서 제외" }).eq("id", a.id);
+    setStatus(a, "NO_MATCH", "이용 제한 기간이라 매칭에서 제외 (SAF-02)");
+    notify(a, "MATCH_RESTRICTED", "이번 매칭에 참여할 수 없어요", "이용 제한 기간이라 매칭에서 제외됐어요. 제한 내용은 알림에서 확인할 수 있어요.", "/notifications");
   }
 
   // ── 2. 관계: 차단·신고·비선호는 같은 테이블 불가, 이전에 만난 사람은 점수에만 반영 ──
@@ -376,7 +390,7 @@ async function execute(
     reallocated_count: reallocated,
     confirmed_count: confirmed,
     failed_count: failed,
-    failure_summary: { reasons, unpaid, relations: { ...relationSummary, metSeated: placed.reduce((s, t) => s + t.check.metPairs, 0), conflictsSeated: placed.reduce((s, t) => s + t.check.conflicts, 0) }, dataMissing: exceptions.filter((e) => e.type === "DATA_MISSING").length, venueShortage: placed.length - confirmedTables.length },
+    failure_summary: { reasons, unpaid, restricted: restrictedApps.length, relations: { ...relationSummary, metSeated: placed.reduce((s, t) => s + t.check.metPairs, 0), conflictsSeated: placed.reduce((s, t) => s + t.check.conflicts, 0) }, dataMissing: exceptions.filter((e) => e.type === "DATA_MISSING").length, venueShortage: placed.length - confirmedTables.length },
   }).eq("id", runId);
 
   return { candidates: people.length, tables: confirmedTables.length, confirmed, reallocated, failed, exceptions: exceptions.length };

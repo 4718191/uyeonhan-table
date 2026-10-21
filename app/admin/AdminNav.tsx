@@ -8,13 +8,13 @@ const MENU: { label: string; href?: string }[] = [
   { label: "운영 대시보드", href: "/admin" },
   { label: "회차 관리", href: "/admin/slots" },
   { label: "식당 재고·자동화 규칙", href: "/admin/venues" },
-  { label: "신청자·결제·환불" },
+  { label: "신청자·결제·환불", href: "/admin/applicants" },
   { label: "자동 매칭 모니터", href: "/admin/monitor" },
   { label: "예외 처리함", href: "/admin/exceptions" },
-  { label: "테이블·식당·단체방" },
-  { label: "안내·리마인드 이력" },
-  { label: "참석·취소·노쇼" },
-  { label: "피드백·신고" },
+  { label: "테이블·식당·단체방", href: "/admin/tables" },
+  { label: "안내·리마인드 이력", href: "/admin/messages" },
+  { label: "참석·취소·노쇼", href: "/admin/attendance" },
+  { label: "피드백·신고", href: "/admin/safety" },
 ];
 
 export function AdminNav() {

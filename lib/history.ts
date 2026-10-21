@@ -3,7 +3,7 @@ import type { SupabaseClient } from "@supabase/supabase-js";
 
 // 상태 변경 이력 (PRD 16장: 누가, 언제, 무엇을, 왜 바꿨는지 남긴다)
 export type StatusChange = {
-  entity: "application" | "payment" | "event_slot" | "table" | "venue" | "venue_availability" | "matching_settings";
+  entity: "application" | "payment" | "event_slot" | "table" | "venue" | "venue_availability" | "matching_settings" | "profile" | "safety_report";
   entityId: string;
   field: string;
   from: string | null;

@@ -3,12 +3,13 @@ import { runMatching } from "@/modules/matching/run";
 import { runPostContent, runRemind } from "@/modules/events/jobs";
 import { runCloseEvent } from "@/modules/events/close";
 import { simulateReapply } from "@/modules/demo/reapply";
+import { createAdminClient } from "@/lib/supabase/admin";
 
 // 예약 작업 실행기 (시스템_설계.md 3장)
 // Vercel Cron과 운영자 "지금 실행" 버튼이 같은 함수를 호출한다.
 // 각 작업은 여러 번 실행돼도 결과가 중복되지 않게(멱등) 구현한다.
 
-export type JobName = "match" | "remind" | "post-content" | "close-event" | "demo-reapply";
+export type JobName = "match" | "remind" | "post-content" | "close-event" | "demo-reapply" | "keepalive";
 export type JobTrigger = "CRON" | "ADMIN";
 export type JobResult = { job: JobName; ok: boolean; message: string };
 
@@ -18,6 +19,7 @@ export const JOB_LABELS: Record<JobName, string> = {
   "post-content": "대화 콘텐츠 게시",
   "close-event": "행사 종료 처리 (노쇼 후보 판정)",
   "demo-reapply": "재참여 시뮬레이션 (시연)",
+  keepalive: "DB 연결 유지",
 };
 
 export function isJobName(value: string): value is JobName {
@@ -37,6 +39,11 @@ export async function runJob(job: JobName, trigger: JobTrigger): Promise<JobResu
     if (trigger !== "ADMIN") return { job, ok: false, message: "시연 도구는 운영자 화면에서만 실행해요." };
     const r = await simulateReapply();
     return { job, ok: r.ok, message: r.message };
+  }
+  if (job === "keepalive") {
+    // Supabase 무료 플랜은 오래 쓰이지 않으면 프로젝트를 일시 정지한다. 매일 가벼운 조회로 활동을 남긴다.
+    const { count, error } = await createAdminClient().from("event_slots").select("id", { count: "exact", head: true });
+    return { job, ok: !error, message: error ? `DB 연결 실패: ${error.message}` : `DB 연결 확인 (회차 ${count ?? 0}개)` };
   }
   if (job === "close-event") {
     const r = await runCloseEvent(trigger);

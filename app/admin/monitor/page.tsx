@@ -86,7 +86,7 @@ export default async function MonitorPage() {
                 latest.failure_summary.venueShortage ? `식당 부족 ${latest.failure_summary.venueShortage}개 테이블` : null,
                 latest.failure_summary.dataMissing ? `데이터 누락 ${latest.failure_summary.dataMissing}명` : null,
                 latest.split_merge_count ? `다른 희망 지역으로 재배치해 만든 테이블 ${latest.split_merge_count}개` : null,
-              ].filter(Boolean).join(" · ") || "남은 사람 없이 모두 확정됐어요."}
+              ].filter(Boolean).join(" · ") || ((latest.candidate_count ?? 0) === 0 ? "이번 회차에는 매칭할 후보가 없었어요." : "남은 사람 없이 모두 확정됐어요.")}
             </p>
           )}
 

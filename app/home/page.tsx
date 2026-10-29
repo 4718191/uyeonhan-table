@@ -135,7 +135,11 @@ function describe(app: ApplicationView, resolution: { status: string; choice: st
   const m = app.match_status;
   const canceled = app.application_status === "CANCELED";
 
-  const passText = app.pass
+  // 보관해 둔 1회권으로 신청했으면(결제 금액 0원) 그렇게 표시한다
+  const usedStored = app.pass?.type === "SINGLE" && app.payment?.amount === 0;
+  const passText = usedStored
+    ? `보관한 1회권 사용 · ${PAYMENT_LABELS[app.payment_status]}`
+    : app.pass
     ? `${PASS_LABELS[app.pass.type]}${app.pass.valid_until ? ` (${fmtEventDate(membershipEnd(app.pass)!)}까지)` : ""} · ${PAYMENT_LABELS[app.payment_status]}`
     : PAYMENT_LABELS[app.payment_status];
 
